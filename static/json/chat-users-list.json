@@ -1,0 +1,73 @@
+[
+  {
+    "users": [
+      {
+        "id": 1,
+        "name": "Urska Tomasevic",
+        "status": "online",
+        "profile": "/static/an/team/urskatomasevic.png"
+      },
+      {
+        "id": 2,
+        "name": "MTech",
+        "status": "online",
+        "profile": "/static/an/team/milovantomasevic.png",
+        "messagecount" : 8
+      },
+      {
+        "id": 3,
+        "name": "Clifford Taylor",
+        "status": "away",
+        "nickname": "CT",
+        "profile": ""
+      },
+      {
+        "id": 4,
+        "name": "MTech",
+        "status": "online",
+        "profile": "/static/an/team/milovantomasevic.png"
+      },
+      {
+        "id": 5,
+        "name": "Ivan Lukovic",
+        "status": "online",
+        "profile": "/static/an/team/ivan-lukovic.jpg",
+        "messagecount" : 5
+      },
+      {
+        "id": 6,
+        "name": "Nino Rejc",
+        "status": "away",
+        "profile": "/static/an/team/nino.PNG",
+        "messagecount" : 2
+      },
+      {
+        "id": 7,
+        "name": "Chris Kiernan",
+        "status": "online",
+        "nickname": "CK",
+        "profile": ""
+      },
+      {
+        "id": 8,
+        "name": "Edith Evans",
+        "status": "away",
+        "nickname": "EE",
+        "profile": ""
+      },
+      {
+        "id": 9,
+        "name": "Matej Pirnat",
+        "status": "away",
+        "profile": "/static/an/team/matejpirnat.png"
+      }
+    ],
+    "channels": [
+      { "id": 10, "name": "Data Insights Accelerator", "members": 12, "messagecount": 7 },
+      { "id": 11, "name": "AI-driven Personalization", "members": 10 },
+      { "id": 12, "name": "Master Data Management", "members": 24,"messagecount": 2 },
+      { "id": 13, "name": "Data Integration Hub", "members": 8 },
+      { "id": 14, "name": "Customer 360 View", "members": 16 }
+    ]
+  }
+]

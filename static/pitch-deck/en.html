@@ -1,0 +1,1383 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>advanexus</title>
+
+  <meta name="description" content="advanexus is an operating system for controlled, auditable, and accountable data operations.">
+	<meta name="author" content="Milovan Tomašević">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="libs/reveal.js/4.1.3/reset.css">
+	<link rel="stylesheet" href="libs/reveal.js/4.1.3/reveal.css">
+
+	
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+	  <!-- highlight Theme -->
+  	
+	  <link rel="stylesheet" href="libs/highlight.js/11.3.1/styles/monokai.min.css">
+	
+	
+		
+	<link rel="stylesheet" href="libs/reveal.js/4.1.3/plugin/chalkboard/style.css">
+	
+	
+	
+	<link rel="stylesheet" href="libs/styles/tasklist.css">
+
+
+
+  <!-- Revealjs Theme -->
+  
+  	<link rel="stylesheet" href="libs/reveal.js/4.1.3/theme/white.css" id="theme">
+  
+  
+
+
+  <!-- Revealjs Theme -->
+  
+
+ 
+</head>
+
+<body>
+  
+    <div id="logo" style="position: fixed; top: 20px; left: 20px; z-index: 1; height:3rem;">
+        <img src="advanexus/logo-circle.png" style="height:100%"/>
+    </div>
+  
+
+
+  <div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+      
+
+
+    
+    <section>
+        <section >
+            <style scoped>
+    :root {
+      --primary-color: #0ab39c;
+      --secondary-color: white;
+      --text-color: #343541;
+    }
+    ul.medium { font-size: 80%; }
+    ul.small { font-size: 60%; }
+    .advanexus {
+        color: var(--primary-color);
+        font-family: 'Space Grotesk', sans-serif;
+    }
+    .reveal .slides { color: var(--text-color); }
+    .reveal { font-size: 32px; }
+    .reveal .slides h1 { font-size: 150%; }
+    .reveal .slides h2 { font-size: 125%; }
+    .reveal .slides h3 { font-size: 120%; }
+    .reveal .slides h4 { font-size: 85%; }
+    .reveal .slides p { font-size: 85%; line-height: 1.4; }
+    .reveal .slides ul, .reveal .slides ol { font-size: 80%; line-height: 1.4; }
+    .reveal .slides li { margin-bottom: 0.4em; }
+    .text-medium { font-size: 70%; }
+    .text-small { font-size: 55%; }
+    .text-xsmall { font-size: 45%; }
+    .reveal .slides .footnote { font-size: 45%; opacity: 0.7; }
+    .reveal .slides h1, .reveal .slides h2, .reveal .slides h3 {
+      font-family: "Space Grotesk", monospace;
+      color: var(--primary-color);
+    }
+    .reveal .slides a { color: var(--primary-color); }
+    .fa, .fas.fa-bars, .controls-arrow, span { color: var(--primary-color); }
+    .slide-number { background-color: var(--text-color) !important; }
+    .slide-number-a, .slide-number-delimiter, .slide-number-b { color: var(--secondary-color); }
+    .reveal .slides p, .reveal .slides li, .reveal .slides div, .reveal .slides span {
+      font-family: "JetBrains Mono", monospace;
+    }
+    .reveal .slides {
+      color: var(--text-color);
+    }
+    .reveal .slides h1,
+    .reveal .slides h2,
+    .reveal .slides h3 {
+      font-family: "Space Grotesk", monospace;
+      color: var(--primary-color);
+    }
+    .reveal .slides a {
+      color: var(--primary-color);
+    }
+    .fa,
+    .fas.fa-bars,
+    .controls-arrow,
+    span {
+      color: var(--primary-color);
+    }
+    .slide-number {
+      background-color: var(--text-color) !important;
+    }
+    .slide-number-a,
+    .slide-number-delimiter,
+    .slide-number-b {
+      color: var(--secondary-color);
+    }
+    .shrink {
+        font-size: 70% !important;
+        line-height: 1.1em !important; /* manji line-height */
+        text-align: left !important;
+
+        display: block !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding-left: 0.4em !important;
+    }
+
+    /* Umanjena i profesionalno uvučena lista */
+    .shrink ul,
+    .shrink ol {
+        margin-left: 1em !important;
+        padding-left: 0.4em !important;
+        font-size: 92% !important;
+    }
+
+    .shrink li {
+        margin-bottom: 0.15em !important; /* vrlo kompaktno */
+        line-height: 1.15em !important;   /* još dodatno sabija listu */
+    }
+</style>
+<script src="https://cdn.lordicon.com/lordicon.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap"/>
+<p><strong>Operating system for controlled data execution</strong></p>
+<p><a href="https://www.advanexus.com" :target="_blank"><img src="advanexus/logo.png" alt="Logo"></a></p>
+<p><strong>Target investment: €2.4M</strong><br>
+to unify the platform, integrate the C++ execution core, introduce the ACI layer, and prepare for expansion into the EU and U.S. markets</p>
+<p><strong>Delivery plan:</strong> 12 months<br>
+<strong>Total funding period:</strong> 15 months</p>
+<p><small><a href="mailto:info@advanexus.com">info@advanexus.com</a></small></p>
+<p><lord-icon src="https://cdn.lordicon.com/mrikdaqa.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:100px;height:100px"></lord-icon>
+<lord-icon src="https://cdn.lordicon.com/fqrjldna.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:100px;height:100px"></lord-icon>
+<lord-icon src="https://cdn.lordicon.com/pwdeppfh.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:100px;height:100px"></lord-icon></p>
+
+            </section>
+        
+            <section >
+                <h3>The problem the market actually has</h3>
+<p><lord-icon src="https://cdn.lordicon.com/vwtvwncw.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon>
+<lord-icon src="https://cdn.lordicon.com/hnxipqzk.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon>
+<lord-icon src="https://cdn.lordicon.com/xdwerdzf.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon>
+<lord-icon src="https://cdn.lordicon.com/llbjqxzl.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon></p>
+<div style="font-size: 66%">
+<table>
+<thead>
+<tr>
+<th><strong>Fragmented operations</strong></th>
+<th><strong>Business consequences</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Multiple tools, teams, and partial controls</td>
+<td>Slower onboarding and slower change delivery</td>
+</tr>
+<tr>
+<td>Unclear accountability over data and rules</td>
+<td>Higher operational and regulatory risk</td>
+</tr>
+<tr>
+<td>Manual and slow change review</td>
+<td>Higher likelihood of error</td>
+</tr>
+<tr>
+<td>Incidents require additional manual analysis</td>
+<td>Slower response and greater pressure</td>
+</tr>
+<tr>
+<td>Audit readiness is built retroactively</td>
+<td>Greater audit stress and weaker defensibility</td>
+</tr>
+<tr>
+<td>AI and analytics run on insufficiently controlled data</td>
+<td>Lower trust in outputs and slower business value</td>
+</tr>
+</tbody>
+</table>
+</div>
+            </section>
+        
+            <section >
+                <h4>HOW <span class="advanexus">advanexus</span> WORKS</h4>
+<h3>From fragmented data flows to an operational layer ready for analytics and AI</h3>
+<p><img src="advanexus/advanexus_data_platform.gif" alt="" style="width:80%"></p>
+<div style="font-size: 48%">
+<p>Systems and cloud sources → <span class="advanexus">advanexus</span> → controlled and provable delivery to reporting, analytics, and AI<br>
+<span class="advanexus">advanexus</span> does not replace existing systems; it introduces control over how data is executed, validated, and delivered.</p>
+</div>
+            </section>
+        
+            <section >
+                <h3>Where Advanexus sits in the market</h3>
+<div style="font-size: 55%">
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Examples</th>
+<th>Where it overlaps</th>
+<th>Where <span class="advanexus">advanexus</span> is different</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Large data and enterprise platforms</td>
+<td>Databricks, Snowflake, SAP, Oracle</td>
+<td>Data, governance, integrations, analytics</td>
+<td>It is not a replacement for the full platform; it provides execution control, rules during operation, controlled delivery, and provability above the existing environment</td>
+</tr>
+<tr>
+<td>Orchestration and execution management tools</td>
+<td>Dagster, Prefect</td>
+<td>Workflows, execution management, operational coordination</td>
+<td>It is not focused only on orchestration; it provides accountability, repeatability, approval, and evidence across the full operational process</td>
+</tr>
+<tr>
+<td>Data governance and trusted data layer</td>
+<td>Collibra, Informatica, Qlik Talend</td>
+<td>Governance, lineage, quality, trusted data</td>
+<td>It is not focused only on cataloging and governance; it provides control over how the flow is actually executed, validated, and delivered</td>
+</tr>
+<tr>
+<td>Observability and operational insight layer</td>
+<td>Monte Carlo, Palantir Foundry</td>
+<td>Visibility, operational context, reliability</td>
+<td>It is not focused only on monitoring or business-layer modeling; it provides controlled delivery and evidence through the flow itself</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="font-size: 77%">
+<p><span class="advanexus">advanexus</span> is not just another data platform.<br>
+<span class="advanexus">advanexus</span> is an operational layer for controlled data execution, above and between existing systems.</p>
+</div>
+            </section>
+        
+            <section >
+                <h3>Visual positioning of Advanexus</h3>
+<div style="height:520px; background: rgba(255,255,255,0.92); border-radius: 12px; padding: 12px;">
+  <canvas data-chart="scatter">
+<!--
+{
+  "data": {
+    "datasets": [
+      {
+        "label": "Analytics and storage platforms (Databricks, Snowflake)",
+        "data": [
+          { "x": 6.5, "y": 8.2 }
+        ],
+        "pointRadius": 9,
+        "pointHoverRadius": 12,
+        "pointBackgroundColor": "rgba(20,220,220,0.95)",
+        "pointBorderColor": "rgba(18,19,49,0.9)",
+        "pointBorderWidth": 2,
+        "backgroundColor": "rgba(20,220,220,0.95)",
+        "borderColor": "rgba(18,19,49,0.9)"
+      },
+      {
+        "label": "Data governance and catalog (Collibra, Informatica, Qlik Talend)",
+        "data": [
+          { "x": 8.4, "y": 3.2 }
+        ],
+        "pointRadius": 9,
+        "pointHoverRadius": 12,
+        "pointBackgroundColor": "rgba(220,220,120,0.98)",
+        "pointBorderColor": "rgba(18,19,49,0.9)",
+        "pointBorderWidth": 2,
+        "backgroundColor": "rgba(220,220,120,0.98)",
+        "borderColor": "rgba(18,19,49,0.9)"
+      },
+      {
+        "label": "Orchestration and execution management (Dagster, Prefect)",
+        "data": [
+          { "x": 6.4, "y": 4.8 }
+        ],
+        "pointRadius": 9,
+        "pointHoverRadius": 12,
+        "pointBackgroundColor": "rgba(220,120,120,0.95)",
+        "pointBorderColor": "rgba(18,19,49,0.9)",
+        "pointBorderWidth": 2,
+        "backgroundColor": "rgba(220,120,120,0.95)",
+        "borderColor": "rgba(18,19,49,0.9)"
+      },
+      {
+        "label": "Monitoring and operational insight (Monte Carlo, Palantir Foundry)",
+        "data": [
+          { "x": 7.3, "y": 5.4 }
+        ],
+        "pointRadius": 9,
+        "pointHoverRadius": 12,
+        "pointBackgroundColor": "rgba(155,135,245,0.95)",
+        "pointBorderColor": "rgba(18,19,49,0.9)",
+        "pointBorderWidth": 2,
+        "backgroundColor": "rgba(155,135,245,0.95)",
+        "borderColor": "rgba(18,19,49,0.9)"
+      },
+      {
+        "label": "Ad hoc scripts and scattered tools",
+        "data": [
+          { "x": 2.0, "y": 2.0 }
+        ],
+        "pointRadius": 9,
+        "pointHoverRadius": 12,
+        "pointBackgroundColor": "rgba(160,160,160,0.90)",
+        "pointBorderColor": "rgba(18,19,49,0.9)",
+        "pointBorderWidth": 2,
+        "backgroundColor": "rgba(160,160,160,0.90)",
+        "borderColor": "rgba(18,19,49,0.9)"
+      },
+      {
+        "label": "advanexus",
+        "data": [
+          { "x": 9.1, "y": 6.6 }
+        ],
+        "pointRadius": 15,
+        "pointHoverRadius": 18,
+        "pointBackgroundColor": "rgba(10,179,156,1)",
+        "pointBorderColor": "rgba(18,19,49,0.95)",
+        "pointBorderWidth": 3,
+        "backgroundColor": "rgba(10,179,156,1)",
+        "borderColor": "rgba(18,19,49,0.95)"
+      }
+    ]
+  },
+  "options": {
+    "responsive": true,
+    "maintainAspectRatio": false,
+    "layout": {
+      "padding": { "top": 10, "right": 10, "bottom": 10, "left": 10 }
+    },
+    "plugins": {
+      "legend": {
+        "display": true,
+        "position": "bottom",
+        "labels": {
+          "color": "rgba(18,19,49,0.92)",
+          "font": { "size": 13, "weight": "800" },
+          "boxWidth": 16,
+          "boxHeight": 16,
+          "usePointStyle": true,
+          "pointStyle": "circle",
+          "padding": 10
+        }
+      },
+      "tooltip": {
+        "enabled": true,
+        "backgroundColor": "rgba(18,19,49,0.95)",
+        "titleColor": "rgba(255,255,255,0.98)",
+        "bodyColor": "rgba(255,255,255,0.95)",
+        "borderColor": "rgba(10,179,156,1)",
+        "borderWidth": 1
+      },
+      "pointLabels": {
+        "color": "rgba(18,19,49,0.92)",
+        "fontSize": 12,
+        "fontWeight": "800",
+        "offsetX": 10,
+        "offsetY": -10
+      },
+      "quadrantTitles": {
+        "color": "rgba(18,19,49,0.70)",
+        "fontSize": 13,
+        "fontWeight": "800",
+        "q1": "High analytics, lower control",
+        "q2": "High analytics, high control",
+        "q3": "Low analytics, low control",
+        "q4": "Lower analytics, high control"
+      },
+      "crosshair": {
+        "midX": 5,
+        "midY": 5,
+        "lineColor": "rgba(18,19,49,0.30)",
+        "lineWidth": 2
+      }
+    },
+    "scales": {
+      "x": {
+        "min": 0,
+        "max": 10,
+        "grid": { "color": "rgba(18,19,49,0.10)" },
+        "ticks": {
+          "stepSize": 1,
+          "color": "rgba(18,19,49,0.85)",
+          "font": { "weight": "800", "size": 12 }
+        },
+        "title": {
+          "display": true,
+          "text": "Operational control and provability (low → high)",
+          "color": "rgba(18,19,49,0.92)",
+          "font": { "size": 15, "weight": "900" }
+        }
+      },
+      "y": {
+        "min": 0,
+        "max": 10,
+        "grid": { "color": "rgba(18,19,49,0.10)" },
+        "ticks": {
+          "stepSize": 1,
+          "color": "rgba(18,19,49,0.85)",
+          "font": { "weight": "800", "size": 12 }
+        },
+        "title": {
+          "display": true,
+          "text": "Breadth of data and analytics platform capability (low → high)",
+          "color": "rgba(18,19,49,0.92)",
+          "font": { "size": 13, "weight": "900" }
+        }
+      }
+    }
+  },
+  "plugins": [
+    {
+      "id": "crosshair",
+      "afterDraw": "function(chart,args,opts){const area=chart.chartArea;if(!area)return;const ctx=chart.ctx;const x=chart.scales.x;const y=chart.scales.y;const midX=x.getPixelForValue(opts.midX||5);const midY=y.getPixelForValue(opts.midY||5);ctx.save();ctx.strokeStyle=opts.lineColor||'rgba(0,0,0,0.25)';ctx.lineWidth=opts.lineWidth||2;ctx.beginPath();ctx.moveTo(midX,area.top);ctx.lineTo(midX,area.bottom);ctx.stroke();ctx.beginPath();ctx.moveTo(area.left,midY);ctx.lineTo(area.right,midY);ctx.stroke();ctx.restore();}"
+    },
+    {
+      "id": "pointLabels",
+      "afterDatasetsDraw": "function(chart,args,opts){const ctx=chart.ctx;ctx.save();ctx.fillStyle=(opts&&opts.color)?opts.color:'rgba(0,0,0,0.85)';const fs=(opts&&opts.fontSize)?opts.fontSize:12;const fw=(opts&&opts.fontWeight)?opts.fontWeight:'700';ctx.font=fw+' '+fs+'px Arial';const offX=(opts&&opts.offsetX)?opts.offsetX:10;const offY=(opts&&opts.offsetY)?opts.offsetY:-10;chart.data.datasets.forEach(function(ds,i){const meta=chart.getDatasetMeta(i);if(!meta||meta.hidden)return;meta.data.forEach(function(pt){const p=pt.getProps(['x','y'],true);const txt=ds.label||'';if(!txt)return;ctx.fillText(txt,p.x+offX,p.y+offY);});});ctx.restore();}"
+    },
+    {
+      "id": "quadrantTitles",
+      "afterDraw": "function(chart,args,opts){const area=chart.chartArea;if(!area||!opts)return;const ctx=chart.ctx;const x=chart.scales.x;const y=chart.scales.y;const midX=x.getPixelForValue(5);const midY=y.getPixelForValue(5);ctx.save();ctx.fillStyle=opts.color||'rgba(0,0,0,0.55)';ctx.font=(opts.fontWeight||'700')+' '+(opts.fontSize||12)+'px Arial';ctx.fillText(opts.q1||'',area.left+8,area.top+18);ctx.fillText(opts.q2||'',midX+8,area.top+18);ctx.fillText(opts.q3||'',area.left+8,area.bottom-8);ctx.fillText(opts.q4||'',midX+8,area.bottom-8);ctx.restore();}"
+    }
+  ]
+}
+-->
+  </canvas>
+</div>
+            </section>
+        
+            <section >
+                <h3>Initial beachhead market and go-to-market strategy</h3>
+<div style="font-size: 66%">
+<table>
+<thead>
+<tr>
+<th><strong>Area</strong></th>
+<th><strong>Focus</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Initial market</td>
+<td>Tier 2 and Tier 3 banks, regulated fintech companies, insurance organizations, and teams with high compliance requirements, as well as individual teams within larger banks with clearly bounded workflows</td>
+</tr>
+<tr>
+<td>Initial sales strategy</td>
+<td>The entry point is not as a replacement for the central platform in Tier 1 banks, but through a clearly bounded high-value problem with lower organizational risk</td>
+</tr>
+<tr>
+<td>First application scenarios</td>
+<td>AML, fraud detection, compliance workflows, controlled reporting pipelines, audit-sensitive data movement, reconciliations, and operational handoffs between teams</td>
+</tr>
+<tr>
+<td>Reference-building strategy</td>
+<td>2 pilot clients, 1 to 2 partner-led implementations, and references from controlled use cases before expanding to a broader scope</td>
+</tr>
+<tr>
+<td>Reason for this approach</td>
+<td>The problem is critical enough for the buyer to see value, while the entry point remains bounded enough for the risk to stay acceptable</td>
+</tr>
+<tr>
+<td>Expected outcome</td>
+<td>Faster proof of value, first serious references, lower entry risk, and a gradual path toward larger institutional clients</td>
+</tr>
+</tbody>
+</table>
+</div>
+            </section>
+        
+            <section >
+                <h3>The product today and what the investment unlocks</h3>
+<div style="font-size: 66%">
+<table>
+<thead>
+<tr>
+<th>What already exists today</th>
+<th>What the investment unlocks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A functional platform foundation</td>
+<td>A unified platform</td>
+</tr>
+<tr>
+<td>Core product model: sources, jobs and tasks, checks and rules, datasets, delivery, and audit evidence</td>
+<td>An integrated C++ execution core</td>
+</tr>
+<tr>
+<td>A controlled workflow model</td>
+<td>ACI as an intelligent control layer</td>
+</tr>
+<tr>
+<td>Provability of execution and rules during operation</td>
+<td>Infrastructure stabilization and scalability</td>
+</tr>
+<tr>
+<td>The ability to demonstrate the product through a PoC and pilot scenario</td>
+<td>A pilot-ready enterprise package for serious market entry</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="font-size: 77%">
+<p>This is <strong>not</strong> an investment in an idea from zero.<br>
+This <strong>is</strong> an investment in unifying, strengthening, and commercially preparing an existing product.</p>
+</div>
+            </section>
+        
+            <section >
+                <h3>What is built through the initial investment</h3>
+<div style="font-size: 58%">
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>What is built</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Phase 1. New infrastructure</td>
+<td>Deployment model, CI/CD, system observability, and initial security baseline</td>
+<td>A stable and production-ready platform foundation</td>
+</tr>
+<tr>
+<td>Phase 2. Platform unification</td>
+<td>Convergence of the base and controlled versions, one development path, one domain model, and a unified API and UI direction</td>
+<td>One platform instead of multiple development tracks</td>
+</tr>
+<tr>
+<td>Phase 3. C++ core integration</td>
+<td>Execution core, lifecycle management, status, failures, and evidence binding</td>
+<td>A unified execution engine inside the platform</td>
+</tr>
+<tr>
+<td>Phase 4. ACI foundation</td>
+<td>Flow formalization, change and risk review, incident summary, audit draft, and trusted dataset summary</td>
+<td>An intelligent control layer within the platform</td>
+</tr>
+<tr>
+<td>Phase 5. Final hardening and pilot readiness</td>
+<td>Security, performance, deployment runbooks, and a pilot package</td>
+<td>A product ready for a serious pilot and client-facing deployment</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="font-size: 77%">
+<p>The initial investment <strong>funds</strong> a clear plan with a defined sequence, scope, and outcome.<br>
+It does <strong>not fund</strong> open-ended development without clear boundaries.</p>
+</div>
+            </section>
+        
+            <section >
+                <h3>ACI as a differentiator, not a marketing layer</h3>
+<div style="font-size: 55%">
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>What ACI is</th>
+<th>What ACI brings</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Role</td>
+<td>An embedded intelligent control layer inside <span class="advanexus">advanexus</span></td>
+<td>Accelerates work within an already controlled system</td>
+</tr>
+<tr>
+<td>Constraint</td>
+<td>It is not a chatbot, not a generic assistant, and not an autonomous agent</td>
+<td>It does not introduce additional operational or regulatory chaos</td>
+</tr>
+<tr>
+<td>Mode of operation</td>
+<td>It works only on existing platform objects and their context</td>
+<td>Everything remains tied to rules, lineage, accountability, evidence, and approval</td>
+</tr>
+<tr>
+<td>Initial functions</td>
+<td>Flow formalization, change and risk review, incident summary, audit draft, trusted dataset summary</td>
+<td>Reduces manual work and accelerates the most expensive operational steps</td>
+</tr>
+<tr>
+<td>Operational value</td>
+<td>Helps teams understand faster what needs to be formalized, what changed, what is risky, and what happened</td>
+<td>Shorter onboarding, faster change review, faster incident response, and faster audit preparation</td>
+</tr>
+<tr>
+<td>Commercial value</td>
+<td>Strengthens the existing product instead of shifting the story toward generic AI</td>
+<td>Creates a clearer proof of value for the buyer and stronger product differentiation</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="font-size: 80%">
+<p><span class="advanexus">advanexus</span> introduces intelligence only after execution, rules, accountability, and provability are already under control.</p>
+</div>
+            </section>
+        
+            <section >
+                <h3>Time to value, adoption, and migration risk</h3>
+<div style="font-size: 48%">
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Approach</th>
+<th>Expected outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Entry model</td>
+<td><span class="advanexus">advanexus</span> is introduced through a clearly bounded high-value use case, not through a large-scale replacement of the existing environment</td>
+<td>Lower entry risk and a faster start to the engagement</td>
+</tr>
+<tr>
+<td>Implementation steps</td>
+<td>1. discovery and scope definition  2. controlled pilot  3. gradual move into production operation</td>
+<td>A clearly defined path from the first problem to the first production value</td>
+</tr>
+<tr>
+<td>Time to the first solution draft</td>
+<td>2 to 4 weeks to define the initial scope and produce a usable flow draft</td>
+<td>Faster decision-making and a faster start to the pilot phase</td>
+</tr>
+<tr>
+<td>Time to the first controlled scenario</td>
+<td>6 to 10 weeks to the first high-value controlled scenario</td>
+<td>Early proof of value without major organizational disruption</td>
+</tr>
+<tr>
+<td>Time to the first production scope</td>
+<td>12 to 16 weeks to a gradual move into production for the first scope</td>
+<td>A shorter path to real business impact</td>
+</tr>
+<tr>
+<td>Impact on the team and organization</td>
+<td>Adoption happens around existing flows, without mass replacement of personnel and without reshaping the organization</td>
+<td>Lower risk to team efficiency and lower adoption cost</td>
+</tr>
+<tr>
+<td>Measurable operational value</td>
+<td>In pilot validation, the goal is a faster transition from process description to flow draft, faster change review, faster incident summary, and faster audit preparation</td>
+<td>40%+ faster flow draft, 30%+ faster change review, 50%+ faster incident summary, and 40%+ faster audit draft preparation*</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="font-size: 55%">
+<p><span class="advanexus">advanexus</span> reduces adoption risk by introducing a control layer around existing flows and shortening the path to the first provable value.</p>
+<ul>
+<li>Target ranges for pilot validation, not external guaranteed commitments.</li>
+</ul>
+</div>
+            </section>
+        
+            <section >
+                <h3>Regulatory approach, accountability, and risk management model</h3>
+<div style="font-size: 55%">
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Approach</th>
+<th>What it means in practice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Market entry</td>
+<td>Initial market entry is not based on the claim that all certifications are already completed</td>
+<td>Entry starts through a clearly bounded use case, controlled rollout, and gradual trust-building</td>
+</tr>
+<tr>
+<td>Regulatory approach</td>
+<td>A phased compliance model is applied</td>
+<td>A security baseline exists from the start, while formal strengthening of controls follows expansion toward more demanding clients</td>
+</tr>
+<tr>
+<td>Environment for early clients</td>
+<td>Where needed, partner-hosted or compliant execution environments are used</td>
+<td>This lowers the regulatory threshold for early implementations and accelerates the path to reference clients</td>
+</tr>
+<tr>
+<td>Provability and traceability</td>
+<td>Activity trails and evidence are built into the operating model itself</td>
+<td>Audit readiness is not created retroactively, but through the operational flow</td>
+</tr>
+<tr>
+<td>Contracting model</td>
+<td>Contracts are tied to a clearly defined scope of engagement</td>
+<td>Responsibilities are defined upfront and aligned with the rollout phase</td>
+</tr>
+<tr>
+<td>Legal protection</td>
+<td>Liability caps, professional indemnity insurance, and cyber insurance</td>
+<td>Risk is contractually and financially controlled, without taking on the role of the system of record in the initial phase</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="font-size: 77%">
+<p>Regulatory and legal risk is not ignored; market entry is structured so that it remains technically, operationally, and contractually under control.</p>
+</div>
+            </section>
+        
+            <section >
+                <h3>Technical scalability and operational limits</h3>
+<div style="font-size: 58%">
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Approach</th>
+<th>What it means in practice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Market positioning</td>
+<td><span class="advanexus">advanexus</span> is not positioned as a replacement for an infinitely scalable data storage platform</td>
+<td>The focus is on controlled execution and provability for clearly defined operational scopes</td>
+</tr>
+<tr>
+<td>Scalability foundation</td>
+<td>New infrastructure, separate execution profiles, an integrated C++ execution core, workload isolation, system observability, and recovery</td>
+<td>Scalability is achieved through deliberate design, not through unverified claims</td>
+</tr>
+<tr>
+<td>Operational framework</td>
+<td>Every rollout has a clearly defined execution envelope</td>
+<td>Ingest volume, dataset size, concurrency, and target service levels are defined for each specific use case</td>
+</tr>
+<tr>
+<td>Technical assurance</td>
+<td>Performance and limits are measured per scenario rather than assumed in advance</td>
+<td>Buyers and investors receive a clear technical profile for both the pilot and production scope</td>
+</tr>
+<tr>
+<td>What the initial investment delivers</td>
+<td>A formal benchmark package and a published performance envelope for pilot and enterprise sales</td>
+<td>Technical capacity becomes measurable, comparable, and commercially usable</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="font-size: 66%">
+<p><span class="advanexus">advanexus</span> does not sell unverified claims of infinite scale.<br>
+<span class="advanexus">advanexus</span> sells controlled and measured operational capacity for clearly defined scenarios.</p>
+</div>
+            </section>
+        
+            <section >
+                <h3>Revenue model and economic logic</h3>
+<div style="font-size: 45%">
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Structure</th>
+<th>Economic rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Layer 1. Initial package</td>
+<td>Paid package for problem discovery and proof of concept: <strong>€30k to €80k</strong></td>
+<td>Enables entry into the client account with limited risk and early funding of the initial engagement</td>
+</tr>
+<tr>
+<td>Layer 2. Annual subscription for the first production scope</td>
+<td>Annual subscription for a clearly bounded production scope: <strong>€120k to €300k annually</strong></td>
+<td>Converts the pilot and initial engagement into recurring revenue</td>
+</tr>
+<tr>
+<td>Layer 3. Expansion across multiple domains</td>
+<td>Expansion across additional flows, teams, or business domains: <strong>€300k to €700k+ annually</strong></td>
+<td>Increases value per client without proportional growth in delivery cost</td>
+</tr>
+<tr>
+<td>Layer 4. Higher-value additional services</td>
+<td>Premium support, compliance, guided enablement, and expansion support</td>
+<td>Creates additional revenue and strengthens client retention</td>
+</tr>
+<tr>
+<td>Customer acquisition cost</td>
+<td>Target blended customer acquisition cost in the early phase: <strong>€50k to €90k</strong></td>
+<td>Maintains sales discipline and measures how efficiently the initial engagement converts into subscription and expansion</td>
+</tr>
+<tr>
+<td>Payback period</td>
+<td>Target: <strong>under 18 months</strong> for a premium client and <strong>under 12 months</strong> for expansion within an existing client</td>
+<td>Shows that the model does not depend on an excessively long wait for sales payback</td>
+</tr>
+<tr>
+<td>Path to sustainability</td>
+<td>Target break-even at around <strong>€2.3M to €2.6M in annual revenue</strong></td>
+<td>In practical terms, this means <strong>8 to 10 premium clients</strong> or <strong>5 to 6 larger clients</strong> with a mix of initial packages, production scopes, and expansions</td>
+</tr>
+<tr>
+<td>Financial planning</td>
+<td>A pro forma cash flow model exists for the initial investment period and a 24-month exit scenario</td>
+<td>The investment is based on a planned transition from early revenue to sustainable growth</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="font-size: 60%">
+<p><span class="advanexus">advanexus</span> does not build revenue only through technical implementation, but through a clear progression from the initial engagement to annual and expanded revenue with sustainable economic logic.</p>
+</div>
+            </section>
+        
+            <section >
+                <h3>GTM plan, sales model, and partners</h3>
+<div style="font-size: 50%">
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Approach</th>
+<th>What it means in practice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Route to market</td>
+<td>Sales does not rely on a single salesperson, but on three channels: founder-led selling in the early phase, partner-led access for regulated clients, and expansion through early reference clients</td>
+<td>The sales model follows how an enterprise buyer actually makes a decision</td>
+</tr>
+<tr>
+<td>Sales motion</td>
+<td>Entry through a clearly defined use case, a paid initial package, a bounded pilot, an annual contract for the first production scope, and expansion by domain</td>
+<td>Revenue is built step by step, with lower entry risk and a clearer path to a larger contract</td>
+</tr>
+<tr>
+<td>Partner model</td>
+<td>Cloud and infrastructure partners, data implementation partners, and specialized compliance and integration partners</td>
+<td>Partners expand market access, reduce entry risk, and accelerate early implementations</td>
+</tr>
+<tr>
+<td>First-year budget</td>
+<td>Planned costs include travel and meetings, partner development, demo and pilot preparation, and a reserve for variable sales incentives</td>
+<td>Sales cost is planned, not left to chance</td>
+</tr>
+<tr>
+<td>Sales and administrative overhead</td>
+<td>The goal is disciplined overhead appropriate to the initial phase, without premature expansion of administration and corporate structure</td>
+<td>Capital remains focused on sales, product development, and early reference clients</td>
+</tr>
+<tr>
+<td>Sales scalability</td>
+<td>Early sales work is high-touch and guided, then expands through references, implementation templates, and the partner channel</td>
+<td>Sales does not scale only through headcount, but also through repeatability of the approach</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="font-size: 70%">
+<p><span class="advanexus">advanexus</span> is sold as an enterprise product with a guided route to market, a clear partner model, and a planned sales cost structure.</p>
+</div>
+            </section>
+        
+            <section >
+                <h3>Team, governance, and operating model</h3>
+<div style="font-size: 39%">
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th style="text-align:right">NoP</th>
+<th>Setup</th>
+<th>What it means in practice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Platform core</td>
+<td style="text-align:right">8</td>
+<td>1 founder / CEO / product and architecture lead, 1 platform tech lead, 2 senior backend engineers, 1 senior C++ core integration engineer, 1 infrastructure and reliability engineer, 1 frontend / full-stack engineer, 1 QA and automation engineer</td>
+<td>A small and senior team capable of delivering platform unification, core integration, and ACI without excessive organizational overhead</td>
+</tr>
+<tr>
+<td>Client delivery and expansion</td>
+<td style="text-align:right">2</td>
+<td>2 Solution Lead roles acting as the bridge between sales, implementation, and client expansion</td>
+<td>They lead discovery, scope definition, pilot delivery, first production rollout, and domain expansion, without the need for a dedicated project manager per client</td>
+</tr>
+<tr>
+<td>Additional functions as needed</td>
+<td style="text-align:right">3 part-time roles</td>
+<td>Product design and analysis, compliance and legal advisor, finance and administrative support</td>
+<td>Functions that are not continuously loaded do not carry the cost of full-time positions, but remain available when truly needed</td>
+</tr>
+<tr>
+<td>Security and compliance</td>
+<td style="text-align:right">within the existing team + advisor</td>
+<td>Ownership for security and compliance sits with a responsible person inside the core team, supported by a part-time advisor</td>
+<td>Certifications, contracts, vendor reviews, and regulatory readiness have clear ownership, without creating a premature internal department</td>
+</tr>
+<tr>
+<td>Organizational decisions</td>
+<td style="text-align:right">no additional full-time roles</td>
+<td>No dedicated project manager in the initial phase, no full-time HR / administrative / legal department, and a primarily remote operating model</td>
+<td>Capital remains focused on product, infrastructure, sales, and early clients</td>
+</tr>
+<tr>
+<td>Location and legal structure</td>
+<td style="text-align:right">development core in Serbia, commercial structure for the EU and U.S.</td>
+<td>The development core is based in Novi Sad, while the legal and contracting structure is designed for work with clients in the EU and U.S.</td>
+<td>The cost base remains disciplined, while the commercial framework remains acceptable for enterprise contracting</td>
+</tr>
+<tr>
+<td>Founder compensation policy</td>
+<td style="text-align:right">1 founder at a conservative level</td>
+<td>Founder compensation remains conservative in the initial phase, with most upside tied to equity rather than cash burn</td>
+<td>This avoids unnecessary financial pressure on the company during product build-out and early reference creation</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="font-size: 48%">
+<p>The initial operating setup includes 8 full-time core team members, 2 Solution Lead roles for client-facing delivery, and 3 part-time support functions.</p>
+</div>
+            </section>
+        
+            <section >
+                <h3>Budget, contingency, and funding period</h3>
+<div style="font-size: 66%">
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th style="text-align:right">Amount</th>
+<th style="text-align:right">Share</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Team and employer costs</td>
+<td style="text-align:right">€920,800</td>
+<td style="text-align:right">38%</td>
+</tr>
+<tr>
+<td>Office, lease, and furniture</td>
+<td style="text-align:right">€100,000</td>
+<td style="text-align:right">4%</td>
+</tr>
+<tr>
+<td>Equipment</td>
+<td style="text-align:right">€85,000</td>
+<td style="text-align:right">4%</td>
+</tr>
+<tr>
+<td>Infrastructure, tooling, and security</td>
+<td style="text-align:right">€220,000</td>
+<td style="text-align:right">9%</td>
+</tr>
+<tr>
+<td>Certifications, legal, and insurance</td>
+<td style="text-align:right">€260,000</td>
+<td style="text-align:right">11%</td>
+</tr>
+<tr>
+<td>Go-to-market, partners, and pilots</td>
+<td style="text-align:right">€270,000</td>
+<td style="text-align:right">11%</td>
+</tr>
+<tr>
+<td>Contingency, protection period, and operating flexibility</td>
+<td style="text-align:right">€544,200</td>
+<td style="text-align:right">23%</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="font-size: 85%">
+<p>The realistic annual operating budget is approximately <strong>€1.86M</strong>.<br>
+The total target investment is <strong>€2.4M</strong>, including contingency, a protection period, and room for unforeseen costs.</p>
+</div>
+<div style="font-size: 65%">
+<p>The initial investment does not fund an idea from zero, but the unification of the platform, integration of the C++ core, the ACI foundation, certification readiness, and market entry into the EU and U.S.</p>
+</div>
+            </section>
+        
+            <section >
+                <h3>Milestones, value at the end of the initial phase, and exit logic</h3>
+<div style="font-size: 45%">
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Content</th>
+<th>What it means for the investor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Milestone 1</td>
+<td>The new infrastructure is live and the unified platform architecture is defined</td>
+<td>The technical foundation moves from a development state into a stable and scalable framework</td>
+</tr>
+<tr>
+<td>Milestone 2</td>
+<td>Convergence of the base and controlled versions is completed, and the C++ execution path is integrated</td>
+<td>One product emerges with one execution core, instead of multiple separate development tracks</td>
+</tr>
+<tr>
+<td>Milestone 3</td>
+<td>The ACI foundation is live, the performance benchmark package is published, and the first pilot-ready package is available</td>
+<td>The product gains an intelligent layer, a measurable technical profile, and a form ready for engagement with serious early clients</td>
+</tr>
+<tr>
+<td>Milestone 4</td>
+<td>2 pilot clients are secured, 1 to 2 production references are established, and the sales narrative is ready for the enterprise market</td>
+<td>The initial investment ends in a product with real references, lower sales risk, and greater market weight</td>
+</tr>
+<tr>
+<td>Value at the end of the initial phase</td>
+<td>One product, stronger enterprise credibility, lower delivery friction, stronger differentiation, and a clearer path to expansion</td>
+<td>Company value increases through product maturity, sales readiness, and proven reduction of operational risk</td>
+</tr>
+<tr>
+<td>Exit logic</td>
+<td>The primary focus is not a fast exit, but value creation; likely paths include a strategic acquisition by a data, governance, observability, or infrastructure vendor, or continued growth as a profitable platform for regulated verticals</td>
+<td>The investor gets both a path to strategic exit and the possibility of value growth through independent expansion</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="font-size: 60%">
+<p>The initial investment ends in a product that is more valuable, easier to sell, more market-ready, and more strategically attractive than at the start of the program.</p>
+</div>
+            </section>
+        
+            <section >
+                <h3>Final investment thesis</h3>
+<div style="font-size: 60%">
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Target investment</td>
+<td><strong>€2.4M</strong></td>
+</tr>
+<tr>
+<td>Delivery period</td>
+<td><strong>12 months of program execution + 15 months of total funding period</strong></td>
+</tr>
+<tr>
+<td>Use of investment</td>
+<td>New infrastructure, unification of the base and controlled versions, integration of the C++ execution core, ACI foundation, enterprise readiness, pilot readiness, and market readiness</td>
+</tr>
+<tr>
+<td>Technical outcome</td>
+<td>One unified platform, one execution core, and one intelligent control layer</td>
+</tr>
+<tr>
+<td>Business outcome</td>
+<td>A stronger foundation for premium and enterprise contracts, lower delivery risk, stronger differentiation, and a stronger market position</td>
+</tr>
+<tr>
+<td>Investment logic</td>
+<td>The initial investment does not fund the creation of an idea, but the conversion of an existing foundation into a serious, market-ready, and harder-to-copy enterprise product</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="font-size: 78%">
+<p><span class="advanexus">advanexus</span> is not just another AI add-on.<br>
+<span class="advanexus">advanexus</span> is an investment in a more serious, more differentiated, and more valuable enterprise product with a clear path toward pilots, references, and growth.</p>
+</div>
+            </section>
+        
+            <section >
+                <p><a href="https://www.advanexus.com" :target="_blank"><img src="advanexus/advanexus-vc.png" alt="Logo" style="" width="45%"></a></p>
+<p><a href="https://www.advanexus.com" :target="_blank"><img src="advanexus/advanexus.png" alt="Logo" style="" width="20%"></a>
+<a href="https://www.milovantomasevic.com" :target="_blank"><img src="advanexus/sign-mt.png" alt="Logo" style="" width="30%"></a></p>
+
+            </section>
+        
+
+    </section>
+    
+
+
+    </div>
+
+
+  </div>
+
+  	
+	<script src="libs/reveal.js/4.1.3/reveal.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/zoom/zoom.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/notes/notes.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/search/search.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/markdown/markdown.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/highlight/highlight.js"></script>
+	
+	<script src="libs/reveal.js/4.1.3/plugin/math/math.js"></script>
+
+	<script src="libs/reveal.js/4.1.3/plugin/fullscreen/plugin.js"></script>
+  
+  	<script src="libs/reveal.js/4.1.3/plugin/animate/plugin.js"></script>
+  	<script src="libs/reveal.js/4.1.3/plugin/animate/svg.min.js"></script>
+  
+  	<script src="libs/reveal.js/4.1.3/plugin/anything/plugin.js"></script>
+	  <script src="libs/reveal.js/4.1.3/plugin/anything/Chart.min.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/anything/d3/d3.v3.min.js"></script>				
+	<script src="libs/reveal.js/4.1.3/plugin/anything/d3.patch.js"></script>			
+	<script src="libs/reveal.js/4.1.3/plugin/anything/d3/queue.v1.min.js"></script>		
+	<script src="libs/reveal.js/4.1.3/plugin/anything/d3/topojson.v1.min.js"></script>		
+	<script src="libs/reveal.js/4.1.3/plugin/anything/function-plot.js"></script>
+
+ <!--	<script src="libs/reveal.js/4.1.3/plugin/audio-slideshow/plugin.js"></script>  -->
+<!--	<script src="libs/reveal.js/4.1.3/plugin/audio-slideshow/recorder.js"></script>-->
+<!--	<script src="libs/reveal.js/4.1.3/plugin/audio-slideshow/RecordRTC.js"></script>-->
+
+<script src="libs/reveal.js/4.1.3/plugin/chalkboard/plugin.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/customcontrols/plugin.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/embed-tweet/plugin.js"></script>
+
+	<script src="libs/reveal.js/4.1.3/plugin/chart/chart.min.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/chart/plugin.js"></script>
+
+  <script>
+
+		const printPlugins = [
+			RevealNotes, 
+			RevealHighlight,
+			RevealMath,
+			RevealAnimate,
+			RevealChalkboard, 
+			RevealEmbedTweet,
+			RevealChart,
+		];
+
+		const plugins =  [...printPlugins,
+		RevealZoom, 
+		RevealSearch, 
+				RevealMarkdown, 
+				
+				RevealFullscreen,
+				RevealAnything,
+				//RevealAudioSlideshow,
+				//RevealAudioRecorder,
+				
+				// poll
+				// question
+				// seminar
+				 ]
+
+
+		// Also available as an ES module, see:
+		// https://revealjs.com/initialization/
+		Reveal.initialize({
+			controls: true,
+			controlsTutorial: true,
+			controlsLayout: 'bottom-right',
+			controlsBackArrows: 'faded',
+			progress: true,
+			slideNumber: true,
+			//#showSlideNumber "all" "print" "speaker"
+			hash: true,//#  hash: false,
+			//# respondToHashChanges: true,
+			//# history: false,
+			keyboard: true,
+			//#keyboardCondition: null,
+			overview: true,
+			center: true,
+			touch: true,
+			loop: false,
+			rtl: false,
+			//#navigationMode: 'default', linear grid
+			shuffle: false,
+			fragments: true,
+			fragmentInURL: false,
+			embedded: false,
+			help: true,
+			//#pause: true
+			showNotes: false,
+			autoPlayMedia: false, // TODO fix this to a nullable value
+			//#preloadIframes: null. true false
+			//#autoAnimate: true
+			//#autoAnimateMatcher: null,
+			//#autoAnimateEasing: 'ease',
+			//autoAnimateDuration: 1.0,
+			//#autoAnimateUnmatched: true
+			//#autoAnimateStyles: []
+			autoSlide: 0, // TODO fix this to a falseable value
+			autoSlideStoppable: true,
+			autoSlideMethod: '0',
+			defaultTiming: 120,
+			mouseWheel: false,
+			//#previewLinks: false
+			//#postMessage: true,  // TODO : this can cause issues with the vscode api ???
+			//#postMessageEvents: false,
+			//#focusBodyOnPageVisibilityChange: true,
+			transition: 'slide',
+			transitionSpeed: 'default',
+			backgroundTransition: 'convex',
+			//#pdfMaxPagesPerSlide: Number.POSITIVE_INFINITY,
+			//#pdfSeparateFragments: true,
+			//#pdfPageHeightOffset: -1,
+			viewDistance: 3,
+			//#mobileViewDistance: 2,
+			display: 'block',
+			//#hideInactiveCursor: true,
+			//#hideCursorTime: 5000
+
+			// Parallax Background
+			parallaxBackgroundImage: '',
+			parallaxBackgroundSize: '',
+			parallaxBackgroundHorizontal: 0,
+			parallaxBackgroundVertical: 0,
+			
+			//Presentation Size
+			width: 960,
+			height: 700,
+			margin: 0.04,
+			minScale: 0.2,
+			maxScale: 2,
+			disableLayout: false,
+
+			audio: {
+				prefix: 'audio/', 	// audio files are stored in the "audio" folder
+				suffix: '.ogg',		// audio files have the ".ogg" ending
+				textToSpeechURL: null,  // the URL to the text to speech converter
+				defaultNotes: false, 	// use slide notes as default for the text to speech converter
+				defaultText: false, 	// use slide text as default for the text to speech converter
+				advance: 0, 		// advance to next slide after given time in milliseconds after audio has played, use negative value to not advance
+				autoplay: false,	// automatically start slideshow
+				defaultDuration: 5,	// default duration in seconds if no audio is available
+				defaultAudios: true,	// try to play audios with names such as audio/1.2.ogg
+				playerOpacity: 0.05,	// opacity value of audio player if unfocused
+				playerStyle: 'position: fixed; bottom: 4px; left: 25%; width: 50%; height:75px; z-index: 33;', // style used for container of audio controls
+				startAtFragment: false, // when moving to a slide, start at the current fragment or at the start of the slide
+			},
+			
+			chalkboard: { // font-awesome.min.css must be available
+					//src: "chalkboard/chalkboard.json",
+					storage: "chalkboard-demo",
+				},
+			
+			customcontrols: {
+					controls: [
+      						{
+						  id: 'toggle-overview',
+						  title: 'Toggle overview (O)',
+						  icon: '<i class="fa fa-th"></i>',
+						  action: 'Reveal.toggleOverview();'
+						}
+						,
+						{ icon: '<i class="fa fa-pen-square"></i>',
+						  title: 'Toggle chalkboard (B)',
+						  action: 'RevealChalkboard.toggleChalkboard();'
+						},
+						{ icon: '<i class="fa fa-pen"></i>',
+						  title: 'Toggle notes canvas (C)',
+						  action: 'RevealChalkboard.toggleNotesCanvas();'
+						}
+				]
+			},
+			chart: {
+					defaults: { 
+						color: 'lightgray', // color of labels
+						scale: { 
+							beginAtZero: true, 
+							ticks: { stepSize: 1 },
+							grid: { color: "lightgray" } , // color of grid lines
+						},
+					},
+					line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] }, 
+					bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
+					pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+					radar: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
+			},
+			math: {
+				mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+				config: 'TeX-AMS_HTML-full',
+				// pass other options into `MathJax.Hub.Config()`
+				TeX: { Macros: { RR: "{\\bf R}" } }
+				},
+				anything: [ 
+				{
+		className: "plot",
+		defaults: {width:500, height: 500, grid:true},
+		initialize: (function(container, options){ options.target = "#"+container.id; functionPlot(options) })
+	 },
+	 {
+		className: "chart",  
+		initialize: (function(container, options){ container.chart = new Chart(container.getContext("2d"), options);  })
+	 },
+	 {
+		className: "anything",
+		initialize: (function(container, options){ if (options && options.initialize) { options.initialize(container)} })
+	 },
+					],
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: (window.location.search.match(/print-pdf/gi) ? printPlugins : plugins ) 
+		});
+			
+
+
+	    // Change chalkboard theme : 
+		function changeTheme(input) {
+			var config = {};
+			config.theme = input.value;
+			Reveal.getPlugin("RevealChalkboard").configure(config);
+			input.blur();
+		}
+
+		// // Handle the message inside the webview
+        // window.addEventListener('message', event => {
+
+        //     const message = event.data; // The JSON data our extension sent
+
+        //     switch (message.command) {
+        //         case 'refactor':
+        //             Reveal.toggleHelp();
+        //     }
+        // });
+
+		if (window.location.search.match(/print-pdf-now/gi)) {
+      		setTimeout(() => {
+				window.print();
+			  }, 2500);
+			
+    }
+		
+
+	</script>
+
+</body>
+
+</html>

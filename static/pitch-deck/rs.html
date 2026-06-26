@@ -1,0 +1,1383 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>advanexus</title>
+
+  <meta name="description" content="advanexus is an operating system for controlled, auditable, and accountable data operations.">
+	<meta name="author" content="Milovan Tomašević">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="libs/reveal.js/4.1.3/reset.css">
+	<link rel="stylesheet" href="libs/reveal.js/4.1.3/reveal.css">
+
+	
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+	  <!-- highlight Theme -->
+  	
+	  <link rel="stylesheet" href="libs/highlight.js/11.3.1/styles/monokai.min.css">
+	
+	
+		
+	<link rel="stylesheet" href="libs/reveal.js/4.1.3/plugin/chalkboard/style.css">
+	
+	
+	
+	<link rel="stylesheet" href="libs/styles/tasklist.css">
+
+
+
+  <!-- Revealjs Theme -->
+  
+  	<link rel="stylesheet" href="libs/reveal.js/4.1.3/theme/white.css" id="theme">
+  
+  
+
+
+  <!-- Revealjs Theme -->
+  
+
+ 
+</head>
+
+<body>
+  
+    <div id="logo" style="position: fixed; top: 20px; left: 20px; z-index: 1; height:3rem;">
+        <img src="advanexus/logo-circle.png" style="height:100%"/>
+    </div>
+  
+
+
+  <div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+      
+
+
+    
+    <section>
+        <section >
+            <style scoped>
+    :root {
+      --primary-color: #0ab39c;
+      --secondary-color: white;
+      --text-color: #343541;
+    }
+    ul.medium { font-size: 80%; }
+    ul.small { font-size: 60%; }
+    .advanexus {
+        color: var(--primary-color);
+        font-family: 'Space Grotesk', sans-serif;
+    }
+    .reveal .slides { color: var(--text-color); }
+    .reveal { font-size: 32px; }
+    .reveal .slides h1 { font-size: 150%; }
+    .reveal .slides h2 { font-size: 125%; }
+    .reveal .slides h3 { font-size: 120%; }
+    .reveal .slides h4 { font-size: 85%; }
+    .reveal .slides p { font-size: 85%; line-height: 1.4; }
+    .reveal .slides ul, .reveal .slides ol { font-size: 80%; line-height: 1.4; }
+    .reveal .slides li { margin-bottom: 0.4em; }
+    .text-medium { font-size: 70%; }
+    .text-small { font-size: 55%; }
+    .text-xsmall { font-size: 45%; }
+    .reveal .slides .footnote { font-size: 45%; opacity: 0.7; }
+    .reveal .slides h1, .reveal .slides h2, .reveal .slides h3 {
+      font-family: "Space Grotesk", monospace;
+      color: var(--primary-color);
+    }
+    .reveal .slides a { color: var(--primary-color); }
+    .fa, .fas.fa-bars, .controls-arrow, span { color: var(--primary-color); }
+    .slide-number { background-color: var(--text-color) !important; }
+    .slide-number-a, .slide-number-delimiter, .slide-number-b { color: var(--secondary-color); }
+    .reveal .slides p, .reveal .slides li, .reveal .slides div, .reveal .slides span {
+      font-family: "JetBrains Mono", monospace;
+    }
+    .reveal .slides {
+      color: var(--text-color);
+    }
+    .reveal .slides h1,
+    .reveal .slides h2,
+    .reveal .slides h3 {
+      font-family: "Space Grotesk", monospace;
+      color: var(--primary-color);
+    }
+    .reveal .slides a {
+      color: var(--primary-color);
+    }
+    .fa,
+    .fas.fa-bars,
+    .controls-arrow,
+    span {
+      color: var(--primary-color);
+    }
+    .slide-number {
+      background-color: var(--text-color) !important;
+    }
+    .slide-number-a,
+    .slide-number-delimiter,
+    .slide-number-b {
+      color: var(--secondary-color);
+    }
+    .shrink {
+        font-size: 70% !important;
+        line-height: 1.1em !important; /* manji line-height */
+        text-align: left !important;
+
+        display: block !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding-left: 0.4em !important;
+    }
+
+    /* Umanjena i profesionalno uvučena lista */
+    .shrink ul,
+    .shrink ol {
+        margin-left: 1em !important;
+        padding-left: 0.4em !important;
+        font-size: 92% !important;
+    }
+
+    .shrink li {
+        margin-bottom: 0.15em !important; /* vrlo kompaktno */
+        line-height: 1.15em !important;   /* još dodatno sabija listu */
+    }
+</style>
+<script src="https://cdn.lordicon.com/lordicon.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap"/>
+<p><strong>Operativni sistem za kontrolisano izvršavanje podataka</strong></p>
+<p><a href="https://www.advanexus.com" :target="_blank"><img src="advanexus/logo.png" alt="Logo"></a></p>
+<p><strong>Ciljna investicija: €2,4M</strong><br>
+za objedinjavanje platforme, integraciju C++ izvršnog jezgra, uvođenje ACI sloja i pripremu za izlazak na tržište EU i SAD</p>
+<p><strong>Plan realizacije:</strong> 12 meseci<br>
+<strong>Ukupan period finansiranja:</strong> 15 meseci</p>
+<p><small><a href="mailto:info@advanexus.com">info@advanexus.com</a></small></p>
+<p><lord-icon src="https://cdn.lordicon.com/mrikdaqa.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:100px;height:100px"></lord-icon>
+<lord-icon src="https://cdn.lordicon.com/fqrjldna.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:100px;height:100px"></lord-icon>
+<lord-icon src="https://cdn.lordicon.com/pwdeppfh.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:100px;height:100px"></lord-icon></p>
+
+            </section>
+        
+            <section >
+                <h3>Problem koji tržište zaista ima</h3>
+<p><lord-icon src="https://cdn.lordicon.com/vwtvwncw.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon>
+<lord-icon src="https://cdn.lordicon.com/hnxipqzk.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon>
+<lord-icon src="https://cdn.lordicon.com/xdwerdzf.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon>
+<lord-icon src="https://cdn.lordicon.com/llbjqxzl.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon></p>
+<div style="font-size: 66%">
+<table>
+<thead>
+<tr>
+<th><strong>Fragmentisana operativa</strong></th>
+<th><strong>Poslovne posledice</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Više alata, timova i parcijalnih kontrola</td>
+<td>Sporiji onboarding i sporije promene</td>
+</tr>
+<tr>
+<td>Nejasna odgovornost nad podacima i pravilima</td>
+<td>Veći operativni i regulatorni rizik</td>
+</tr>
+<tr>
+<td>Ručna i spora provera promena</td>
+<td>Veća verovatnoća greške</td>
+</tr>
+<tr>
+<td>Incidenti zahtevaju dodatnu ručnu analizu</td>
+<td>Sporije reagovanje i veći pritisak</td>
+</tr>
+<tr>
+<td>Revizijska spremnost dolazi naknadno</td>
+<td>Veći audit stres i slabija dokazivost</td>
+</tr>
+<tr>
+<td>AI i analitika rade nad nedovoljno kontrolisanim podacima</td>
+<td>Manje poverenje u rezultate i sporija poslovna vrednost</td>
+</tr>
+</tbody>
+</table>
+</div>
+            </section>
+        
+            <section >
+                <h4>KAKO <span class="advanexus">advanexus</span> RADI</h4>
+<h3>Od fragmentisanih tokova podataka do operativnog sloja spremnog za analitiku i AI</h3>
+<p><img src="advanexus/advanexus_data_platform.gif" alt="" style="width:80%"></p>
+<div style="font-size: 50%">
+<p>Sistemi i cloud izvori → <span class="advanexus">advanexus</span> → kontrolisana i dokaziva isporuka ka izveštavanju, analitici i AI-u<br>
+<span class="advanexus">advanexus</span> ne menja postojeće sisteme, već uvodi kontrolu nad tim kako se podaci izvršavaju, proveravaju i isporučuju.</p>
+</div>
+            </section>
+        
+            <section >
+                <h3>Gde je Advanexus na tržištu</h3>
+<div style="font-size: 55%">
+<table>
+<thead>
+<tr>
+<th>Kategorija</th>
+<th>Primeri</th>
+<th>Gde se preklapa</th>
+<th>Gde je razlika <span class="advanexus">advanexus</span>-a</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Velike platforme za podatke i poslovne sisteme</td>
+<td>Databricks, Snowflake, SAP, Oracle</td>
+<td>Podaci, upravljanje, integracije, analitika</td>
+<td>Nije zamena za celu platformu, već obezbeđuje kontrolu izvršavanja, pravila tokom rada, kontrolisanu isporuku i dokazivost iznad postojećeg okruženja</td>
+</tr>
+<tr>
+<td>Alati za orkestraciju i upravljanje izvršavanjem</td>
+<td>Dagster, Prefect</td>
+<td>Tokovi rada, upravljanje izvršavanjem, operativna koordinacija</td>
+<td>Nije usmeren samo na orkestraciju, već obezbeđuje odgovornost, ponovljivost, odobravanje i dokaze kroz ceo operativni proces</td>
+</tr>
+<tr>
+<td>Sloj za upravljanje podacima i pouzdane podatke</td>
+<td>Collibra, Informatica, Qlik Talend</td>
+<td>Upravljanje, poreklo podataka, kvalitet, pouzdani podaci</td>
+<td>Nije usmeren samo na katalog i upravljanje, već obezbeđuje kontrolu nad tim kako se tok zaista izvršava, proverava i isporučuje</td>
+</tr>
+<tr>
+<td>Sloj za nadzor i operativni uvid</td>
+<td>Monte Carlo, Palantir Foundry</td>
+<td>Vidljivost, operativni kontekst, pouzdanost</td>
+<td>Nije usmeren samo na nadzor ili modelovanje poslovnog sloja, već obezbeđuje kontrolisanu isporuku i dokaz kroz sam tok rada</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="font-size: 77%">
+<p><span class="advanexus">advanexus</span> nije još jedna platforma za podatke.<br>
+<span class="advanexus">advanexus</span> je operativni sloj za kontrolisano izvršavanje podataka, iznad i između postojećih sistema.</p>
+</div>
+            </section>
+        
+            <section >
+                <h3>Vizuelno pozicioniranje Advanexus-a</h3>
+<div style="height:520px; background: rgba(255,255,255,0.92); border-radius: 12px; padding: 12px;">
+  <canvas data-chart="scatter">
+<!--
+{
+  "data": {
+    "datasets": [
+      {
+        "label": "Platforme za analitiku i skladištenje (Databricks, Snowflake)",
+        "data": [
+          { "x": 6.5, "y": 8.2 }
+        ],
+        "pointRadius": 9,
+        "pointHoverRadius": 12,
+        "pointBackgroundColor": "rgba(20,220,220,0.95)",
+        "pointBorderColor": "rgba(18,19,49,0.9)",
+        "pointBorderWidth": 2,
+        "backgroundColor": "rgba(20,220,220,0.95)",
+        "borderColor": "rgba(18,19,49,0.9)"
+      },
+      {
+        "label": "Upravljanje podacima i katalog (Collibra, Informatica, Qlik Talend)",
+        "data": [
+          { "x": 8.4, "y": 3.2 }
+        ],
+        "pointRadius": 9,
+        "pointHoverRadius": 12,
+        "pointBackgroundColor": "rgba(220,220,120,0.98)",
+        "pointBorderColor": "rgba(18,19,49,0.9)",
+        "pointBorderWidth": 2,
+        "backgroundColor": "rgba(220,220,120,0.98)",
+        "borderColor": "rgba(18,19,49,0.9)"
+      },
+      {
+        "label": "Orkestracija i upravljanje izvršavanjem (Dagster, Prefect)",
+        "data": [
+          { "x": 6.4, "y": 4.8 }
+        ],
+        "pointRadius": 9,
+        "pointHoverRadius": 12,
+        "pointBackgroundColor": "rgba(220,120,120,0.95)",
+        "pointBorderColor": "rgba(18,19,49,0.9)",
+        "pointBorderWidth": 2,
+        "backgroundColor": "rgba(220,120,120,0.95)",
+        "borderColor": "rgba(18,19,49,0.9)"
+      },
+      {
+        "label": "Nadzor i operativni uvid (Monte Carlo, Palantir Foundry)",
+        "data": [
+          { "x": 7.3, "y": 5.4 }
+        ],
+        "pointRadius": 9,
+        "pointHoverRadius": 12,
+        "pointBackgroundColor": "rgba(155,135,245,0.95)",
+        "pointBorderColor": "rgba(18,19,49,0.9)",
+        "pointBorderWidth": 2,
+        "backgroundColor": "rgba(155,135,245,0.95)",
+        "borderColor": "rgba(18,19,49,0.9)"
+      },
+      {
+        "label": "Ad hoc skripte i rasuti alati",
+        "data": [
+          { "x": 2.0, "y": 2.0 }
+        ],
+        "pointRadius": 9,
+        "pointHoverRadius": 12,
+        "pointBackgroundColor": "rgba(160,160,160,0.90)",
+        "pointBorderColor": "rgba(18,19,49,0.9)",
+        "pointBorderWidth": 2,
+        "backgroundColor": "rgba(160,160,160,0.90)",
+        "borderColor": "rgba(18,19,49,0.9)"
+      },
+      {
+        "label": "advanexus",
+        "data": [
+          { "x": 9.1, "y": 6.6 }
+        ],
+        "pointRadius": 15,
+        "pointHoverRadius": 18,
+        "pointBackgroundColor": "rgba(10,179,156,1)",
+        "pointBorderColor": "rgba(18,19,49,0.95)",
+        "pointBorderWidth": 3,
+        "backgroundColor": "rgba(10,179,156,1)",
+        "borderColor": "rgba(18,19,49,0.95)"
+      }
+    ]
+  },
+  "options": {
+    "responsive": true,
+    "maintainAspectRatio": false,
+    "layout": {
+      "padding": { "top": 10, "right": 10, "bottom": 10, "left": 10 }
+    },
+    "plugins": {
+      "legend": {
+        "display": true,
+        "position": "bottom",
+        "labels": {
+          "color": "rgba(18,19,49,0.92)",
+          "font": { "size": 13, "weight": "800" },
+          "boxWidth": 16,
+          "boxHeight": 16,
+          "usePointStyle": true,
+          "pointStyle": "circle",
+          "padding": 10
+        }
+      },
+      "tooltip": {
+        "enabled": true,
+        "backgroundColor": "rgba(18,19,49,0.95)",
+        "titleColor": "rgba(255,255,255,0.98)",
+        "bodyColor": "rgba(255,255,255,0.95)",
+        "borderColor": "rgba(10,179,156,1)",
+        "borderWidth": 1
+      },
+      "pointLabels": {
+        "color": "rgba(18,19,49,0.92)",
+        "fontSize": 12,
+        "fontWeight": "800",
+        "offsetX": 10,
+        "offsetY": -10
+      },
+      "quadrantTitles": {
+        "color": "rgba(18,19,49,0.70)",
+        "fontSize": 13,
+        "fontWeight": "800",
+        "q1": "Visoka analitika, niža kontrola",
+        "q2": "Visoka analitika, visoka kontrola",
+        "q3": "Niska analitika, niska kontrola",
+        "q4": "Niža analitika, visoka kontrola"
+      },
+      "crosshair": {
+        "midX": 5,
+        "midY": 5,
+        "lineColor": "rgba(18,19,49,0.30)",
+        "lineWidth": 2
+      }
+    },
+    "scales": {
+      "x": {
+        "min": 0,
+        "max": 10,
+        "grid": { "color": "rgba(18,19,49,0.10)" },
+        "ticks": {
+          "stepSize": 1,
+          "color": "rgba(18,19,49,0.85)",
+          "font": { "weight": "800", "size": 12 }
+        },
+        "title": {
+          "display": true,
+          "text": "Operativna kontrola i dokazivost (niska → visoka)",
+          "color": "rgba(18,19,49,0.92)",
+          "font": { "size": 15, "weight": "900" }
+        }
+      },
+      "y": {
+        "min": 0,
+        "max": 10,
+        "grid": { "color": "rgba(18,19,49,0.10)" },
+        "ticks": {
+          "stepSize": 1,
+          "color": "rgba(18,19,49,0.85)",
+          "font": { "weight": "800", "size": 12 }
+        },
+        "title": {
+          "display": true,
+          "text": "Širina platforme za podatke i analitiku (niska → visoka)",
+          "color": "rgba(18,19,49,0.92)",
+          "font": { "size": 15, "weight": "900" }
+        }
+      }
+    }
+  },
+  "plugins": [
+    {
+      "id": "crosshair",
+      "afterDraw": "function(chart,args,opts){const area=chart.chartArea;if(!area)return;const ctx=chart.ctx;const x=chart.scales.x;const y=chart.scales.y;const midX=x.getPixelForValue(opts.midX||5);const midY=y.getPixelForValue(opts.midY||5);ctx.save();ctx.strokeStyle=opts.lineColor||'rgba(0,0,0,0.25)';ctx.lineWidth=opts.lineWidth||2;ctx.beginPath();ctx.moveTo(midX,area.top);ctx.lineTo(midX,area.bottom);ctx.stroke();ctx.beginPath();ctx.moveTo(area.left,midY);ctx.lineTo(area.right,midY);ctx.stroke();ctx.restore();}"
+    },
+    {
+      "id": "pointLabels",
+      "afterDatasetsDraw": "function(chart,args,opts){const ctx=chart.ctx;ctx.save();ctx.fillStyle=(opts&&opts.color)?opts.color:'rgba(0,0,0,0.85)';const fs=(opts&&opts.fontSize)?opts.fontSize:12;const fw=(opts&&opts.fontWeight)?opts.fontWeight:'700';ctx.font=fw+' '+fs+'px Arial';const offX=(opts&&opts.offsetX)?opts.offsetX:10;const offY=(opts&&opts.offsetY)?opts.offsetY:-10;chart.data.datasets.forEach(function(ds,i){const meta=chart.getDatasetMeta(i);if(!meta||meta.hidden)return;meta.data.forEach(function(pt){const p=pt.getProps(['x','y'],true);const txt=ds.label||'';if(!txt)return;ctx.fillText(txt,p.x+offX,p.y+offY);});});ctx.restore();}"
+    },
+    {
+      "id": "quadrantTitles",
+      "afterDraw": "function(chart,args,opts){const area=chart.chartArea;if(!area||!opts)return;const ctx=chart.ctx;const x=chart.scales.x;const y=chart.scales.y;const midX=x.getPixelForValue(5);const midY=y.getPixelForValue(5);ctx.save();ctx.fillStyle=opts.color||'rgba(0,0,0,0.55)';ctx.font=(opts.fontWeight||'700')+' '+(opts.fontSize||12)+'px Arial';ctx.fillText(opts.q1||'',area.left+8,area.top+18);ctx.fillText(opts.q2||'',midX+8,area.top+18);ctx.fillText(opts.q3||'',area.left+8,area.bottom-8);ctx.fillText(opts.q4||'',midX+8,area.bottom-8);ctx.restore();}"
+    }
+  ]
+}
+-->
+  </canvas>
+</div>
+            </section>
+        
+            <section >
+                <h3>Početna tržišna tačka i strategija ulaska</h3>
+<div style="font-size: 66%">
+<table>
+<thead>
+<tr>
+<th><strong>Oblast</strong></th>
+<th><strong>Fokus</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Početno tržište</td>
+<td>Banke drugog i trećeg nivoa, regulisane fintech kompanije, osiguranje i timovi sa visokim zahtevima za usklađenost, kao i pojedinačni timovi unutar većih banaka sa jasno ograničenim radnim tokovima</td>
+</tr>
+<tr>
+<td>Početna prodajna strategija</td>
+<td>Ne ulazi se prvo kao zamena za centralnu platformu u bankama prvog nivoa, već kroz jasno ograničen problem visoke vrednosti i nižeg organizacionog rizika</td>
+</tr>
+<tr>
+<td>Prvi scenariji primene</td>
+<td>AML, otkrivanje prevara, tokovi za usklađenost, kontrolisani izveštajni tokovi, prenos podataka osetljiv na reviziju, usklađivanje podataka i operativne predaje između timova</td>
+</tr>
+<tr>
+<td>Strategija sticanja referenci</td>
+<td>2 pilot klijenta, 1 do 2 implementacije kroz partnere, reference iz kontrolisanih scenarija pre širenja na veći opseg</td>
+</tr>
+<tr>
+<td>Razlog ovakvog pristupa</td>
+<td>Problem je dovoljno kritičan da kupac vidi vrednost, a ulaz je dovoljno ograničen da rizik ostane prihvatljiv</td>
+</tr>
+<tr>
+<td>Očekivani ishod</td>
+<td>Brži dokaz vrednosti, prve ozbiljne reference, niži ulazni rizik i postepen put ka većim institucionalnim klijentima</td>
+</tr>
+</tbody>
+</table>
+</div>
+            </section>
+        
+            <section >
+                <h3>Proizvod danas i šta investicija otključava</h3>
+<div style="font-size: 66%">
+<table>
+<thead>
+<tr>
+<th>Danas postoji</th>
+<th>Investicija otključava</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Funkcionalna osnova platforme</td>
+<td>Objedinjenu platformu</td>
+</tr>
+<tr>
+<td>Ključni proizvodni model: izvori, poslovi i zadaci, provere i pravila, skupovi podataka, isporuka, revizijski dokaz</td>
+<td>Integrisano C++ izvršno jezgro</td>
+</tr>
+<tr>
+<td>Kontrolisan model toka rada</td>
+<td>ACI kao inteligentni kontrolni sloj</td>
+</tr>
+<tr>
+<td>Dokazivost izvršavanja i pravila tokom rada</td>
+<td>Infrastrukturnu stabilizaciju i skalabilnost</td>
+</tr>
+<tr>
+<td>Mogućnost demonstracije kroz PoC i pilot scenario</td>
+<td>Pilot-ready enterprise paket za ozbiljan izlazak pred klijente</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="font-size: 77%">
+<p>Ovo <strong>nije</strong> ulaganje u ideju od nule.<br>
+Ovo <strong>je</strong> ulaganje u objedinjavanje, jačanje i komercijalnu pripremu postojećeg proizvoda.</p>
+</div>
+            </section>
+        
+            <section >
+                <h3>Šta se tačno gradi kroz početnu investiciju</h3>
+<div style="font-size: 58%">
+<table>
+<thead>
+<tr>
+<th>Faza</th>
+<th>Šta se gradi</th>
+<th>Rezultat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Faza 1. Nova infrastruktura</td>
+<td>Model postavljanja, CI/CD, nadzor nad radom sistema i početni bezbednosni standard</td>
+<td>Stabilna i produkciono spremna osnova platforme</td>
+</tr>
+<tr>
+<td>Faza 2. Objedinjavanje platforme</td>
+<td>Spajanje osnovne i kontrolisane verzije, jedan razvojni pravac, jedan domen model i jedinstven API i UI pravac</td>
+<td>Jedna platforma umesto više razvojnih tokova</td>
+</tr>
+<tr>
+<td>Faza 3. Integracija C++ jezgra</td>
+<td>Izvršno jezgro, upravljanje životnim ciklusom, status, greške i povezivanje sa dokazima</td>
+<td>Jedinstven izvršni motor unutar platforme</td>
+</tr>
+<tr>
+<td>Faza 4. ACI osnova</td>
+<td>Formalizacija tokova, pregled promena i rizika, incidentni sažetak, nacrt za reviziju i sažetak pouzdanog skupa podataka</td>
+<td>Inteligentni kontrolni sloj unutar platforme</td>
+</tr>
+<tr>
+<td>Faza 5. Završno jačanje i spremnost za pilot</td>
+<td>Bezbednost, performanse, operativna uputstva za postavljanje i paket za pilot</td>
+<td>Proizvod spreman za ozbiljan pilot i izlazak pred klijenta</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="font-size: 77%">
+<p>Početna investicija finansira jasan plan sa definisanim redosledom, opsegom i ishodom.<br>
+Ne finansira se otvoren razvoj bez jasnih granica.</p>
+</div>
+            </section>
+        
+            <section >
+                <h3>ACI kao diferencijator, a ne kao marketinški sloj</h3>
+<div style="font-size: 55%">
+<table>
+<thead>
+<tr>
+<th>Oblast</th>
+<th>Šta ACI jeste</th>
+<th>Šta ACI donosi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Uloga</td>
+<td>Ugrađeni inteligentni kontrolni sloj unutar <span class="advanexus">advanexus</span>-a</td>
+<td>Ubrzava rad unutar već kontrolisanog sistema</td>
+</tr>
+<tr>
+<td>Ograničenje</td>
+<td>Nije chatbot, nije generički pomoćnik i nije samostalni agent</td>
+<td>Ne uvodi dodatni operativni i regulatorni haos</td>
+</tr>
+<tr>
+<td>Način rada</td>
+<td>Radi samo nad postojećim objektima platforme i njihovim kontekstom</td>
+<td>Sve ostaje vezano za pravila, poreklo, odgovornost, dokaze i odobravanje</td>
+</tr>
+<tr>
+<td>Prve funkcije</td>
+<td>Formalizacija tokova, pregled promena i rizika, incidentni sažetak, nacrt za reviziju, sažetak pouzdanog skupa podataka</td>
+<td>Smanjuje ručni rad i ubrzava najskuplje operativne korake</td>
+</tr>
+<tr>
+<td>Operativna vrednost</td>
+<td>Pomaže da se brže razume šta treba formalizovati, šta se promenilo, šta je rizično i šta se desilo</td>
+<td>Kraći onboarding, brži pregled promena, brži odgovor na incident i brža priprema za reviziju</td>
+</tr>
+<tr>
+<td>Komercijalna vrednost</td>
+<td>Pojačava postojeći proizvod, umesto da skreće priču na opštu veštačku inteligenciju</td>
+<td>Jasniji dokaz vrednosti za kupca i jača diferencijacija proizvoda</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="font-size: 80%">
+<p><span class="advanexus">advanexus</span> uvodi inteligenciju tek kada su izvršavanje, pravila, odgovornost i dokazivost već pod kontrolom.</p>
+</div>
+            </section>
+        
+            <section >
+                <h3>Vreme do vrednosti, usvajanje i migracioni rizik</h3>
+<div style="font-size: 50%">
+<table>
+<thead>
+<tr>
+<th>Oblast</th>
+<th>Pristup</th>
+<th>Očekivani ishod</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Način uvođenja</td>
+<td><span class="advanexus">advanexus</span> se uvodi kroz jasno ograničen scenario visoke vrednosti, a ne kroz veliku zamenu postojećeg okruženja</td>
+<td>Niži ulazni rizik i brži početak saradnje</td>
+</tr>
+<tr>
+<td>Koraci implementacije</td>
+<td>1. otkrivanje i razgraničenje opsega  2. kontrolisani pilot  3. postepeno uvođenje u produkcioni rad</td>
+<td>Jasno definisan put od prvog problema do prve produkcione vrednosti</td>
+</tr>
+<tr>
+<td>Vreme do prvog nacrta rešenja</td>
+<td>2 do 4 nedelje do definisanog početnog opsega i upotrebljivog nacrta toka</td>
+<td>Brže donošenje odluke i brži početak pilot faze</td>
+</tr>
+<tr>
+<td>Vreme do prvog kontrolisanog scenarija</td>
+<td>6 do 10 nedelja do prvog kontrolisanog scenarija visoke vrednosti</td>
+<td>Rani dokaz vrednosti bez velike organizacione promene</td>
+</tr>
+<tr>
+<td>Vreme do prvog produkcionog opsega</td>
+<td>12 do 16 nedelja do postepenog prelaza u produkcioni rad za prvi opseg</td>
+<td>Kraći put do realnog poslovnog efekta</td>
+</tr>
+<tr>
+<td>Uticaj na tim i organizaciju</td>
+<td>Uvođenje se radi oko postojećih tokova, bez masovne zamene kadrova i bez potpunog prekrajanja organizacije</td>
+<td>Niži rizik po efikasnost tima i manji trošak usvajanja</td>
+</tr>
+<tr>
+<td>Merljiva operativna vrednost</td>
+<td>U pilot validaciji cilj je brži prelaz od opisa procesa do nacrta toka, brži pregled promena, brži incidentni sažetak i brža priprema za reviziju</td>
+<td>40%+ brži nacrt toka, 30%+ brži pregled promena, 50%+ brži incidentni sažetak i 40%+ brža priprema nacrta za reviziju*</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="font-size: 55%">
+<p><span class="advanexus">advanexus</span> smanjuje rizik usvajanja tako što uvodi kontrolni sloj oko postojećih tokova i skraćuje put do prve dokazive vrednosti.</p>
+<ul>
+<li>Ciljni rasponi za pilot validaciju, a ne spoljašnja garantovana obećanja.</li>
+</ul>
+</div>
+            </section>
+        
+            <section >
+                <h3>Regulatorni pristup, odgovornost i model upravljanja rizikom</h3>
+<div style="font-size: 58%">
+<table>
+<thead>
+<tr>
+<th>Oblast</th>
+<th>Pristup</th>
+<th>Šta to znači u praksi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ulazak na tržište</td>
+<td>Početni ulazak nije zasnovan na tvrdnji da su svi sertifikati već završeni</td>
+<td>Ulazak počinje kroz jasno ograničen scenario, kontrolisano uvođenje i postepen rast poverenja</td>
+</tr>
+<tr>
+<td>Regulatorni pristup</td>
+<td>Primenjuje se fazni model usklađivanja</td>
+<td>Bezbednosni minimum postoji od početka, formalno jačanje kontrola prati širenje ka zahtevnijim klijentima</td>
+</tr>
+<tr>
+<td>Okruženje za prve klijente</td>
+<td>Kada je potrebno, koristi se partnersko ili usklađeno okruženje za izvođenje</td>
+<td>Smanjuje se regulatorni prag za prve implementacije i ubrzava put do reference</td>
+</tr>
+<tr>
+<td>Dokazivost i praćenje</td>
+<td>Trag aktivnosti i dokazi ugrađeni su u sam način rada</td>
+<td>Revizijska spremnost ne nastaje naknadno, već kroz operativni tok</td>
+</tr>
+<tr>
+<td>Ugovorni model</td>
+<td>Ugovori su vezani za jasno definisan opseg angažmana</td>
+<td>Odgovornosti su unapred određene i usklađene sa fazom uvođenja</td>
+</tr>
+<tr>
+<td>Pravna zaštita</td>
+<td>Ograničenje odgovornosti, osiguranje od profesionalne odgovornosti i osiguranje od sajber rizika</td>
+<td>Rizik je ugovorno i finansijski kontrolisan, bez preuzimanja uloge centralnog sistema evidencije u početnoj fazi</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="font-size: 77%">
+<p>Regulatorni i pravni rizik ne zanemaruje se, već se ulazak oblikuje tako da bude tehnički, operativno i ugovorno pod kontrolom.</p>
+</div>
+            </section>
+        
+            <section >
+                <h3>Tehnička skalabilnost i operativni limiti</h3>
+<div style="font-size: 58%">
+<table>
+<thead>
+<tr>
+<th>Oblast</th>
+<th>Pristup</th>
+<th>Šta to znači u praksi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tržišno pozicioniranje</td>
+<td><span class="advanexus">advanexus</span> se ne postavlja kao zamena za beskonačno skalabilnu platformu za skladištenje podataka</td>
+<td>Fokus je na kontrolisanom izvršavanju i dokazivosti za jasno definisane operativne opsege</td>
+</tr>
+<tr>
+<td>Osnova skalabilnosti</td>
+<td>Nova infrastruktura, odvojeni profili izvršavanja, integrisano C++ izvršno jezgro, izolacija opterećenja, nadzor nad radom sistema i oporavak</td>
+<td>Skalabilnost se postiže planski, a ne neproverenim tvrdnjama</td>
+</tr>
+<tr>
+<td>Operativni okvir</td>
+<td>Svako uvođenje ima jasno definisan okvir izvršavanja</td>
+<td>Ulazni obim, veličina skupova podataka, istovremenost rada i ciljni nivo usluge određuju se po konkretnom scenariju</td>
+</tr>
+<tr>
+<td>Tehnička sigurnost</td>
+<td>Performanse i granice se mere po scenariju, a ne pretpostavljaju unapred</td>
+<td>Kupac i investitor dobijaju jasan tehnički profil za pilot i za produkcioni opseg</td>
+</tr>
+<tr>
+<td>Isporuka kroz početnu investiciju</td>
+<td>Formalni paket merenja i objavljen okvir performansi za pilot i enterprise prodaju</td>
+<td>Tehnički kapacitet postaje merljiv, uporediv i prodajno upotrebljiv</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="font-size: 77%">
+<p><span class="advanexus">advanexus</span> ne prodaje neproverene tvrdnje o beskonačnoj skalabilnosti.<br>
+<span class="advanexus">advanexus</span> prodaje kontrolisane i merene operativne kapacitete za jasno definisane scenarije.</p>
+</div>
+            </section>
+        
+            <section >
+                <h3>Model prihoda i ekonomska logika</h3>
+<div style="font-size: 50%">
+<table>
+<thead>
+<tr>
+<th>Oblast</th>
+<th>Struktura</th>
+<th>Ekonomski smisao</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sloj 1. Početni paket</td>
+<td>Plaćeni paket za otkrivanje problema i dokaz koncepta: <strong>€30k do €80k</strong></td>
+<td>Omogućava ulazak kod klijenta uz ograničen rizik i rano finansiranje početnog angažmana</td>
+</tr>
+<tr>
+<td>Sloj 2. Godišnja pretplata za prvi produkcioni opseg</td>
+<td>Godišnja pretplata za jasno ograničen produkcioni opseg: <strong>€120k do €300k godišnje</strong></td>
+<td>Pretvara pilot i početni angažman u ponovljiv prihod</td>
+</tr>
+<tr>
+<td>Sloj 3. Širenje na više domena</td>
+<td>Proširenje na više tokova, timova ili poslovnih oblasti: <strong>€300k do €700k+ godišnje</strong></td>
+<td>Povećava vrednost po klijentu bez proporcionalnog rasta troška isporuke</td>
+</tr>
+<tr>
+<td>Sloj 4. Dodatne usluge više vrednosti</td>
+<td>Premium podrška, usklađenost, vođeno osposobljavanje i podrška pri širenju</td>
+<td>Donosi dodatni prihod i jača zadržavanje klijenta</td>
+</tr>
+<tr>
+<td>Trošak sticanja klijenta</td>
+<td>Ciljani objedinjeni trošak sticanja klijenta u ranoj fazi: <strong>€50k do €90k</strong></td>
+<td>Održava disciplinu prodaje i meri koliko efikasno početni angažman prelazi u pretplatu i širenje</td>
+</tr>
+<tr>
+<td>Povraćaj troška sticanja</td>
+<td>Cilj: <strong>ispod 18 meseci</strong> za premium klijenta i <strong>ispod 12 meseci</strong> za širenje kod postojećeg klijenta</td>
+<td>Pokazuje da model ne zavisi od predugog čekanja na povraćaj uloženog u prodaju</td>
+</tr>
+<tr>
+<td>Put do održivosti</td>
+<td>Cilj preloma poslovanja na oko <strong>€2,3M do €2,6M godišnjeg prihoda</strong></td>
+<td>Praktično znači <strong>8 do 10 premium klijenata</strong> ili <strong>5 do 6 većih klijenata</strong> uz mešavinu početnih paketa, produkcionih opsega i širenja</td>
+</tr>
+<tr>
+<td>Finansijsko planiranje</td>
+<td>Postoji pro forma model novčanog toka za period početne investicije i izlazni scenario za naredna 24 meseca</td>
+<td>Investicija se oslanja na plan prelaza iz početnih prihoda ka održivom rastu</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="font-size: 66%">
+<p><span class="advanexus">advanexus</span> ne gradi prihod samo kroz tehničku implementaciju, već kroz jasan prelaz od početnog angažmana do godišnjeg i proširenog prihoda sa održivom ekonomskom logikom.</p>
+</div>
+            </section>
+        
+            <section >
+                <h3>GTM plan, prodajni model i partneri</h3>
+<div style="font-size: 50%">
+<table>
+<thead>
+<tr>
+<th>Oblast</th>
+<th>Pristup</th>
+<th>Šta to znači u praksi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Način izlaska na tržište</td>
+<td>Prodaja se ne zasniva na jednom prodavcu, već na tri kanala: prodaja koju u ranoj fazi vodi osnivač, pristup kroz partnere za regulisane klijente i širenje kroz prve referentne klijente</td>
+<td>Prodajni model prati način na koji enterprise kupac zaista donosi odluku</td>
+</tr>
+<tr>
+<td>Prodajni tok</td>
+<td>Ulazak kroz jasno definisan scenario primene, plaćeni početni paket, ograničen pilot, godišnji ugovor za prvi produkcioni opseg i širenje po domenima</td>
+<td>Prihod se gradi postepeno, uz niži ulazni rizik i jasniji put ka većem ugovoru</td>
+</tr>
+<tr>
+<td>Partnerski model</td>
+<td>Cloud i infrastrukturni partneri, partneri za implementaciju podataka i specijalizovani partneri za usklađenost i integracije</td>
+<td>Partneri šire pristup tržištu, smanjuju ulazni rizik i ubrzavaju prve implementacije</td>
+</tr>
+<tr>
+<td>Budžet za prvu godinu</td>
+<td>Planirani su troškovi za putovanja i sastanke, razvoj partnera, pripremu demonstracija i pilota, kao i rezervu za promenljivu prodajnu stimulaciju</td>
+<td>Prodajni trošak je planiran, a ne prepušten slučaju</td>
+</tr>
+<tr>
+<td>Opšti prodajni i administrativni trošak</td>
+<td>Cilj je disciplinovan trošak primeren početnoj fazi, bez preuranjenog širenja administracije i korporativne strukture</td>
+<td>Kapital ostaje usmeren na prodaju, proizvod i prve reference</td>
+</tr>
+<tr>
+<td>Skaliranje prodaje</td>
+<td>Početni prodajni rad je visokododirni i vođen, a zatim se širi kroz reference, šablone implementacije i partnerski kanal</td>
+<td>Prodaja se ne skalira samo brojem ljudi, već i ponovljivošću pristupa</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="font-size: 77%">
+<p><span class="advanexus">advanexus</span> se prodaje kao enterprise proizvod sa vođenim izlaskom na tržište, jasnim partnerskim modelom i planiranim troškom prodaje.</p>
+</div>
+            </section>
+        
+            <section >
+                <h3>Tim, upravljanje i operativni model firme</h3>
+<div style="font-size: 40%">
+<table>
+<thead>
+<tr>
+<th>Oblast</th>
+<th style="text-align:right">Broj ljudi</th>
+<th>Postavka</th>
+<th>Šta to znači u praksi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jezgro platforme</td>
+<td style="text-align:right">8</td>
+<td>1 osnivač / direktor / vođa proizvoda i arhitekture, 1 tehnički vođa platforme, 2 viša bekend inženjera, 1 viši C++ inženjer za integraciju jezgra, 1 inženjer infrastrukture i pouzdanosti, 1 frontend / inženjer punog opsega, 1 inženjer za kvalitet i automatizaciju</td>
+<td>Mali i senior tim sposoban da isporuči objedinjavanje platforme, integraciju jezgra i ACI bez prevelike organizacione mase</td>
+</tr>
+<tr>
+<td>Klijentsko uvođenje i širenje</td>
+<td style="text-align:right">2</td>
+<td>2 Solution Lead uloge kao most između prodaje, uvođenja i širenja kod klijenata</td>
+<td>Vode otkrivanje problema, razgraničenje opsega, pilot, prvo produkciono uvođenje i širenje po domenima, bez potrebe za zasebnim menadžerom projekta po klijentu</td>
+</tr>
+<tr>
+<td>Dodatne funkcije po potrebi</td>
+<td style="text-align:right">3 delimično angažovane uloge</td>
+<td>Dizajn i analiza proizvoda, savetnik za usklađenost i pravo, finansijska i administrativna podrška</td>
+<td>Funkcije koje nisu stalno opterećene ne nose trošak punog radnog vremena, ali su dostupne kada su zaista potrebne</td>
+</tr>
+<tr>
+<td>Bezbednost i usklađenost</td>
+<td style="text-align:right">unutar postojećeg tima + savetnik</td>
+<td>Odgovornost za bezbednost i usklađenost vodi se kroz vlasnika unutar jezgra tima i delimično angažovanog savetnika</td>
+<td>Sertifikati, ugovori, provere dobavljača i regulatorna priprema imaju jasno vlasništvo, bez formiranja preuranjenog internog odeljenja</td>
+</tr>
+<tr>
+<td>Organizacione odluke</td>
+<td style="text-align:right">bez dodatnog punog radnog vremena</td>
+<td>Nema posebnog menadžera projekta u početnoj fazi, nema punog HR / administrativnog / pravnog odseka, rad je pretežno udaljen</td>
+<td>Kapital ostaje usmeren na proizvod, infrastrukturu, prodaju i prve klijente</td>
+</tr>
+<tr>
+<td>Lokacija i pravna struktura</td>
+<td style="text-align:right">razvojno jezgro u Srbiji, komercijalna struktura za EU i SAD</td>
+<td>Razvojno jezgro je u Novom Sadu, a pravna i ugovorna struktura prilagođena je radu sa klijentima u EU i SAD</td>
+<td>Troškovna osnova ostaje disciplinovana, a komercijalni okvir ostaje prihvatljiv za enterprise ugovaranje</td>
+</tr>
+<tr>
+<td>Politika kompenzacije osnivača</td>
+<td style="text-align:right">1 osnivač na konzervativnom nivou</td>
+<td>Osnivačka kompenzacija ostaje na konzervativnom nivou za početnu fazu, a glavni rast vrednosti vezuje se za vlasnički udeo</td>
+<td>Ne pravi se nepotreban novčani pritisak na firmu u fazi izgradnje proizvoda i prvih referenci</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="font-size: 55%">
+<p>Početna operativna postavka obuhvata 8 stalnih članova jezgra tima, 2 Solution Lead uloge za rad sa klijentima i 3 delimično angažovane funkcije podrške.</p>
+</div>
+            </section>
+        
+            <section >
+                <h3>Budžet, rezerva i period finansiranja</h3>
+<div style="font-size: 66%">
+<table>
+<thead>
+<tr>
+<th>Kategorija</th>
+<th style="text-align:right">Iznos</th>
+<th style="text-align:right">Udeo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tim i doprinosi</td>
+<td style="text-align:right">€920.800</td>
+<td style="text-align:right">38%</td>
+</tr>
+<tr>
+<td>Prostor, zakup i nameštaj</td>
+<td style="text-align:right">€100.000</td>
+<td style="text-align:right">4%</td>
+</tr>
+<tr>
+<td>Oprema</td>
+<td style="text-align:right">€85.000</td>
+<td style="text-align:right">4%</td>
+</tr>
+<tr>
+<td>Infrastruktura, alati i bezbednost</td>
+<td style="text-align:right">€220.000</td>
+<td style="text-align:right">9%</td>
+</tr>
+<tr>
+<td>Sertifikati, pravo i osiguranje</td>
+<td style="text-align:right">€260.000</td>
+<td style="text-align:right">11%</td>
+</tr>
+<tr>
+<td>Izlazak na tržište, partneri i piloti</td>
+<td style="text-align:right">€270.000</td>
+<td style="text-align:right">11%</td>
+</tr>
+<tr>
+<td>Rezerva, zaštitni period i operativna fleksibilnost</td>
+<td style="text-align:right">€544.200</td>
+<td style="text-align:right">23%</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="font-size: 85%">
+<p>Realni godišnji operativni budžet iznosi približno <strong>€1,86M</strong>.<br>
+Ukupan investicioni cilj iznosi <strong>€2,4M</strong>, uključujući rezervu, zaštitni period i prostor za nepredviđene troškove.</p>
+</div>
+<div style="font-size: 65%">
+<p>Početna investicija ne finansira ideju od nule, već objedinjavanje platforme, integraciju C++ jezgra, ACI osnovu, sertifikacionu spremnost i izlazak na tržište u EU i SAD.</p>
+</div>
+            </section>
+        
+            <section >
+                <h3>Ključne etape, vrednost po završetku početne faze i izlazna logika</h3>
+<div style="font-size: 45%">
+<table>
+<thead>
+<tr>
+<th>Oblast</th>
+<th>Sadržaj</th>
+<th>Šta to znači za investitora</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ključna etapa 1</td>
+<td>Nova infrastruktura je aktivna i objedinjena arhitektura platforme je definisana</td>
+<td>Tehnička osnova prelazi iz razvojnog stanja u stabilan i skalabilan okvir</td>
+</tr>
+<tr>
+<td>Ključna etapa 2</td>
+<td>Završeno je objedinjavanje osnovne i kontrolisane verzije, a C++ izvršni put je integrisan</td>
+<td>Nastaje jedan proizvod sa jednim izvršnim jezgrom, umesto više odvojenih razvojnih tokova</td>
+</tr>
+<tr>
+<td>Ključna etapa 3</td>
+<td>ACI osnova je aktivna, objavljen je paket merenja performansi i spreman je prvi paket za pilot</td>
+<td>Proizvod dobija inteligentni sloj, merljiv tehnički profil i oblik pogodan za izlazak pred prve ozbiljne klijente</td>
+</tr>
+<tr>
+<td>Ključna etapa 4</td>
+<td>Obezbeđena su 2 pilot klijenta, 1 do 2 produkcione reference i prodajni narativ spreman za enterprise tržište</td>
+<td>Početna investicija završava u proizvodu koji ima stvarne reference, niži prodajni rizik i veću tržišnu težinu</td>
+</tr>
+<tr>
+<td>Vrednost po završetku početne faze</td>
+<td>Jedan proizvod, jača enterprise kredibilnost, niži trošak isporuke, veća diferencijacija i jasniji put ka širenju</td>
+<td>Vrednost firme raste kroz proizvodnu zrelost, prodajnu spremnost i dokazano smanjenje operativnog rizika</td>
+</tr>
+<tr>
+<td>Izlazna logika</td>
+<td>Primarni fokus nije brza prodaja firme, već stvaranje vrednosti; mogući putevi su strateška akvizicija od strane dobavljača za podatke, upravljanje, nadzor ili infrastrukturu, ili nastavak razvoja kao profitabilne platforme za regulisane vertikale</td>
+<td>Investitor dobija i put ka strateškom izlazu i mogućnost rasta kroz samostalno širenje firme</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="font-size: 60%">
+<p>Početna investicija završava u proizvodu koji je vredniji, lakši za prodaju, tržišno zreliji i strateški zanimljiviji nego na početku programa.</p>
+</div>
+            </section>
+        
+            <section >
+                <h3>Završna investiciona teza</h3>
+<div style="font-size: 60%">
+<table>
+<thead>
+<tr>
+<th>Oblast</th>
+<th>Sadržaj</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ciljna investicija</td>
+<td><strong>€2,4M</strong></td>
+</tr>
+<tr>
+<td>Period realizacije</td>
+<td><strong>12 meseci programa + 15 meseci ukupnog perioda finansiranja</strong></td>
+</tr>
+<tr>
+<td>Namena investicije</td>
+<td>Nova infrastruktura, objedinjavanje osnovne i kontrolisane verzije, integracija C++ izvršnog jezgra, ACI osnova, enterprise spremnost, pilot i tržišna spremnost</td>
+</tr>
+<tr>
+<td>Tehnički ishod</td>
+<td>Jedna objedinjena platforma, jedno izvršno jezgro i jedan inteligentni kontrolni sloj</td>
+</tr>
+<tr>
+<td>Poslovni ishod</td>
+<td>Jača osnova za premium i enterprise ugovore, niži rizik isporuke, veća diferencijacija i jača tržišna pozicija</td>
+</tr>
+<tr>
+<td>Investiciona logika</td>
+<td>Početna investicija ne finansira nastanak ideje, već pretvaranje postojeće osnove u ozbiljan, tržišno spreman i teže kopirljiv enterprise proizvod</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="font-size: 78%">
+<p><span class="advanexus">advanexus</span> nije još jedan AI dodatak.<br>
+<span class="advanexus">advanexus</span> je investicija u ozbiljniji, diferenciraniji i vredniji enterprise proizvod sa jasnim putem ka pilotima, referencama i rastu.</p>
+</div>
+            </section>
+        
+            <section >
+                <p><a href="https://www.advanexus.com" :target="_blank"><img src="advanexus/advanexus-vc.png" alt="Logo" style="" width="45%"></a></p>
+<p><a href="https://www.advanexus.com" :target="_blank"><img src="advanexus/advanexus.png" alt="Logo" style="" width="20%"></a>
+<a href="https://www.milovantomasevic.com" :target="_blank"><img src="advanexus/sign-mt.png" alt="Logo" style="" width="30%"></a></p>
+
+            </section>
+        
+
+    </section>
+    
+
+
+    </div>
+
+
+  </div>
+
+  	
+	<script src="libs/reveal.js/4.1.3/reveal.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/zoom/zoom.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/notes/notes.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/search/search.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/markdown/markdown.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/highlight/highlight.js"></script>
+	
+	<script src="libs/reveal.js/4.1.3/plugin/math/math.js"></script>
+
+	<script src="libs/reveal.js/4.1.3/plugin/fullscreen/plugin.js"></script>
+  
+  	<script src="libs/reveal.js/4.1.3/plugin/animate/plugin.js"></script>
+  	<script src="libs/reveal.js/4.1.3/plugin/animate/svg.min.js"></script>
+  
+  	<script src="libs/reveal.js/4.1.3/plugin/anything/plugin.js"></script>
+	  <script src="libs/reveal.js/4.1.3/plugin/anything/Chart.min.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/anything/d3/d3.v3.min.js"></script>				
+	<script src="libs/reveal.js/4.1.3/plugin/anything/d3.patch.js"></script>			
+	<script src="libs/reveal.js/4.1.3/plugin/anything/d3/queue.v1.min.js"></script>		
+	<script src="libs/reveal.js/4.1.3/plugin/anything/d3/topojson.v1.min.js"></script>		
+	<script src="libs/reveal.js/4.1.3/plugin/anything/function-plot.js"></script>
+
+ <!--	<script src="libs/reveal.js/4.1.3/plugin/audio-slideshow/plugin.js"></script>  -->
+<!--	<script src="libs/reveal.js/4.1.3/plugin/audio-slideshow/recorder.js"></script>-->
+<!--	<script src="libs/reveal.js/4.1.3/plugin/audio-slideshow/RecordRTC.js"></script>-->
+
+<script src="libs/reveal.js/4.1.3/plugin/chalkboard/plugin.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/customcontrols/plugin.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/embed-tweet/plugin.js"></script>
+
+	<script src="libs/reveal.js/4.1.3/plugin/chart/chart.min.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/chart/plugin.js"></script>
+
+  <script>
+
+		const printPlugins = [
+			RevealNotes, 
+			RevealHighlight,
+			RevealMath,
+			RevealAnimate,
+			RevealChalkboard, 
+			RevealEmbedTweet,
+			RevealChart,
+		];
+
+		const plugins =  [...printPlugins,
+		RevealZoom, 
+		RevealSearch, 
+				RevealMarkdown, 
+				
+				RevealFullscreen,
+				RevealAnything,
+				//RevealAudioSlideshow,
+				//RevealAudioRecorder,
+				
+				// poll
+				// question
+				// seminar
+				 ]
+
+
+		// Also available as an ES module, see:
+		// https://revealjs.com/initialization/
+		Reveal.initialize({
+			controls: true,
+			controlsTutorial: true,
+			controlsLayout: 'bottom-right',
+			controlsBackArrows: 'faded',
+			progress: true,
+			slideNumber: true,
+			//#showSlideNumber "all" "print" "speaker"
+			hash: true,//#  hash: false,
+			//# respondToHashChanges: true,
+			//# history: false,
+			keyboard: true,
+			//#keyboardCondition: null,
+			overview: true,
+			center: true,
+			touch: true,
+			loop: false,
+			rtl: false,
+			//#navigationMode: 'default', linear grid
+			shuffle: false,
+			fragments: true,
+			fragmentInURL: false,
+			embedded: false,
+			help: true,
+			//#pause: true
+			showNotes: false,
+			autoPlayMedia: false, // TODO fix this to a nullable value
+			//#preloadIframes: null. true false
+			//#autoAnimate: true
+			//#autoAnimateMatcher: null,
+			//#autoAnimateEasing: 'ease',
+			//autoAnimateDuration: 1.0,
+			//#autoAnimateUnmatched: true
+			//#autoAnimateStyles: []
+			autoSlide: 0, // TODO fix this to a falseable value
+			autoSlideStoppable: true,
+			autoSlideMethod: '0',
+			defaultTiming: 120,
+			mouseWheel: false,
+			//#previewLinks: false
+			//#postMessage: true,  // TODO : this can cause issues with the vscode api ???
+			//#postMessageEvents: false,
+			//#focusBodyOnPageVisibilityChange: true,
+			transition: 'slide',
+			transitionSpeed: 'default',
+			backgroundTransition: 'convex',
+			//#pdfMaxPagesPerSlide: Number.POSITIVE_INFINITY,
+			//#pdfSeparateFragments: true,
+			//#pdfPageHeightOffset: -1,
+			viewDistance: 3,
+			//#mobileViewDistance: 2,
+			display: 'block',
+			//#hideInactiveCursor: true,
+			//#hideCursorTime: 5000
+
+			// Parallax Background
+			parallaxBackgroundImage: '',
+			parallaxBackgroundSize: '',
+			parallaxBackgroundHorizontal: 0,
+			parallaxBackgroundVertical: 0,
+			
+			//Presentation Size
+			width: 960,
+			height: 700,
+			margin: 0.04,
+			minScale: 0.2,
+			maxScale: 2,
+			disableLayout: false,
+
+			audio: {
+				prefix: 'audio/', 	// audio files are stored in the "audio" folder
+				suffix: '.ogg',		// audio files have the ".ogg" ending
+				textToSpeechURL: null,  // the URL to the text to speech converter
+				defaultNotes: false, 	// use slide notes as default for the text to speech converter
+				defaultText: false, 	// use slide text as default for the text to speech converter
+				advance: 0, 		// advance to next slide after given time in milliseconds after audio has played, use negative value to not advance
+				autoplay: false,	// automatically start slideshow
+				defaultDuration: 5,	// default duration in seconds if no audio is available
+				defaultAudios: true,	// try to play audios with names such as audio/1.2.ogg
+				playerOpacity: 0.05,	// opacity value of audio player if unfocused
+				playerStyle: 'position: fixed; bottom: 4px; left: 25%; width: 50%; height:75px; z-index: 33;', // style used for container of audio controls
+				startAtFragment: false, // when moving to a slide, start at the current fragment or at the start of the slide
+			},
+			
+			chalkboard: { // font-awesome.min.css must be available
+					//src: "chalkboard/chalkboard.json",
+					storage: "chalkboard-demo",
+				},
+			
+			customcontrols: {
+					controls: [
+      						{
+						  id: 'toggle-overview',
+						  title: 'Toggle overview (O)',
+						  icon: '<i class="fa fa-th"></i>',
+						  action: 'Reveal.toggleOverview();'
+						}
+						,
+						{ icon: '<i class="fa fa-pen-square"></i>',
+						  title: 'Toggle chalkboard (B)',
+						  action: 'RevealChalkboard.toggleChalkboard();'
+						},
+						{ icon: '<i class="fa fa-pen"></i>',
+						  title: 'Toggle notes canvas (C)',
+						  action: 'RevealChalkboard.toggleNotesCanvas();'
+						}
+				]
+			},
+			chart: {
+					defaults: { 
+						color: 'lightgray', // color of labels
+						scale: { 
+							beginAtZero: true, 
+							ticks: { stepSize: 1 },
+							grid: { color: "lightgray" } , // color of grid lines
+						},
+					},
+					line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] }, 
+					bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
+					pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+					radar: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
+			},
+			math: {
+				mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+				config: 'TeX-AMS_HTML-full',
+				// pass other options into `MathJax.Hub.Config()`
+				TeX: { Macros: { RR: "{\\bf R}" } }
+				},
+				anything: [ 
+				{
+		className: "plot",
+		defaults: {width:500, height: 500, grid:true},
+		initialize: (function(container, options){ options.target = "#"+container.id; functionPlot(options) })
+	 },
+	 {
+		className: "chart",  
+		initialize: (function(container, options){ container.chart = new Chart(container.getContext("2d"), options);  })
+	 },
+	 {
+		className: "anything",
+		initialize: (function(container, options){ if (options && options.initialize) { options.initialize(container)} })
+	 },
+					],
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: (window.location.search.match(/print-pdf/gi) ? printPlugins : plugins ) 
+		});
+			
+
+
+	    // Change chalkboard theme : 
+		function changeTheme(input) {
+			var config = {};
+			config.theme = input.value;
+			Reveal.getPlugin("RevealChalkboard").configure(config);
+			input.blur();
+		}
+
+		// // Handle the message inside the webview
+        // window.addEventListener('message', event => {
+
+        //     const message = event.data; // The JSON data our extension sent
+
+        //     switch (message.command) {
+        //         case 'refactor':
+        //             Reveal.toggleHelp();
+        //     }
+        // });
+
+		if (window.location.search.match(/print-pdf-now/gi)) {
+      		setTimeout(() => {
+				window.print();
+			  }, 2500);
+			
+    }
+		
+
+	</script>
+
+</body>
+
+</html>

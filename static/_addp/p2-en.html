@@ -1,0 +1,1222 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>advanexus</title>
+
+	<meta name="description" content="advanexus data development and analysis platform">
+	<meta name="author" content="Milovan Tomašević">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="libs/reveal.js/4.1.3/reset.css">
+	<link rel="stylesheet" href="libs/reveal.js/4.1.3/reveal.css">
+
+	
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+	  <!-- highlight Theme -->
+  	
+	  <link rel="stylesheet" href="libs/highlight.js/11.3.1/styles/monokai.min.css">
+	
+	
+		
+	<link rel="stylesheet" href="libs/reveal.js/4.1.3/plugin/chalkboard/style.css">
+	
+	
+	
+		<link rel="stylesheet" href="libs/reveal.js/4.1.3/plugin/customcontrols/style.css">
+	
+	<link rel="stylesheet" href="libs/styles/tasklist.css">
+
+
+
+  <!-- Revealjs Theme -->
+  
+  	<link rel="stylesheet" href="libs/reveal.js/4.1.3/theme/white.css" id="theme">
+  
+  
+
+
+  <!-- Revealjs Theme -->
+  
+
+ 
+</head>
+
+<body>
+  
+    <div id="logo" style="position: fixed; top: 20px; left: 20px; z-index: 1; height:3rem;">
+        <img src="advanexus/logo-circle.png" style="height:100%"/>
+    </div>
+  
+
+
+  <div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+      
+
+
+    
+    <section>
+        <section >
+            <style scoped>
+    :root {
+      --primary-color: #0ab39c;
+      --secondary-color: white;
+      --text-color: #343541;
+    }
+    ul.medium {
+        font-size: 80%;
+    }
+
+    ul.small {
+        font-size: 60%;
+    }
+    .advanexus {
+        color: var(--primary-color);
+        font-family: 'Space Grotesk', sans-serif;
+    }
+    .reveal .slides {
+      color: var(--text-color);
+    }
+    .reveal .slides h1,
+    .reveal .slides h2,
+    .reveal .slides h3 {
+      font-family: "Space Grotesk", monospace;
+      color: var(--primary-color);
+    }
+    .reveal .slides a {
+      color: var(--primary-color);
+    }
+    .fa,
+    .fas.fa-bars,
+    .controls-arrow,
+    span {
+      color: var(--primary-color);
+    }
+    .slide-number {
+      background-color: var(--text-color) !important;
+    }
+    .slide-number-a,
+    .slide-number-delimiter,
+    .slide-number-b {
+      color: var(--secondary-color);
+    }
+    .reveal .slides p,
+  .reveal .slides li,
+  .reveal .slides div,
+  .reveal .slides span {
+    font-family: "JetBrains Mono", monospace;
+  }
+</style>
+<script src="https://cdn.lordicon.com/lordicon.js"></script>
+<link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap"
+/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap">
+<p><strong>Enterprise Platform for Data Control and Automation</strong></p>
+<p><a href="https://www.advanexus.com" :target="_blank"><img src="advanexus/logo.png" alt="Logo"></a></p>
+<p>Enables full control, automation, and reliability of data processes<br>
+in complex and highly regulated environments.</p>
+<div style="font-size: 50%">
+<p>Built for enterprise environments. Designed for full control.</p>
+<p><strong>Founder:</strong> Milovan Tomašević, Phd</p>
+</div>
+            </section>
+        
+            <section >
+                <h3>The Real Enterprise Problem</h3>
+<p><lord-icon
+    src="https://cdn.lordicon.com/xdwerdzf.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/llbjqxzl.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon></p>
+<div style="font-size: 45%">
+<table>
+<thead>
+<tr>
+<th><strong>Problem (Current State)</strong></th>
+<th><strong>Impact (Why It Matters)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data scattered across dozens of systems</td>
+<td>High operational costs</td>
+</tr>
+<tr>
+<td>Manual or fragile processes</td>
+<td>Long time-to-value</td>
+</tr>
+<tr>
+<td>Difficult to audit and poorly documented</td>
+<td>Increased regulatory risk</td>
+</tr>
+<tr>
+<td>Slow to change, migrate, and analyze</td>
+<td>Dependency on individuals</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Result:</strong> systems are slow, complex, and unreliable.<br>
+<strong>Root cause:</strong> not a lack of tools, but a lack of control and orchestration above the existing stack.</p>
+</div>
+            </section>
+        
+            <section >
+                <h3>Solution</h3>
+<p><lord-icon
+    src="https://cdn.lordicon.com/jxyemgzp.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/oscijwdh.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/msgytrdr.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/zkveuwek.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/nekffjzn.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon></p>
+<div style="font-size: 42%">
+<table>
+<thead>
+<tr>
+<th><strong>Today’s Problem</strong></th>
+<th><strong>How <span class="advanexus">advanexus</span> Solves It</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fragmented systems and data sources</td>
+<td>A single controlled layer across all existing systems</td>
+</tr>
+<tr>
+<td>Manual, fragile, and unreliable processes</td>
+<td>Automated and deterministic process execution</td>
+</tr>
+<tr>
+<td>Unclear execution order and dependencies</td>
+<td>Algorithmic engine for dependency resolution</td>
+</tr>
+<tr>
+<td>Weak data quality control</td>
+<td>Built-in data quality rules in every process</td>
+</tr>
+<tr>
+<td>Lack of traceability and auditability</td>
+<td>Full audit trail for every step</td>
+</tr>
+<tr>
+<td>Slow analytics and ad-hoc tools</td>
+<td>Analytics, sandbox, and visualization in one environment</td>
+</tr>
+</tbody>
+</table>
+<p><strong><span class="advanexus">advanexus</span> is a control &amp; automation layer above existing data systems.</strong><br>
+No replatforming. No replacement of core systems.</p>
+</div>
+            </section>
+        
+            <section >
+                <h3>How Advanexus Delivers Value</h3>
+<div style="font-size: 45%">
+<table>
+<thead>
+<tr>
+<th><strong>How It Works (End-to-End)</strong></th>
+<th><strong>What It Delivers (Core Value)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ingest &amp; Integration (DB / API / files)</td>
+<td>Reduced operational complexity</td>
+</tr>
+<tr>
+<td>Orchestration (dependencies, scheduler)</td>
+<td>Faster migrations and changes</td>
+</tr>
+<tr>
+<td>Data Quality (rules, controls, notifications)</td>
+<td>Lower regulatory and operational risk</td>
+</tr>
+<tr>
+<td>Execution Engine (SQL + cross-DB)</td>
+<td>Faster access to trusted data</td>
+</tr>
+<tr>
+<td>Evidence &amp; Audit (proof of every step)</td>
+<td>Reduced dependency on individuals</td>
+</tr>
+<tr>
+<td>Sandbox &amp; Visualization (analytics in one system)</td>
+<td>Faster results and better decisions</td>
+</tr>
+</tbody>
+</table>
+<p><strong>What It Enables (Grouped Use Cases):</strong></p>
+<ul>
+<li><strong>Integration &amp; ingest:</strong> files → SQL tables, DB/API connectors, fast file analysis</li>
+<li><strong>Migration &amp; automation:</strong> cross-DB schema/data transfer, deterministic SQL execution, scheduling</li>
+<li><strong>Reliability &amp; compliance:</strong> data quality in pipelines, audit evidence, backup &amp; restore</li>
+<li><strong>Analytics &amp; knowledge:</strong> visualization and dashboards, Python sandbox, knowledge base</li>
+</ul>
+<p><strong>Simpler data management. Higher reliability. Faster outcomes.</strong></p>
+</div>
+            </section>
+        
+            <section >
+                <h3>Who Are Advanexus Customers</h3>
+<p><lord-icon
+    src="https://cdn.lordicon.com/fqbvgezn.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon></p>
+<div style="font-size: 60%">
+<p>Primary customers are organizations with complex and regulated data environments:</p>
+<ul>
+<li>Banks (Tier-1 and Tier-2)</li>
+<li>Insurance companies</li>
+<li>Fintech and payment providers
+<ul>
+<li>High regulatory requirements</li>
+<li>Heterogeneous systems</li>
+</ul>
+</li>
+<li>Large enterprise organizations</li>
+</ul>
+</div>
+            </section>
+        
+            <section >
+                <h3>Data Platform Market</h3>
+<p><lord-icon  
+ src="https://cdn.lordicon.com/zowmdprl.json"  
+ trigger="loop"  
+ colors="primary:#0ab39c,secondary:#343541"  
+ style="width:150px;height:150px"> </lord-icon></p>
+<div style="font-size: 35%">
+<table>
+<thead>
+<tr>
+<th><strong>Market</strong></th>
+<th style="text-align:right"><strong>Size (base, $B)</strong></th>
+<th style="text-align:right"><strong>Size in 2030 ($B)</strong></th>
+<th style="text-align:right"><strong>CAGR (%)</strong></th>
+<th><strong>Fastest Growing Region</strong></th>
+<th><strong>Largest Market</strong></th>
+<th><strong>Source</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="advanexus"><strong>Customer Data Platforms (CDP)</strong></span></td>
+<td style="text-align:right"><span class="advanexus">5.37 (2023)</span></td>
+<td style="text-align:right"><span class="advanexus">51.95</span></td>
+<td style="text-align:right"><span class="advanexus">39.5%</span></td>
+<td>Asia-Pacific</td>
+<td>North America</td>
+<td><a href="https://www.grandviewresearch.com/industry-analysis/customer-data-platform-market">Grand View Research</a></td>
+</tr>
+<tr>
+<td><span class="advanexus"><strong>Autonomous Data Platforms</strong></span></td>
+<td style="text-align:right"><span class="advanexus">2.13 (2025)</span></td>
+<td style="text-align:right"><span class="advanexus">5.37</span></td>
+<td style="text-align:right"><span class="advanexus">20.3%</span></td>
+<td>Asia-Pacific</td>
+<td>North America</td>
+<td><a href="https://www.mordorintelligence.com/industry-reports/autonomous-data-platform-market">Mordor Intelligence</a></td>
+</tr>
+<tr>
+<td><span class="advanexus"><strong>Data Science Platforms</strong></span></td>
+<td style="text-align:right"><span class="advanexus">111.23 (2025)</span></td>
+<td style="text-align:right"><span class="advanexus">275.67</span></td>
+<td style="text-align:right"><span class="advanexus">21.4%</span></td>
+<td>Asia-Pacific</td>
+<td>North America</td>
+<td><a href="https://www.mordorintelligence.com/industry-reports/data-science-platform-market">Mordor Intelligence</a></td>
+</tr>
+<tr>
+<td><span class="advanexus"><strong>DataOps Platforms</strong></span></td>
+<td style="text-align:right"><span class="advanexus">4.22 (2023)</span></td>
+<td style="text-align:right"><span class="advanexus">17.17</span></td>
+<td style="text-align:right"><span class="advanexus">22.5%</span></td>
+<td>Asia-Pacific</td>
+<td>North America</td>
+<td><a href="https://www.grandviewresearch.com/industry-analysis/dataops-platform-market">Grand View Research</a></td>
+</tr>
+<tr>
+<td><span class="advanexus"><strong>Data Integration Platforms (ETL/ELT)</strong></span></td>
+<td style="text-align:right"><span class="advanexus">15.18 (2024)</span></td>
+<td style="text-align:right"><span class="advanexus">30.27</span></td>
+<td style="text-align:right"><span class="advanexus">12.1%</span></td>
+<td>Asia-Pacific</td>
+<td>North America</td>
+<td><a href="https://www.grandviewresearch.com/industry-analysis/data-integration-market">Grand View Research</a></td>
+</tr>
+<tr>
+<td><strong>Data Fabric Platforms</strong></td>
+<td style="text-align:right">2.29 (2023)</td>
+<td style="text-align:right">12.91 (2032)</td>
+<td style="text-align:right">21.2%</td>
+<td>Asia-Pacific</td>
+<td>North America</td>
+<td><a href="https://www.fortunebusinessinsights.com/data-fabric-market-105272">Fortune Business Insights</a></td>
+</tr>
+<tr>
+<td><strong>Master Data Management (MDM)</strong></td>
+<td style="text-align:right">18.23 (2025)</td>
+<td style="text-align:right">43.38</td>
+<td style="text-align:right">18.9%</td>
+<td>Asia-Pacific</td>
+<td>North America</td>
+<td><a href="https://www.mordorintelligence.com/industry-reports/master-data-management-market">Mordor Intelligence</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+            </section>
+        
+            <section >
+                <h3>Industry Comparison</h3>
+<div style="font-size: 35%">
+<table>
+<thead>
+<tr>
+<th><strong>Criterion (Gartner DI/ETL)</strong></th>
+<th><strong><span class="advanexus">advanexus</span></strong></th>
+<th><strong>Databricks</strong></th>
+<th><strong>Snowflake</strong></th>
+<th><strong>Talend</strong></th>
+<th><strong>Informatica IICS</strong></th>
+<th><strong>Alteryx</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. File import (CSV/JSON/Excel/Logs)</strong></td>
+<td>✔ Native ingest</td>
+<td>🔄 Spark ingest</td>
+<td>🚫 Stage + COPY</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td><strong>2. Auto file → SQL table</strong></td>
+<td>✔ Unique</td>
+<td>🚫</td>
+<td>🚫</td>
+<td>🚫</td>
+<td>🚫</td>
+<td>🚫</td>
+</tr>
+<tr>
+<td><strong>3. DB → DB data transfer</strong></td>
+<td>✔ Built-in</td>
+<td>🚫</td>
+<td>🚫</td>
+<td>🔄</td>
+<td>🔄</td>
+<td>🚫</td>
+</tr>
+<tr>
+<td><strong>4. Schema and dependency migration</strong></td>
+<td>✔ Algorithmic</td>
+<td>🚫</td>
+<td>🚫</td>
+<td>🚫</td>
+<td>🚫</td>
+<td>🚫</td>
+</tr>
+<tr>
+<td><strong>5. Orchestration (real-time jobs)</strong></td>
+<td>✔ Built-in</td>
+<td>🔄 Workflows</td>
+<td>🚫 SQL Tasks</td>
+<td>🔄</td>
+<td>✔</td>
+<td>🔄</td>
+</tr>
+<tr>
+<td><strong>6. Automated SQL script execution</strong></td>
+<td>✔ SQL Engine</td>
+<td>✔</td>
+<td>🚫</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td><strong>7. Dependency and parallelism management</strong></td>
+<td>✔ Intelligent</td>
+<td>🔄 Manual DAG</td>
+<td>🚫</td>
+<td>🔄</td>
+<td>🔄</td>
+<td>🚫</td>
+</tr>
+<tr>
+<td><strong>8. Built-in Data Quality rules</strong></td>
+<td>✔ Real-time DQ</td>
+<td>🔄 (DLT)</td>
+<td>🚫</td>
+<td>✔</td>
+<td>✔</td>
+<td>🔄</td>
+</tr>
+<tr>
+<td><strong>9. Monitoring and alerting</strong></td>
+<td>✔ Centralized</td>
+<td>✔</td>
+<td>🔄</td>
+<td>✔</td>
+<td>✔</td>
+<td>🔄</td>
+</tr>
+<tr>
+<td><strong>10. Python sandbox / notebooks</strong></td>
+<td>✔ Built-in</td>
+<td>✔ Notebooks</td>
+<td>🚫</td>
+<td>🚫</td>
+<td>🚫</td>
+<td>🚫</td>
+</tr>
+<tr>
+<td><strong>11. Built-in visualization (charts/dashboards)</strong></td>
+<td>✔ Visualizer</td>
+<td>🔄 Basic</td>
+<td>🚫</td>
+<td>🚫</td>
+<td>🚫</td>
+<td>✔</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="font-size: 30%">
+<p><strong>References:</strong></p>
+<ol>
+<li><a href="https://docs.databricks.com/">Databricks Documentation – Ingestion, Workflows, DLT</a></li>
+<li><a href="https://docs.snowflake.com/">Snowflake Documentation – Data Loading, Tasks</a></li>
+<li><a href="https://help.talend.com/">Talend Documentation – Components &amp; Data Quality</a></li>
+<li><a href="https://docs.informatica.com/">Informatica IICS Documentation – Taskflows, Monitoring</a></li>
+<li><a href="https://help.alteryx.com/">Alteryx Documentation – Designer, Server, Analytics</a></li>
+</ol>
+<p>✔ = supported  🔄 = partially  🚫 = not supported</p>
+</div>
+            </section>
+        
+            <section >
+                <h3>Traction – Where We Are Today</h3>
+<p><lord-icon
+    src="https://cdn.lordicon.com/zwgkioyr.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/hcsnfpqp.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon></p>
+<div style="font-size: 60%">
+<ul>
+<li>Functional <strong>MVP</strong> and demo environment</li>
+<li>Proven <strong>real-world use cases</strong>:
+<ul>
+<li>data and schema migrations</li>
+<li>automated SQL execution</li>
+<li>data quality controls and audit evidence</li>
+</ul>
+</li>
+<li><strong>Repeatable PoC models</strong> (no custom development)</li>
+<li>Tested in <strong>real enterprise scenarios</strong></li>
+</ul>
+<p><strong>Status:</strong> Advanexus is an operational platform in an early validation phase, ready for PoC and pilot implementations with enterprise customers.</p>
+</div>
+            </section>
+        
+            <section >
+                <h3>Business Model</h3>
+<p><lord-icon
+    src="https://cdn.lordicon.com/yqbrtxmj.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/pjwlqzvi.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/piwupaqb.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon></p>
+<div style="font-size: 45%">
+<table>
+<thead>
+<tr>
+<th><strong>Element</strong></th>
+<th><strong>How the Model Is Structured</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Customer entry point</td>
+<td>PoC and pilot phases as a controlled entry</td>
+</tr>
+<tr>
+<td>Core revenue</td>
+<td>Enterprise licensing (annual subscription)</td>
+</tr>
+<tr>
+<td>Expansion per customer</td>
+<td>“Land &amp; expand” by team, use case, and scale</td>
+</tr>
+<tr>
+<td>Contract structure</td>
+<td>Long-term agreements (3–5 years)</td>
+</tr>
+<tr>
+<td>Deployment</td>
+<td>Partner-led deployment or supported by the core team</td>
+</tr>
+<tr>
+<td>Additional revenue</td>
+<td>Implementation, onboarding, premium support</td>
+</tr>
+<tr>
+<td>Operational characteristics</td>
+<td>High gross margins, low churn, high LTV</td>
+</tr>
+</tbody>
+</table>
+</div>
+            </section>
+        
+            <section >
+                <h3>Go-To-Market Model</h3>
+<p><lord-icon
+    src="https://cdn.lordicon.com/csxbxlji.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/weqkkuwt.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon></p>
+<div style="font-size: 45%">
+<table>
+<thead>
+<tr>
+<th><strong>Phase</strong></th>
+<th><strong>Approach</strong></th>
+<th><strong>Objective</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Early entry</td>
+<td>Founder-led enterprise selling</td>
+<td>Initial PoC and pilot validation</td>
+</tr>
+<tr>
+<td>Entry point</td>
+<td>Focus on key (wedge) use cases</td>
+<td>Fast value with low risk</td>
+</tr>
+<tr>
+<td>Standardization</td>
+<td>PoC factory</td>
+<td>Repeatable and controlled entry</td>
+</tr>
+<tr>
+<td>Scaling</td>
+<td>Partners (SIs and regional integrators)</td>
+<td>Expansion without internal team growth</td>
+</tr>
+<tr>
+<td>Growth</td>
+<td>Reference-driven sales</td>
+<td>Credibility and faster deal closure</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Principle:</strong> small initial footprint → proven value → controlled expansion.</p>
+</div>
+            </section>
+        
+            <section >
+                <h3>Team</h3>
+<p><lord-icon
+    src="https://cdn.lordicon.com/pjkwunvs.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/oswwkrzw.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon></p>
+<div style="font-size: 70%">
+<ul>
+<li>Founder with deep enterprise and banking experience</li>
+<li>Small, senior team of experts (platform, DevOps, data &amp; AI)</li>
+<li>Strong focus on reliability, scalability, and regulated environments</li>
+</ul>
+</div>
+            </section>
+        
+            <section >
+                <h3>Capital Requirements</h3>
+<p><lord-icon
+    src="https://cdn.lordicon.com/kqaqakkv.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/hxcttyly.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon></p>
+<div style="font-size: 70%">
+<ul>
+<li>Scaling the existing MVP into an enterprise-ready platform</li>
+<li>PoC and pilot validation in the market</li>
+<li>Building the sales and partner model</li>
+</ul>
+</div>
+            </section>
+        
+            <section >
+                <h3>Exit Strategy</h3>
+<p><lord-icon
+    src="https://cdn.lordicon.com/lgaqqvqw.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/yfgatqxp.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon></p>
+<div style="font-size: 45%">
+<table>
+<thead>
+<tr>
+<th><strong>Element</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primary exit</td>
+<td>Strategic acquisition by enterprise, data, or cloud vendors</td>
+</tr>
+<tr>
+<td>Buyer profile</td>
+<td>Companies seeking a control and automation layer above existing systems</td>
+</tr>
+<tr>
+<td>Alternative exits</td>
+<td>Growth or buy-and-build Private Equity<br>Secondary exit in a later growth stage</td>
+</tr>
+<tr>
+<td>Acquisition rationale</td>
+<td>Modular and integrable architecture<br>Focus on regulated industries<br>Filling a critical gap in existing data platforms<br>Repeatable enterprise use cases and references</td>
+</tr>
+<tr>
+<td>Time horizon</td>
+<td>Mid-term horizon (5–7 years)</td>
+</tr>
+</tbody>
+</table>
+</div>
+            </section>
+        
+            <section >
+                <h3>Development and Validation Roadmap</h3>
+<p><lord-icon
+    src="https://cdn.lordicon.com/mjlntuvf.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/dlchtpur.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/xpnynjpe.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon></p>
+<div style="font-size: 44%">
+<table>
+<thead>
+<tr>
+<th>Activity</th>
+<th>Q1</th>
+<th>Q2</th>
+<th>Q3</th>
+<th>Q4</th>
+<th>Q5</th>
+<th>Q6</th>
+<th>Q7</th>
+<th>Q8</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MVP and core architecture stabilization</td>
+<td>✔️</td>
+<td>✔️</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PoC factory (standardized use cases)</td>
+<td>✔️</td>
+<td>✔️</td>
+<td>✔️</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Customer pilot implementations</td>
+<td></td>
+<td>✔️</td>
+<td>✔️</td>
+<td>✔️</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Multi-tenant hardening and isolation</td>
+<td></td>
+<td></td>
+<td>✔️</td>
+<td>✔️</td>
+<td>✔️</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Security, audit, and compliance readiness</td>
+<td></td>
+<td></td>
+<td>✔️</td>
+<td>✔️</td>
+<td>✔️</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Partner model and enablement</td>
+<td></td>
+<td></td>
+<td></td>
+<td>✔️</td>
+<td>✔️</td>
+<td>✔️</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Sales scaling (GTM execution)</td>
+<td></td>
+<td></td>
+<td></td>
+<td>✔️</td>
+<td>✔️</td>
+<td>✔️</td>
+<td>✔️</td>
+<td></td>
+</tr>
+<tr>
+<td>Internationalization and regional rollout</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>✔️</td>
+<td>✔️</td>
+<td>✔️</td>
+<td></td>
+</tr>
+<tr>
+<td>Exit readiness (IP, structure, references)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>✔️</td>
+<td>✔️</td>
+<td>✔️</td>
+</tr>
+</tbody>
+</table>
+</div>
+            </section>
+        
+            <section >
+                <h3>Call to Action</h3>
+<p><lord-icon
+    src="https://cdn.lordicon.com/lzwfzdul.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/rmjnvgsm.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/rcuovkuy.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon></p>
+<div style="font-size: 75%">
+<p><span class="advanexus">advanexus</span> is building a control and automation layer for the next generation of enterprise data operations.</p>
+<p>We are looking for:</p>
+<ul>
+<li>strategic investors,</li>
+<li>design-partner customers,</li>
+<li>long-term partners for joint growth.</li>
+</ul>
+</div>
+            </section>
+        
+            <section >
+                <p><a href="https://www.advanexus.com" :target="_blank"><img src="advanexus/advanexus-vc.png" alt="Logo" style="" width="45%"></a></p>
+<p><a href="https://www.advanexus.com" :target="_blank"><img src="advanexus/advanexus.png" alt="Logo" style="" width="20%"></a>
+<a href="https://www.milovantomasevic.com" :target="_blank"><img src="advanexus/sign-mt.png" alt="Logo" style="" width="30%"></a></p>
+
+            </section>
+        
+
+    </section>
+    
+
+
+    </div>
+
+
+  </div>
+
+  	
+	<script src="libs/reveal.js/4.1.3/reveal.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/zoom/zoom.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/notes/notes.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/search/search.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/markdown/markdown.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/highlight/highlight.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/menu/menu.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/math/math.js"></script>
+
+	<script src="libs/reveal.js/4.1.3/plugin/fullscreen/plugin.js"></script>
+  
+  	<script src="libs/reveal.js/4.1.3/plugin/animate/plugin.js"></script>
+  	<script src="libs/reveal.js/4.1.3/plugin/animate/svg.min.js"></script>
+  
+  	<script src="libs/reveal.js/4.1.3/plugin/anything/plugin.js"></script>
+	  <script src="libs/reveal.js/4.1.3/plugin/anything/Chart.min.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/anything/d3/d3.v3.min.js"></script>				
+	<script src="libs/reveal.js/4.1.3/plugin/anything/d3.patch.js"></script>			
+	<script src="libs/reveal.js/4.1.3/plugin/anything/d3/queue.v1.min.js"></script>		
+	<script src="libs/reveal.js/4.1.3/plugin/anything/d3/topojson.v1.min.js"></script>		
+	<script src="libs/reveal.js/4.1.3/plugin/anything/function-plot.js"></script>
+
+ <!--	<script src="libs/reveal.js/4.1.3/plugin/audio-slideshow/plugin.js"></script>  -->
+<!--	<script src="libs/reveal.js/4.1.3/plugin/audio-slideshow/recorder.js"></script>-->
+<!--	<script src="libs/reveal.js/4.1.3/plugin/audio-slideshow/RecordRTC.js"></script>-->
+
+<script src="libs/reveal.js/4.1.3/plugin/chalkboard/plugin.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/customcontrols/plugin.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/embed-tweet/plugin.js"></script>
+
+	<script src="libs/reveal.js/4.1.3/plugin/chart/chart.min.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/chart/plugin.js"></script>
+
+  <script>
+
+		const printPlugins = [
+			RevealNotes, 
+			RevealHighlight,
+			RevealMath,
+			RevealAnimate,
+			RevealChalkboard, 
+			RevealEmbedTweet,
+			RevealChart,
+		];
+
+		const plugins =  [...printPlugins,
+		RevealZoom, 
+		RevealSearch, 
+				RevealMarkdown, 
+				RevealMenu, 
+				RevealFullscreen,
+				RevealAnything,
+				//RevealAudioSlideshow,
+				//RevealAudioRecorder,
+				RevealCustomControls, 
+				// poll
+				// question
+				// seminar
+				 ]
+
+
+		// Also available as an ES module, see:
+		// https://revealjs.com/initialization/
+		Reveal.initialize({
+			controls: true,
+			controlsTutorial: true,
+			controlsLayout: 'bottom-right',
+			controlsBackArrows: 'faded',
+			progress: true,
+			slideNumber: true,
+			//#showSlideNumber "all" "print" "speaker"
+			hash: true,//#  hash: false,
+			//# respondToHashChanges: true,
+			//# history: false,
+			keyboard: true,
+			//#keyboardCondition: null,
+			overview: true,
+			center: true,
+			touch: true,
+			loop: false,
+			rtl: false,
+			//#navigationMode: 'default', linear grid
+			shuffle: false,
+			fragments: true,
+			fragmentInURL: false,
+			embedded: false,
+			help: true,
+			//#pause: true
+			showNotes: false,
+			autoPlayMedia: false, // TODO fix this to a nullable value
+			//#preloadIframes: null. true false
+			//#autoAnimate: true
+			//#autoAnimateMatcher: null,
+			//#autoAnimateEasing: 'ease',
+			//autoAnimateDuration: 1.0,
+			//#autoAnimateUnmatched: true
+			//#autoAnimateStyles: []
+			autoSlide: 0, // TODO fix this to a falseable value
+			autoSlideStoppable: true,
+			autoSlideMethod: '0',
+			defaultTiming: 120,
+			mouseWheel: false,
+			//#previewLinks: false
+			//#postMessage: true,  // TODO : this can cause issues with the vscode api ???
+			//#postMessageEvents: false,
+			//#focusBodyOnPageVisibilityChange: true,
+			transition: 'slide',
+			transitionSpeed: 'default',
+			backgroundTransition: 'convex',
+			//#pdfMaxPagesPerSlide: Number.POSITIVE_INFINITY,
+			//#pdfSeparateFragments: true,
+			//#pdfPageHeightOffset: -1,
+			viewDistance: 3,
+			//#mobileViewDistance: 2,
+			display: 'block',
+			//#hideInactiveCursor: true,
+			//#hideCursorTime: 5000
+
+			// Parallax Background
+			parallaxBackgroundImage: '',
+			parallaxBackgroundSize: '',
+			parallaxBackgroundHorizontal: 0,
+			parallaxBackgroundVertical: 0,
+			
+			//Presentation Size
+			width: 960,
+			height: 700,
+			margin: 0.04,
+			minScale: 0.2,
+			maxScale: 2,
+			disableLayout: false,
+
+			audio: {
+				prefix: 'audio/', 	// audio files are stored in the "audio" folder
+				suffix: '.ogg',		// audio files have the ".ogg" ending
+				textToSpeechURL: null,  // the URL to the text to speech converter
+				defaultNotes: false, 	// use slide notes as default for the text to speech converter
+				defaultText: false, 	// use slide text as default for the text to speech converter
+				advance: 0, 		// advance to next slide after given time in milliseconds after audio has played, use negative value to not advance
+				autoplay: false,	// automatically start slideshow
+				defaultDuration: 5,	// default duration in seconds if no audio is available
+				defaultAudios: true,	// try to play audios with names such as audio/1.2.ogg
+				playerOpacity: 0.05,	// opacity value of audio player if unfocused
+				playerStyle: 'position: fixed; bottom: 4px; left: 25%; width: 50%; height:75px; z-index: 33;', // style used for container of audio controls
+				startAtFragment: false, // when moving to a slide, start at the current fragment or at the start of the slide
+			},
+			
+			chalkboard: { // font-awesome.min.css must be available
+					//src: "chalkboard/chalkboard.json",
+					storage: "chalkboard-demo",
+				},
+			
+			customcontrols: {
+					controls: [
+      						{
+						  id: 'toggle-overview',
+						  title: 'Toggle overview (O)',
+						  icon: '<i class="fa fa-th"></i>',
+						  action: 'Reveal.toggleOverview();'
+						}
+						,
+						{ icon: '<i class="fa fa-pen-square"></i>',
+						  title: 'Toggle chalkboard (B)',
+						  action: 'RevealChalkboard.toggleChalkboard();'
+						},
+						{ icon: '<i class="fa fa-pen"></i>',
+						  title: 'Toggle notes canvas (C)',
+						  action: 'RevealChalkboard.toggleNotesCanvas();'
+						}
+				]
+			},
+			chart: {
+					defaults: { 
+						color: 'lightgray', // color of labels
+						scale: { 
+							beginAtZero: true, 
+							ticks: { stepSize: 1 },
+							grid: { color: "lightgray" } , // color of grid lines
+						},
+					},
+					line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] }, 
+					bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
+					pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+					radar: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
+			},
+			math: {
+				mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+				config: 'TeX-AMS_HTML-full',
+				// pass other options into `MathJax.Hub.Config()`
+				TeX: { Macros: { RR: "{\\bf R}" } }
+				},
+				anything: [ 
+				{
+		className: "plot",
+		defaults: {width:500, height: 500, grid:true},
+		initialize: (function(container, options){ options.target = "#"+container.id; functionPlot(options) })
+	 },
+	 {
+		className: "chart",  
+		initialize: (function(container, options){ container.chart = new Chart(container.getContext("2d"), options);  })
+	 },
+	 {
+		className: "anything",
+		initialize: (function(container, options){ if (options && options.initialize) { options.initialize(container)} })
+	 },
+					],
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: (window.location.search.match(/print-pdf/gi) ? printPlugins : plugins ) 
+		});
+			
+
+
+	    // Change chalkboard theme : 
+		function changeTheme(input) {
+			var config = {};
+			config.theme = input.value;
+			Reveal.getPlugin("RevealChalkboard").configure(config);
+			input.blur();
+		}
+
+		// // Handle the message inside the webview
+        // window.addEventListener('message', event => {
+
+        //     const message = event.data; // The JSON data our extension sent
+
+        //     switch (message.command) {
+        //         case 'refactor':
+        //             Reveal.toggleHelp();
+        //     }
+        // });
+
+		if (window.location.search.match(/print-pdf-now/gi)) {
+      		setTimeout(() => {
+				window.print();
+			  }, 2500);
+			
+    }
+		
+
+	</script>
+
+</body>
+
+</html>

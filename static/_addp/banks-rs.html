@@ -1,0 +1,934 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>advanexus</title>
+
+	<meta name="description" content="advanexus data development and analysis platform">
+	<meta name="author" content="Milovan Tomašević">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="libs/reveal.js/4.1.3/reset.css">
+	<link rel="stylesheet" href="libs/reveal.js/4.1.3/reveal.css">
+
+	
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+	  <!-- highlight Theme -->
+  	
+	  <link rel="stylesheet" href="libs/highlight.js/11.3.1/styles/monokai.min.css">
+	
+	
+		
+	<link rel="stylesheet" href="libs/reveal.js/4.1.3/plugin/chalkboard/style.css">
+	
+	
+	
+		<link rel="stylesheet" href="libs/reveal.js/4.1.3/plugin/customcontrols/style.css">
+	
+	<link rel="stylesheet" href="libs/styles/tasklist.css">
+
+
+
+  <!-- Revealjs Theme -->
+  
+  	<link rel="stylesheet" href="libs/reveal.js/4.1.3/theme/white.css" id="theme">
+  
+  
+
+
+  <!-- Revealjs Theme -->
+  
+
+ 
+</head>
+
+<body>
+  
+    <div id="logo" style="position: fixed; top: 20px; left: 20px; z-index: 1; height:3rem;">
+        <img src="advanexus/logo-circle.png" style="height:100%"/>
+    </div>
+  
+
+
+  <div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+      
+
+
+    
+    <section>
+        <section >
+            <p><a href="https://www.advanexus.com" :target="_blank"><img src="advanexus/logo.png" alt="Logo" style="" width="45%"></a></p>
+<h5>Modularna data-platforma za bankarski ekosistem</h5>
+<h3><strong>Platforma za integraciju, vizualizaciju, obradu i kontrolu podataka</strong></h3>
+<div style="font-size: 50%">
+<p><em>Izgrađeno</em> inženjerski.<br>
+<em>Dizajnirano</em> prema realnim potrebama institucionalnih sistema.<br>
+<em>Prilagođeno visoko-regulisanim operativnim okruženjima.</em><br></p>
+<p><strong>Osnivač:</strong> dr Milovan Tomašević</p>
+<p><strong>Koncept:</strong>
+<em><span class="advanexus">advanexus</span> funkcioniše kao tehnički sloj iznad postojećih operativnih sistema, automatizujući integraciju, migraciju, standardizaciju i kontrolu podataka — kroz ceo finansijski ekosistem.</em></p>
+</div>
+<style scoped>
+    :root {
+      --primary-color: #0ab39c;
+      --secondary-color: white;
+      --text-color: #343541;
+    }
+    ul.medium {
+        font-size: 80%;
+    }
+
+    ul.small {
+        font-size: 60%;
+    }
+    .advanexus {
+        color: var(--primary-color);
+        font-family: 'Space Grotesk', sans-serif;
+    }
+    .reveal .slides {
+      color: var(--text-color);
+    }
+    .reveal .slides h1,
+    .reveal .slides h2,
+    .reveal .slides h3 {
+      font-family: "Space Grotesk", monospace;
+      color: var(--primary-color);
+    }
+    .reveal .slides a {
+      color: var(--primary-color);
+    }
+    .fa,
+    .fas.fa-bars,
+    .controls-arrow,
+    span {
+      color: var(--primary-color);
+    }
+    .slide-number {
+      background-color: var(--text-color) !important;
+    }
+    .slide-number-a,
+    .slide-number-delimiter,
+    .slide-number-b {
+      color: var(--secondary-color);
+    }
+    .shrink {
+        font-size: 70% !important;
+        line-height: 1.1em !important; /* manji line-height */
+        text-align: left !important;
+
+        display: block !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding-left: 0.4em !important;
+    }
+
+    /* Umanjena i profesionalno uvučena lista */
+    .shrink ul,
+    .shrink ol {
+        margin-left: 1em !important;
+        padding-left: 0.4em !important;
+        font-size: 92% !important;
+    }
+
+    .shrink li {
+        margin-bottom: 0.15em !important; /* vrlo kompaktno */
+        line-height: 1.15em !important;   /* još dodatno sabija listu */
+    }
+
+
+</style>
+<script src="https://cdn.lordicon.com/lordicon.js"></script>
+<link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap"
+/>
+            </section>
+        
+            <section >
+                <h3>Zajednički izazovi u bankarskom ekosistemu</h3>
+<p><lord-icon
+    src="https://cdn.lordicon.com/uxqqsiyx.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/vwtvwncw.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/hnxipqzk.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/lrgepzxr.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon></p>
+<div class="shrink">
+<table style="width:100%; font-size: 65%; border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th style="text-align:left; color: var(--primary-color); font-size:90%;">Banke</th>
+      <th style="text-align:left; color: var(--primary-color); font-size:90%;">Centralna banka</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <ul>
+          <li>različite baze (DB2, Oracle, MSSQL, PostgreSQL, ...)</li>
+          <li>CSV / XML / JSON + interne strukture</li>
+          <li>ručni procesi i Excel</li>
+          <li>veliki dnevni i mesečni batch procesi</li>
+          <li>različita tehnička tumačenja pravila</li>
+          <li>teška implementacija novih regulatornih promena</li>
+          <li>incidenti bez jasnog audit-trail-a</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>nema jedinstvenog tehničkog modela među bankama</li>
+          <li>različite tehničke implementacije istog propisa</li>
+          <li>kompleksna konsolidacija i poređenje podataka</li>
+          <li>ograničen uvid u pripremu podataka u bankama</li>
+          <li>potreba za centralizovanim sandbox okruženjem</li>
+          <li>potreba za jačim DQ pravilima i validacijama</li>
+          <li>kompleksne tehničke promene pri novim propisima</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" style="padding-top: 0.5em;">
+        <strong style="color: var(--primary-color);">Zajednički imenilac:</strong>
+        Podaci dolaze iz različitih sistema, u različitim formatima i različitom kvalitetu —  
+        i potrebno ih je ujediniti, stabilizovati i standardizovati.
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+            </section>
+        
+            <section >
+                <h3>Platforma koja ubrzava, standardizuje i pojednostavljuje rad sa podacima</h3>
+<div class="shrink">
+<ul>
+<li><strong><span class="advanexus">advanexus</span> uklanja ključne tehničke izazove</strong>: spor prenos podataka, različite formate, kompleksne tokove, real-time ograničenja i nedostatak standardizacije.</li>
+<li><strong>Dizajnirana za ceo data ekosistem</strong>: netehničke korisnike, data inženjere i data naučnike.</li>
+<li>Donosi <strong>rad bez zastoja</strong>, <strong>visoku brzinu i efikasnost</strong>, <strong>jednostavne procese</strong>.</li>
+<li><strong>Jedna platforma</strong> koja ubrzava operacije, podiže kvalitet podataka i pojednostavljuje razvoj i upravljanje ključnim procesima.</li>
+</ul>
+</div>
+            </section>
+        
+            <section >
+                <h3>Integracija i Standardizacija podataka</h3>
+<p><lord-icon
+    src="https://cdn.lordicon.com/taqsdbhc.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/mjlntuvf.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon></p>
+<div style="font-size: 33%">
+<table>
+<thead>
+<tr>
+<th><strong>Oblast</strong></th>
+<th><strong>Za banke</strong></th>
+<th><strong>Za centralnu banku</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Integracija izvora podataka</strong></td>
+<td>Povezivanje sa DB2, Oracle, PostgreSQL, MSSQL, CSV/XML/JSON, API, MQ, internim formatima bez menjanja core sistema</td>
+<td>Ujednačen, stabilan i kontrolisan tehnički tok iz svih banaka</td>
+</tr>
+<tr>
+<td><strong>Standardizacija podataka</strong></td>
+<td>Mapiranje postojećih struktura na standardizovane modele (transakcije, likvidnost, DWH feedovi, novi propisi)</td>
+<td>Identican format od svih banaka → jednostavnije poređenje, konsolidacija i nadzor</td>
+</tr>
+<tr>
+<td><strong>Fleksibilnost</strong></td>
+<td>Banke zadržavaju sopstvene interne modele i arhitekture</td>
+<td>Centralna banka dobija jedinstveni, tehnički ujednačen model</td>
+</tr>
+<tr>
+<td><strong>Implementacija</strong></td>
+<td>Uvodi se postepeno — od jedne oblasti do kompletnih tokova</td>
+<td>Usaglašena tehnička implementacija za sve učesnike</td>
+</tr>
+</tbody>
+</table>
+</div>
+            </section>
+        
+            <section >
+                <h3>C++ High-Performance moduli</h3>
+<p><lord-icon
+    src="https://cdn.lordicon.com/zkveuwek.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/fqrjldna.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/oscijwdh.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon></p>
+<div class="shrink">
+<table>
+<thead>
+<tr>
+<th><strong>Banke</strong></th>
+<th><strong>Centralna banka</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Obrada velikih batch procesa u minutima, umesto satima</td>
+<td>Stabilno i predvidivo vreme izvršavanja</td>
+</tr>
+<tr>
+<td>Brze migracije i masovne transformacije bez zastoja</td>
+<td>Pouzdano uklapanje u regulatorno definisane rokove</td>
+</tr>
+<tr>
+<td>Minimalna potrošnja resursa u kritičnim noćnim prozorima</td>
+<td>Doslednost i stabilnost ključnih tokova u bankarskom ekosistemu</td>
+</tr>
+</tbody>
+</table>
+</div>
+            </section>
+        
+            <section >
+                <h3>Audit, verzionisanje i incident forenzika</h3>
+<p><lord-icon
+    src="https://cdn.lordicon.com/bmkdunjh.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/nchegqgo.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/cnfrxixw.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon></p>
+<div class="shrink">
+<table>
+<thead>
+<tr>
+<th><strong>Banke</strong></th>
+<th><strong>Centralna banka</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jasna evidencija <em>ko je šta radio</em></td>
+<td>Transparentan uvid u sve ključne tokove</td>
+</tr>
+<tr>
+<td>Detaljna forenzika i analiza incidenata</td>
+<td>Mogućnost potpunog vraćanja i rekonstrukcije izveštaja unazad</td>
+</tr>
+<tr>
+<td>Verzije pravila i procesa po svakoj izmeni</td>
+<td>Kontrola usklađenosti svih učesnika kroz verzionisane tokove</td>
+</tr>
+</tbody>
+</table>
+</div>
+            </section>
+        
+            <section >
+                <h3>Najvažniji use-case-ovi</h3>
+<p><lord-icon
+    src="https://cdn.lordicon.com/mrikdaqa.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/pjkwunvs.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/ggijgnjp.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon></p>
+<div style="font-size: 33%">
+<table>
+<thead>
+<tr>
+<th><strong>Use Case</strong></th>
+<th><strong>Šta banke dobijaju</strong></th>
+<th><strong>Šta centralna banka dobija</strong></th>
+<th><strong>Jedinstvena prednost</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Uvoz i priprema podataka</strong></td>
+<td>Manje ručnog ETL rada</td>
+<td>Standardizovan input</td>
+<td>Ingest + automatski SQL</td>
+</tr>
+<tr>
+<td><strong>2. Integracija izvora</strong></td>
+<td>Jedno mesto za bazu/API/fajlove</td>
+<td>Stabilni formati iz svih banaka</td>
+<td>Najširi spektar konektora</td>
+</tr>
+<tr>
+<td><strong>3. Standardizacija podataka</strong></td>
+<td>Jasna struktura</td>
+<td>Uporedivost podataka</td>
+<td>Interni poslovni model</td>
+</tr>
+<tr>
+<td><strong>4. Analitika i vizualizacija</strong></td>
+<td>Lokalni dashboard-i</td>
+<td>Brže kontrole</td>
+<td>SQL + grafovi u jednom</td>
+</tr>
+<tr>
+<td><strong>5. Backup &amp; restore</strong></td>
+<td>Stabilnost</td>
+<td>Forenzička rekonstrukcija</td>
+<td>Jedinstven engine</td>
+</tr>
+<tr>
+<td><strong>6. Automatizovano izvršavanje SQL-a</strong></td>
+<td>Manje ručnog rada</td>
+<td>Transparentnost</td>
+<td>Centralizovana kontrola</td>
+</tr>
+<tr>
+<td><strong>7. Cross-DB prenos šema</strong></td>
+<td>Migracije uz manje rizika</td>
+<td>Validacija velikih transformacija</td>
+<td>Algoritamsko otkrivanje zavisnosti</td>
+</tr>
+<tr>
+<td><strong>8. Upravljanje zavisnostima</strong></td>
+<td>Optimalan redosled izvršavanja</td>
+<td>Stabilniji rokovi</td>
+<td>Parallelism scheduler</td>
+</tr>
+<tr>
+<td><strong>9. Data Quality</strong></td>
+<td>Manje grešaka</td>
+<td>Standardne kontrole</td>
+<td>Direktno ugrađene u pipeline</td>
+</tr>
+<tr>
+<td><strong>10. Scheduler</strong></td>
+<td>Predvidljivo izvršavanje</td>
+<td>Bolja koordinacija</td>
+<td>Centralni orkestrator</td>
+</tr>
+<tr>
+<td><strong>11. Python Sandbox</strong></td>
+<td>Analitika + ML</td>
+<td>Validacija statističkih modela</td>
+<td>SQL + Python zajedno</td>
+</tr>
+<tr>
+<td><strong>12. Brza analiza fajlova</strong></td>
+<td>Instant pregled</td>
+<td>Brža prijem i kontrola</td>
+<td>Svaki fajl → tabela</td>
+</tr>
+<tr>
+<td><strong>13. API integracije</strong></td>
+<td>Eksterna razmena</td>
+<td>Konsolidovan pristup</td>
+<td>Bez dodatnog koda</td>
+</tr>
+<tr>
+<td><strong>14. Knowledge Base</strong></td>
+<td>Brži onboarding</td>
+<td>Jasna dokumentacija</td>
+<td>Prva platforma sa ugrađenim znanjem</td>
+</tr>
+</tbody>
+</table>
+</div>
+            </section>
+        
+            <section >
+                <h3>Kompletan zajednički “flow”</h3>
+<p><lord-icon
+    src="https://cdn.lordicon.com/zwgkioyr.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/dlchtpur.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/msgytrdr.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon></p>
+<div style="font-size: 30%">
+<table>
+<thead>
+<tr>
+<th><strong>Korak</strong></th>
+<th><strong>Banke</strong></th>
+<th><strong>Centralna banka</strong></th>
+<th><strong>Zajednička vrednost</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Preuzimanje i učitavanje podataka</strong></td>
+<td>Podaci iz core sistema, baza i fajlova</td>
+<td>Prijem jedinstveno pripremljenih setova</td>
+<td>Kontrolisan i ujednačen ulaz iz celog ekosistema</td>
+</tr>
+<tr>
+<td><strong>2. Mapiranje u model</strong></td>
+<td>Pretvaranje lokalnih formata u standard</td>
+<td>Jedinstven tehnički model za sve učesnike</td>
+<td>Lakša konsolidacija i uporedivost</td>
+</tr>
+<tr>
+<td><strong>3. Validacija i kontrola kvaliteta</strong></td>
+<td>Lokalna DQ pravila i tehničke kontrole</td>
+<td>Centralna DQ pravila i nadzor</td>
+<td>Stabilan kvalitet kroz ceo tok</td>
+</tr>
+<tr>
+<td><strong>4. Automatizacija procesa</strong></td>
+<td>Poslovi se izvršavaju bez ručnog rada</td>
+<td>Predvidljivi rokovi i usaglašen raspored</td>
+<td>Manje operativnog rizika</td>
+</tr>
+<tr>
+<td><strong>5. Vizualizacija i izveštaji</strong></td>
+<td>Dashboard-i i brzi pregledi</td>
+<td>Usklađen prikaz za sve učesnike</td>
+<td>Veća transparentnost i bolji uvid</td>
+</tr>
+<tr>
+<td><strong>6. Audit i forenzika</strong></td>
+<td>Lokalni logovi i istorija</td>
+<td>Centralizovan pregled svih tokova</td>
+<td>Lakša identifikacija i rekonstrukcija incidenata</td>
+</tr>
+<tr>
+<td><strong>7. Test okruženje (sandbox)</strong></td>
+<td>Provera novih pravila i procesa</td>
+<td>Validacija banaka pre produkcije</td>
+<td>Sigurna implementacija promena</td>
+</tr>
+</tbody>
+</table>
+</div>
+            </section>
+        
+            <section >
+                <h3>Tehnička arhitektura</h3>
+<p><lord-icon
+    src="https://cdn.lordicon.com/kjjbpuhp.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/jectmwqf.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/ecngpoqo.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon></p>
+<div style="font-size: 60%">
+<table>
+<thead>
+<tr>
+<th><strong>Banke</strong></th>
+<th><strong>Centralna banka</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Izolovane instance</td>
+<td>Agregacioni (centralni) sloj</td>
+</tr>
+<tr>
+<td>Mogućnost različitih modela po banci</td>
+<td>Standardizovani referentni model</td>
+</tr>
+<tr>
+<td>Visoka fleksibilnost integracije</td>
+<td>Transparentna validacija i kontrolni uvid</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Napomena:</strong> <span class="advanexus">advanexus</span> je u potpunosti <strong>multi-tenant arhitektura</strong> — radi odvojeno po banci, ali i kao jedinstveni centralni čvor.</p>
+</div>
+            </section>
+        
+            <section >
+                <h3>Zašto je advanexus jedinstven</h3>
+<p><lord-icon
+    src="https://cdn.lordicon.com/euaablbm.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/oswwkrzw.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/urswgamh.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/yvjimpju.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/sjoccsdj.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon></p>
+<div class="shrink">
+<ol>
+<li><strong>On-premises / cloud / hibrid korišćenje</strong> – radi unutar postojeće infrastrukture ili u oblaku.</li>
+<li><strong>Bez menjanja postojećih sistema</strong> – funkcioniše kao tehnički sloj iznad core sistema.</li>
+<li><strong>End-to-end tok u jednoj platformi</strong> – od preuzimanja podataka, kroz standardizaciju i kontrole, do audita.</li>
+<li><strong>Modularna arhitektura</strong> – koristi se samo ono što je potrebno.</li>
+<li><strong>Prilagođen celom bankarskom ekosistemu</strong> – isti tehnički tok, različite perspektive (banke / centralna banka).</li>
+<li><strong>Mogućnost jedinstvenog tehničkog standarda</strong> unutar bankarskog ekosistema.</li>
+<li><strong>Spreman za AI integracije</strong> – AI podržava rad, ali ne upravlja kritičnim procesima.</li>
+</ol>
+</div>
+            </section>
+        
+            <section >
+                <p><a href="https://www.advanexus.com" :target="_blank"><img src="advanexus/advanexus-vc.png" alt="Logo" style="" width="45%"></a></p>
+<p><a href="https://www.advanexus.com" :target="_blank"><img src="advanexus/advanexus.png" alt="Logo" style="" width="20%"></a>
+<a href="https://www.milovantomasevic.com" :target="_blank"><img src="advanexus/sign-mt.png" alt="Logo" style="" width="30%"></a></p>
+
+            </section>
+        
+
+    </section>
+    
+
+
+    </div>
+
+
+  </div>
+
+  	
+	<script src="libs/reveal.js/4.1.3/reveal.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/zoom/zoom.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/notes/notes.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/search/search.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/markdown/markdown.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/highlight/highlight.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/menu/menu.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/math/math.js"></script>
+
+	<script src="libs/reveal.js/4.1.3/plugin/fullscreen/plugin.js"></script>
+  
+  	<script src="libs/reveal.js/4.1.3/plugin/animate/plugin.js"></script>
+  	<script src="libs/reveal.js/4.1.3/plugin/animate/svg.min.js"></script>
+  
+  	<script src="libs/reveal.js/4.1.3/plugin/anything/plugin.js"></script>
+	  <script src="libs/reveal.js/4.1.3/plugin/anything/Chart.min.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/anything/d3/d3.v3.min.js"></script>				
+	<script src="libs/reveal.js/4.1.3/plugin/anything/d3.patch.js"></script>			
+	<script src="libs/reveal.js/4.1.3/plugin/anything/d3/queue.v1.min.js"></script>		
+	<script src="libs/reveal.js/4.1.3/plugin/anything/d3/topojson.v1.min.js"></script>		
+	<script src="libs/reveal.js/4.1.3/plugin/anything/function-plot.js"></script>
+
+ <!--	<script src="libs/reveal.js/4.1.3/plugin/audio-slideshow/plugin.js"></script>  -->
+<!--	<script src="libs/reveal.js/4.1.3/plugin/audio-slideshow/recorder.js"></script>-->
+<!--	<script src="libs/reveal.js/4.1.3/plugin/audio-slideshow/RecordRTC.js"></script>-->
+
+<script src="libs/reveal.js/4.1.3/plugin/chalkboard/plugin.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/customcontrols/plugin.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/embed-tweet/plugin.js"></script>
+
+	<script src="libs/reveal.js/4.1.3/plugin/chart/chart.min.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/chart/plugin.js"></script>
+
+  <script>
+
+		const printPlugins = [
+			RevealNotes, 
+			RevealHighlight,
+			RevealMath,
+			RevealAnimate,
+			RevealChalkboard, 
+			RevealEmbedTweet,
+			RevealChart,
+		];
+
+		const plugins =  [...printPlugins,
+		RevealZoom, 
+		RevealSearch, 
+				RevealMarkdown, 
+				RevealMenu, 
+				RevealFullscreen,
+				RevealAnything,
+				//RevealAudioSlideshow,
+				//RevealAudioRecorder,
+				RevealCustomControls, 
+				// poll
+				// question
+				// seminar
+				 ]
+
+
+		// Also available as an ES module, see:
+		// https://revealjs.com/initialization/
+		Reveal.initialize({
+			controls: true,
+			controlsTutorial: true,
+			controlsLayout: 'bottom-right',
+			controlsBackArrows: 'faded',
+			progress: true,
+			slideNumber: true,
+			//#showSlideNumber "all" "print" "speaker"
+			hash: true,//#  hash: false,
+			//# respondToHashChanges: true,
+			//# history: false,
+			keyboard: true,
+			//#keyboardCondition: null,
+			overview: true,
+			center: true,
+			touch: true,
+			loop: false,
+			rtl: false,
+			//#navigationMode: 'default', linear grid
+			shuffle: false,
+			fragments: true,
+			fragmentInURL: false,
+			embedded: false,
+			help: true,
+			//#pause: true
+			showNotes: false,
+			autoPlayMedia: false, // TODO fix this to a nullable value
+			//#preloadIframes: null. true false
+			//#autoAnimate: true
+			//#autoAnimateMatcher: null,
+			//#autoAnimateEasing: 'ease',
+			//autoAnimateDuration: 1.0,
+			//#autoAnimateUnmatched: true
+			//#autoAnimateStyles: []
+			autoSlide: 0, // TODO fix this to a falseable value
+			autoSlideStoppable: true,
+			autoSlideMethod: '0',
+			defaultTiming: 120,
+			mouseWheel: false,
+			//#previewLinks: false
+			//#postMessage: true,  // TODO : this can cause issues with the vscode api ???
+			//#postMessageEvents: false,
+			//#focusBodyOnPageVisibilityChange: true,
+			transition: 'slide',
+			transitionSpeed: 'default',
+			backgroundTransition: 'convex',
+			//#pdfMaxPagesPerSlide: Number.POSITIVE_INFINITY,
+			//#pdfSeparateFragments: true,
+			//#pdfPageHeightOffset: -1,
+			viewDistance: 3,
+			//#mobileViewDistance: 2,
+			display: 'block',
+			//#hideInactiveCursor: true,
+			//#hideCursorTime: 5000
+
+			// Parallax Background
+			parallaxBackgroundImage: '',
+			parallaxBackgroundSize: '',
+			parallaxBackgroundHorizontal: 0,
+			parallaxBackgroundVertical: 0,
+			
+			//Presentation Size
+			width: 960,
+			height: 700,
+			margin: 0.04,
+			minScale: 0.2,
+			maxScale: 2,
+			disableLayout: false,
+
+			audio: {
+				prefix: 'audio/', 	// audio files are stored in the "audio" folder
+				suffix: '.ogg',		// audio files have the ".ogg" ending
+				textToSpeechURL: null,  // the URL to the text to speech converter
+				defaultNotes: false, 	// use slide notes as default for the text to speech converter
+				defaultText: false, 	// use slide text as default for the text to speech converter
+				advance: 0, 		// advance to next slide after given time in milliseconds after audio has played, use negative value to not advance
+				autoplay: false,	// automatically start slideshow
+				defaultDuration: 5,	// default duration in seconds if no audio is available
+				defaultAudios: true,	// try to play audios with names such as audio/1.2.ogg
+				playerOpacity: 0.05,	// opacity value of audio player if unfocused
+				playerStyle: 'position: fixed; bottom: 4px; left: 25%; width: 50%; height:75px; z-index: 33;', // style used for container of audio controls
+				startAtFragment: false, // when moving to a slide, start at the current fragment or at the start of the slide
+			},
+			
+			chalkboard: { // font-awesome.min.css must be available
+					//src: "chalkboard/chalkboard.json",
+					storage: "chalkboard-demo",
+				},
+			
+			customcontrols: {
+					controls: [
+      						{
+						  id: 'toggle-overview',
+						  title: 'Toggle overview (O)',
+						  icon: '<i class="fa fa-th"></i>',
+						  action: 'Reveal.toggleOverview();'
+						}
+						,
+						{ icon: '<i class="fa fa-pen-square"></i>',
+						  title: 'Toggle chalkboard (B)',
+						  action: 'RevealChalkboard.toggleChalkboard();'
+						},
+						{ icon: '<i class="fa fa-pen"></i>',
+						  title: 'Toggle notes canvas (C)',
+						  action: 'RevealChalkboard.toggleNotesCanvas();'
+						}
+				]
+			},
+			chart: {
+					defaults: { 
+						color: 'lightgray', // color of labels
+						scale: { 
+							beginAtZero: true, 
+							ticks: { stepSize: 1 },
+							grid: { color: "lightgray" } , // color of grid lines
+						},
+					},
+					line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] }, 
+					bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
+					pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+					radar: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
+			},
+			math: {
+				mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+				config: 'TeX-AMS_HTML-full',
+				// pass other options into `MathJax.Hub.Config()`
+				TeX: { Macros: { RR: "{\\bf R}" } }
+				},
+				anything: [ 
+				{
+		className: "plot",
+		defaults: {width:500, height: 500, grid:true},
+		initialize: (function(container, options){ options.target = "#"+container.id; functionPlot(options) })
+	 },
+	 {
+		className: "chart",  
+		initialize: (function(container, options){ container.chart = new Chart(container.getContext("2d"), options);  })
+	 },
+	 {
+		className: "anything",
+		initialize: (function(container, options){ if (options && options.initialize) { options.initialize(container)} })
+	 },
+					],
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: (window.location.search.match(/print-pdf/gi) ? printPlugins : plugins ) 
+		});
+			
+
+
+	    // Change chalkboard theme : 
+		function changeTheme(input) {
+			var config = {};
+			config.theme = input.value;
+			Reveal.getPlugin("RevealChalkboard").configure(config);
+			input.blur();
+		}
+
+		// // Handle the message inside the webview
+        // window.addEventListener('message', event => {
+
+        //     const message = event.data; // The JSON data our extension sent
+
+        //     switch (message.command) {
+        //         case 'refactor':
+        //             Reveal.toggleHelp();
+        //     }
+        // });
+
+		if (window.location.search.match(/print-pdf-now/gi)) {
+      		setTimeout(() => {
+				window.print();
+			  }, 2500);
+			
+    }
+		
+
+	</script>
+
+</body>
+
+</html>

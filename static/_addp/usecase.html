@@ -1,0 +1,1054 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>advanexus</title>
+
+	<meta name="description" content="advanexus data development and analysis platform">
+	<meta name="author" content="Milovan Tomašević">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="libs/reveal.js/4.1.3/reset.css">
+	<link rel="stylesheet" href="libs/reveal.js/4.1.3/reveal.css">
+
+	
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+	  <!-- highlight Theme -->
+  	
+	  <link rel="stylesheet" href="libs/highlight.js/11.3.1/styles/monokai.min.css">
+	
+	
+		
+	<link rel="stylesheet" href="libs/reveal.js/4.1.3/plugin/chalkboard/style.css">
+	
+	
+	
+	<link rel="stylesheet" href="libs/styles/tasklist.css">
+
+
+
+  <!-- Revealjs Theme -->
+  
+  	<link rel="stylesheet" href="libs/reveal.js/4.1.3/theme/white.css" id="theme">
+  
+  
+
+
+  <!-- Revealjs Theme -->
+  
+
+ 
+</head>
+
+<body>
+  
+    <div id="logo" style="position: fixed; top: 20px; left: 20px; z-index: 1; height:3rem;">
+        <img src="advanexus/logo-circle.png" style="height:100%"/>
+    </div>
+  
+
+
+  <div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+      
+
+
+    
+    <section>
+        <section >
+            <style scoped>
+    :root {
+      --primary-color: #0ab39c;
+      --secondary-color: white;
+      --text-color: #343541;
+    }
+    ul.medium {
+        font-size: 80%;
+    }
+
+    ul.small {
+        font-size: 60%;
+    }
+    .advanexus {
+        color: var(--primary-color);
+        font-family: 'Space Grotesk', sans-serif;
+    }
+    .reveal .slides {
+      color: var(--text-color);
+    }
+    /* ============================= */
+    /* BASE PRESENTATION TYPOGRAPHY */
+    /* ============================= */
+
+    .reveal {
+    font-size: 32px; /* osnovna veličina prezentacije */
+    }
+
+    /* ============================= */
+    /* HEADINGS */
+    /* ============================= */
+
+    .reveal .slides h1 {
+    font-size: 150%;
+    }
+
+    .reveal .slides h2 {
+    font-size: 125%;
+    }
+
+    .reveal .slides h3 {
+    font-size: 120%;
+    }
+
+    .reveal .slides h4 {
+    font-size: 85%;
+    }
+
+    /* ============================= */
+    /* BODY TEXT */
+    /* ============================= */
+
+    .reveal .slides p {
+    font-size: 85%;
+    line-height: 1.4;
+    }
+
+    .reveal .slides ul,
+    .reveal .slides ol {
+    font-size: 80%;
+    line-height: 1.4;
+    }
+
+    .reveal .slides li {
+    margin-bottom: 0.4em;
+    }
+
+    /* ============================= */
+    /* TABLES - DEFAULT */
+    /* ============================= */
+
+    .reveal table {
+    font-size: 60%;
+    border-collapse: collapse;
+    }
+
+    .reveal table th,
+    .reveal table td {
+    padding: 0.35em 0.6em;
+    line-height: 1.3;
+    }
+
+    /* ============================= */
+    /* TABLE HEADER STYLE */
+    /* ============================= */
+
+    .reveal table thead tr {
+    color: var(--primary-color);
+    font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .reveal table thead th {
+    color: var(--primary-color);
+    font-weight: 600;
+    padding: 0.4em 0.6em 0.35em;
+    border-bottom: 1px solid var(--primary-color);
+    letter-spacing: 0.02em;
+    }
+
+    
+
+    /* ============================= */
+    /* SECONDARY & SMALL TEXT */
+    /* ============================= */
+
+    .text-medium {
+    font-size: 70%;
+    }
+
+    .text-small {
+    font-size: 55%;
+    }
+
+    .text-xsmall {
+    font-size: 45%;
+    }
+
+    /* ============================= */
+    /* FOOTNOTES / CAPTIONS */
+    /* ============================= */
+
+    .reveal .slides .footnote {
+    font-size: 45%;
+    opacity: 0.7;
+    }
+
+    .reveal .slides {
+      color: var(--text-color);
+    }
+    .reveal .slides h1,
+    .reveal .slides h2,
+    .reveal .slides h3 {
+      font-family: "Space Grotesk", monospace;
+      color: var(--primary-color);
+    }
+    .reveal .slides a {
+      color: var(--primary-color);
+    }
+    .fa,
+    .fas.fa-bars,
+    .controls-arrow,
+    span {
+      color: var(--primary-color);
+    }
+    .slide-number {
+      background-color: var(--text-color) !important;
+    }
+    .slide-number-a,
+    .slide-number-delimiter,
+    .slide-number-b {
+      color: var(--secondary-color);
+    }
+    .reveal .slides p,
+    .reveal .slides li,
+    .reveal .slides div,
+    .reveal .slides span {
+        font-family: "JetBrains Mono", monospace;
+    }
+</style>
+<script src="https://cdn.lordicon.com/lordicon.js"></script>
+<link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap"
+/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap">
+<h3>One operational data layer for complex, regulated organizations</h3>
+<p><a href="https://www.advanexus.com" :target="_blank"><img src="advanexus/logo.png" alt="Logo"></a></p>
+<h4>Turn fragmented data operations into a controlled, repeatable system</h4>
+<p>Faster decisions • Fewer tools • Lower operational risk • Built-in governance</p>
+
+            </section>
+        
+            <section >
+                <h3>REALITY CHECK</h3>
+<ul>
+<li>The day-to-day reality of enterprise data operations
+<ul>
+<li>Data is spread across databases, APIs, files, and teams</li>
+<li>Excel and ad-hoc scripts quietly become production systems</li>
+<li>Even small changes require coordination across multiple roles</li>
+<li>It is hard to explain:
+<ul>
+<li>what ran</li>
+<li>why it ran</li>
+<li>and which data was actually used</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<table>
+<thead>
+<tr>
+<th>What enterprises expect</th>
+<th>What they experience instead</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Speed</td>
+<td>Manual, fragile processes</td>
+</tr>
+<tr>
+<td>Control</td>
+<td>Hidden scripts and logic</td>
+</tr>
+<tr>
+<td>Auditability</td>
+<td>Fragmented logs and context</td>
+</tr>
+<tr>
+<td>AI readiness</td>
+<td>Unreliable, inconsistent data</td>
+</tr>
+</tbody>
+</table>
+
+            </section>
+        
+            <section >
+                <h3>ADVANEXUS POSITIONING</h3>
+<ul>
+<li>Advanexus as an operational data control layer
+<ul>
+<li>Connect data from databases, APIs, and files</li>
+<li>Understand what the data represents and how it is used</li>
+<li>Move data intentionally, with full visibility</li>
+<li>Validate quality and rules as part of execution</li>
+<li>Automate repeatable, auditable operations</li>
+</ul>
+</li>
+</ul>
+<p><span class="advanexus">advanexus</span> sits <strong>between data sources and analytics / AI</strong>,<br>
+controlling how data moves, changes, and becomes usable across the organization.</p>
+
+            </section>
+        
+            <section >
+                <h4>Use case 1</h4>
+<h3>BUSINESS INSIGHT WITHOUT DATA PROJECTS</h3>
+<ul>
+<li>What the user can do immediately:
+<ul>
+<li>Connect to a database</li>
+<li>See what is inside the data
+<ul>
+<li>no pipelines</li>
+<li>no preparation</li>
+<li>no side effects</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Turn questions into answers:
+<ul>
+<li>Top products by country</li>
+<li>Head vs long-tail distribution</li>
+<li>Visualize directly, no BI setup</li>
+</ul>
+</li>
+</ul>
+<hr>
+<table>
+<thead>
+<tr>
+<th>Where this shows up in real systems</th>
+<th>Typical question it answers</th>
+<th>Why it matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Commerce &amp; payments</td>
+<td>Which products dominate revenue per region?</td>
+<td>Focus &amp; margin</td>
+</tr>
+<tr>
+<td>Risk teams</td>
+<td>Is risk concentrated or distributed?</td>
+<td>Exposure</td>
+</tr>
+<tr>
+<td>Growth teams</td>
+<td>Where is the long tail opportunity?</td>
+<td>Upside</td>
+</tr>
+<tr>
+<td>Product teams</td>
+<td>What changed after a feature rollout?</td>
+<td>Impact</td>
+</tr>
+</tbody>
+</table>
+
+            </section>
+        
+            <section >
+                <h4>Use case 2</h4>
+<h3>CONTROLLED DATA MOVEMENT ACROSS SYSTEMS</h3>
+<ul>
+<li>What the user controls:
+<ul>
+<li>Multiple sources (databases, APIs, files)</li>
+<li>One clearly defined destination</li>
+<li>Explicit flow control:
+<ul>
+<li>Reset → Execute → Verify</li>
+</ul>
+</li>
+<li>Master job defines order and dependencies</li>
+<li>Full visibility:
+<ul>
+<li>what ran</li>
+<li>what failed</li>
+<li>why it failed</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<table>
+<thead>
+<tr>
+<th>When this happens in real systems</th>
+<th>Why data must move</th>
+<th>What usually goes wrong</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Model preparation</td>
+<td>Merge transactional + behavioral data</td>
+<td>Incomplete datasets</td>
+</tr>
+<tr>
+<td>Backfills</td>
+<td>Reprocess historical periods</td>
+<td>Hidden side effects</td>
+</tr>
+<tr>
+<td>Migrations</td>
+<td>Move schemas and dependencies</td>
+<td>Broken dependencies</td>
+</tr>
+<tr>
+<td>Regulatory preparation</td>
+<td>Assemble consistent data snapshots</td>
+<td>Unclear data lineage</td>
+</tr>
+</tbody>
+</table>
+
+            </section>
+        
+            <section >
+                <h4>Use case 3</h4>
+<h3>DATA QUALITY &amp; COMPLIANCE INSIDE THE FLOW</h3>
+<ul>
+<li>What the system enforces automatically:
+<ul>
+<li>Rules are defined inside the job, not after it</li>
+<li>Rules run every time the job runs</li>
+<li>Clear ownership:
+<ul>
+<li>who is notified</li>
+<li>why</li>
+<li>in which execution context</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Example:
+<ul>
+<li>Transaction &gt; EUR 5,000</li>
+<li>Job runs automatically</li>
+<li>Alert sent to the responsible owner</li>
+</ul>
+</li>
+</ul>
+<hr>
+<table>
+<thead>
+<tr>
+<th>Where this applies in real systems</th>
+<th>Embedded rule example</th>
+<th>Why it matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AML</td>
+<td>Threshold-based alerts</td>
+<td>Regulatory safety</td>
+</tr>
+<tr>
+<td>Risk</td>
+<td>Outlier detection</td>
+<td>Exposure control</td>
+</tr>
+<tr>
+<td>Finance</td>
+<td>Consistency checks</td>
+<td>Reporting accuracy</td>
+</tr>
+<tr>
+<td>Operations</td>
+<td>Missing or late data</td>
+<td>Process reliability</td>
+</tr>
+</tbody>
+</table>
+
+            </section>
+        
+            <section >
+                <h4>Use case 4</h4>
+<h3>INSTANT AI &amp; MODEL READINESS</h3>
+<ul>
+<li>What the system guarantees:
+<ul>
+<li>Datasets are always in a known state</li>
+<li>Every run is intentional and repeatable</li>
+<li>Safe iteration:
+<ul>
+<li>Run → Reset → Rerun</li>
+</ul>
+</li>
+<li>No manual cleanup</li>
+<li>No guessing what data was used</li>
+</ul>
+</li>
+</ul>
+<hr>
+<table>
+<thead>
+<tr>
+<th>Who feels the impact immediately</th>
+<th>What changes in practice</th>
+<th>Why it matters for AI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data scientists</td>
+<td>Faster, safer experimentation</td>
+<td>Better models</td>
+</tr>
+<tr>
+<td>Engineers</td>
+<td>No cleanup or rollback scripts</td>
+<td>Stable pipelines</td>
+</tr>
+<tr>
+<td>Risk &amp; compliance teams</td>
+<td>Fully reproducible datasets</td>
+<td>Audit-ready AI</td>
+</tr>
+<tr>
+<td>Management</td>
+<td>Predictable timelines and outcomes</td>
+<td>Trust in delivery</td>
+</tr>
+</tbody>
+</table>
+
+            </section>
+        
+            <section >
+                <h4>Use case 5</h4>
+<h3>AUTOMATED DATA PACKAGING &amp; DELIVERY</h3>
+<ul>
+<li>What the system makes safe and repeatable:
+<ul>
+<li>Prepare a well-defined dataset</li>
+<li>Package it in a consistent, reproducible form</li>
+<li>Deliver it with full context to:
+<ul>
+<li>Download location</li>
+<li>Partner endpoint</li>
+<li>Internal system</li>
+</ul>
+</li>
+<li>Same process every time</li>
+<li>Same result every time</li>
+</ul>
+</li>
+</ul>
+<hr>
+<table>
+<thead>
+<tr>
+<th>Who receives the data</th>
+<th>Why it is requested</th>
+<th>What must never go wrong</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Regulators</td>
+<td>Periodic or ad-hoc reporting</td>
+<td>Incomplete evidence</td>
+</tr>
+<tr>
+<td>Partners</td>
+<td>Data sharing &amp; reconciliation</td>
+<td>Mismatched versions</td>
+</tr>
+<tr>
+<td>Auditors</td>
+<td>Evidence packages</td>
+<td>Missing context</td>
+</tr>
+<tr>
+<td>Internal teams</td>
+<td>Controlled access &amp; handovers</td>
+<td>Unclear ownership</td>
+</tr>
+</tbody>
+</table>
+
+            </section>
+        
+            <section >
+                <h4>Use case 6</h4>
+<h3>FROM FILES TO A SINGLE SOURCE OF TRUTH</h3>
+<ul>
+<li>What happens when files enter the system:
+<ul>
+<li>CSV, JSON, Excel, TXT are ingested as-is</li>
+<li>Each file becomes part of a structured, traceable dataset</li>
+<li>Files are unified by meaning, not by format</li>
+<li>Full traceability:
+<ul>
+<li>who uploaded the file</li>
+<li>when</li>
+<li>where it came from</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>One dataset, two worlds:
+<ul>
+<li>Query and analyze it like a relational database</li>
+<li>Access the original file instantly for further processing</li>
+</ul>
+</li>
+</ul>
+<hr>
+<table>
+<thead>
+<tr>
+<th>What usually lives in files</th>
+<th>What it becomes in Advanexus</th>
+<th>Why this is powerful</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Configurations, events</td>
+<td>Structured, queryable data</td>
+<td>One view, no silos</td>
+</tr>
+<tr>
+<td>Transactions</td>
+<td>Joinable business records</td>
+<td>Consistent analysis</td>
+</tr>
+<tr>
+<td>Manual inputs &amp; corrections</td>
+<td>Governed, auditable adjustments</td>
+<td>Full accountability</td>
+</tr>
+</tbody>
+</table>
+
+            </section>
+        
+            <section >
+                <h4>Use case 7</h4>
+<h3>GOVERNED PYTHON, WHERE THE DATA ALREADY LIVES</h3>
+<ul>
+<li>What changes compared to “normal” Python:
+<ul>
+<li>Python runs exactly where the data already is</li>
+<li>No file transfers, no exports, no local copies</li>
+<li>One-click access to original files and datasets</li>
+<li>Full freedom to:
+<ul>
+<li>filter</li>
+<li>segment</li>
+<li>engineer features</li>
+</ul>
+</li>
+<li>Same audit, same lineage, same execution history</li>
+</ul>
+</li>
+</ul>
+<hr>
+<table>
+<thead>
+<tr>
+<th>Who uses it daily</th>
+<th>What usually slows them down</th>
+<th>What changes here</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data scientists</td>
+<td>Moving data to notebooks</td>
+<td>Data is already there</td>
+</tr>
+<tr>
+<td>ML engineers</td>
+<td>Losing track of versions</td>
+<td>One controlled context</td>
+</tr>
+<tr>
+<td>Risk model owners</td>
+<td>Unclear training datasets</td>
+<td>Full traceability</td>
+</tr>
+<tr>
+<td>Engineering teams</td>
+<td>Parallel, undocumented scripts</td>
+<td>Governed execution</td>
+</tr>
+</tbody>
+</table>
+
+            </section>
+        
+            <section >
+                <h3>KNOWLEDGE &amp; AI AS A SIDE EFFECT</h3>
+<ul>
+<li>What the platform captures automatically:
+<ul>
+<li>What jobs exist and why they exist</li>
+<li>How data moves and transforms</li>
+<li>Who runs what, when, and with which data</li>
+<li>Full execution history and data lineage</li>
+</ul>
+</li>
+<li>Knowledge without extra work:
+<ul>
+<li>No separate documentation effort</li>
+<li>No tribal knowledge locked in people</li>
+<li>No “ask the one person who knows”</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>How AI becomes genuinely useful:
+<ul>
+<li>Explain data flows and decisions in plain language</li>
+<li>Summarize complex jobs and pipelines</li>
+<li>Help onboard new team members using real system context</li>
+<li>Reduce dependency on key individuals</li>
+</ul>
+</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <h3>LIVE DEMO</h3>
+<h4>From source → to insight → to delivery</h4>
+<hr>
+<table>
+<thead>
+<tr>
+<th>What you see</th>
+<th>What it normally requires</th>
+<th>What happens here</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Connect to data</td>
+<td>Setup, tickets, scripts</td>
+<td>One intentional action</td>
+</tr>
+<tr>
+<td>See structure</td>
+<td>Data prep, guessing</td>
+<td>Instant visibility</td>
+</tr>
+<tr>
+<td>Get insight</td>
+<td>BI setup, handoffs</td>
+<td>Direct exploration</td>
+</tr>
+<tr>
+<td>Apply rules</td>
+<td>Custom logic, rework</td>
+<td>Built-in control</td>
+</tr>
+<tr>
+<td>Deliver data</td>
+<td>Manual packaging</td>
+<td>One repeatable step</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<ul>
+<li><strong>What to notice while watching</strong>
+<ul>
+<li>No setup</li>
+<li>No hidden pipelines</li>
+<li>No unclear state</li>
+<li>No side effects</li>
+</ul>
+</li>
+</ul>
+<p><strong>Clear actions. Traceable results.</strong><br>
+<strong>Complexity doesn’t disappear — it is handled by the platform.</strong></p>
+
+            </section>
+        
+            <section >
+                <p><a href="https://www.advanexus.com" :target="_blank"><img src="advanexus/advanexus-vc.png" alt="Logo" style="" width="45%"></a></p>
+<p><a href="https://www.advanexus.com" :target="_blank"><img src="advanexus/advanexus.png" alt="Logo" style="" width="20%"></a>
+<a href="https://www.milovantomasevic.com" :target="_blank"><img src="advanexus/sign-mt.png" alt="Logo" style="" width="30%"></a></p>
+
+            </section>
+        
+
+    </section>
+    
+
+
+    </div>
+
+
+  </div>
+
+  	
+	<script src="libs/reveal.js/4.1.3/reveal.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/zoom/zoom.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/notes/notes.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/search/search.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/markdown/markdown.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/highlight/highlight.js"></script>
+	
+	<script src="libs/reveal.js/4.1.3/plugin/math/math.js"></script>
+
+	<script src="libs/reveal.js/4.1.3/plugin/fullscreen/plugin.js"></script>
+  
+  	<script src="libs/reveal.js/4.1.3/plugin/animate/plugin.js"></script>
+  	<script src="libs/reveal.js/4.1.3/plugin/animate/svg.min.js"></script>
+  
+  	<script src="libs/reveal.js/4.1.3/plugin/anything/plugin.js"></script>
+	  <script src="libs/reveal.js/4.1.3/plugin/anything/Chart.min.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/anything/d3/d3.v3.min.js"></script>				
+	<script src="libs/reveal.js/4.1.3/plugin/anything/d3.patch.js"></script>			
+	<script src="libs/reveal.js/4.1.3/plugin/anything/d3/queue.v1.min.js"></script>		
+	<script src="libs/reveal.js/4.1.3/plugin/anything/d3/topojson.v1.min.js"></script>		
+	<script src="libs/reveal.js/4.1.3/plugin/anything/function-plot.js"></script>
+
+ <!--	<script src="libs/reveal.js/4.1.3/plugin/audio-slideshow/plugin.js"></script>  -->
+<!--	<script src="libs/reveal.js/4.1.3/plugin/audio-slideshow/recorder.js"></script>-->
+<!--	<script src="libs/reveal.js/4.1.3/plugin/audio-slideshow/RecordRTC.js"></script>-->
+
+<script src="libs/reveal.js/4.1.3/plugin/chalkboard/plugin.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/customcontrols/plugin.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/embed-tweet/plugin.js"></script>
+
+	<script src="libs/reveal.js/4.1.3/plugin/chart/chart.min.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/chart/plugin.js"></script>
+
+  <script>
+
+		const printPlugins = [
+			RevealNotes, 
+			RevealHighlight,
+			RevealMath,
+			RevealAnimate,
+			RevealChalkboard, 
+			RevealEmbedTweet,
+			RevealChart,
+		];
+
+		const plugins =  [...printPlugins,
+		RevealZoom, 
+		RevealSearch, 
+				RevealMarkdown, 
+				
+				RevealFullscreen,
+				RevealAnything,
+				//RevealAudioSlideshow,
+				//RevealAudioRecorder,
+				
+				// poll
+				// question
+				// seminar
+				 ]
+
+
+		// Also available as an ES module, see:
+		// https://revealjs.com/initialization/
+		Reveal.initialize({
+			controls: true,
+			controlsTutorial: true,
+			controlsLayout: 'bottom-right',
+			controlsBackArrows: 'faded',
+			progress: true,
+			slideNumber: true,
+			//#showSlideNumber "all" "print" "speaker"
+			hash: true,//#  hash: false,
+			//# respondToHashChanges: true,
+			//# history: false,
+			keyboard: true,
+			//#keyboardCondition: null,
+			overview: true,
+			center: true,
+			touch: true,
+			loop: false,
+			rtl: false,
+			//#navigationMode: 'default', linear grid
+			shuffle: false,
+			fragments: true,
+			fragmentInURL: false,
+			embedded: false,
+			help: true,
+			//#pause: true
+			showNotes: false,
+			autoPlayMedia: false, // TODO fix this to a nullable value
+			//#preloadIframes: null. true false
+			//#autoAnimate: true
+			//#autoAnimateMatcher: null,
+			//#autoAnimateEasing: 'ease',
+			//autoAnimateDuration: 1.0,
+			//#autoAnimateUnmatched: true
+			//#autoAnimateStyles: []
+			autoSlide: 0, // TODO fix this to a falseable value
+			autoSlideStoppable: true,
+			autoSlideMethod: '0',
+			defaultTiming: 120,
+			mouseWheel: false,
+			//#previewLinks: false
+			//#postMessage: true,  // TODO : this can cause issues with the vscode api ???
+			//#postMessageEvents: false,
+			//#focusBodyOnPageVisibilityChange: true,
+			transition: 'slide',
+			transitionSpeed: 'default',
+			backgroundTransition: 'convex',
+			//#pdfMaxPagesPerSlide: Number.POSITIVE_INFINITY,
+			//#pdfSeparateFragments: true,
+			//#pdfPageHeightOffset: -1,
+			viewDistance: 3,
+			//#mobileViewDistance: 2,
+			display: 'block',
+			//#hideInactiveCursor: true,
+			//#hideCursorTime: 5000
+
+			// Parallax Background
+			parallaxBackgroundImage: '',
+			parallaxBackgroundSize: '',
+			parallaxBackgroundHorizontal: 0,
+			parallaxBackgroundVertical: 0,
+			
+			//Presentation Size
+			width: 960,
+			height: 700,
+			margin: 0.04,
+			minScale: 0.2,
+			maxScale: 2,
+			disableLayout: false,
+
+			audio: {
+				prefix: 'audio/', 	// audio files are stored in the "audio" folder
+				suffix: '.ogg',		// audio files have the ".ogg" ending
+				textToSpeechURL: null,  // the URL to the text to speech converter
+				defaultNotes: false, 	// use slide notes as default for the text to speech converter
+				defaultText: false, 	// use slide text as default for the text to speech converter
+				advance: 0, 		// advance to next slide after given time in milliseconds after audio has played, use negative value to not advance
+				autoplay: false,	// automatically start slideshow
+				defaultDuration: 5,	// default duration in seconds if no audio is available
+				defaultAudios: true,	// try to play audios with names such as audio/1.2.ogg
+				playerOpacity: 0.05,	// opacity value of audio player if unfocused
+				playerStyle: 'position: fixed; bottom: 4px; left: 25%; width: 50%; height:75px; z-index: 33;', // style used for container of audio controls
+				startAtFragment: false, // when moving to a slide, start at the current fragment or at the start of the slide
+			},
+			
+			chalkboard: { // font-awesome.min.css must be available
+					//src: "chalkboard/chalkboard.json",
+					storage: "chalkboard-demo",
+				},
+			
+			customcontrols: {
+					controls: [
+      						{
+						  id: 'toggle-overview',
+						  title: 'Toggle overview (O)',
+						  icon: '<i class="fa fa-th"></i>',
+						  action: 'Reveal.toggleOverview();'
+						}
+						,
+						{ icon: '<i class="fa fa-pen-square"></i>',
+						  title: 'Toggle chalkboard (B)',
+						  action: 'RevealChalkboard.toggleChalkboard();'
+						},
+						{ icon: '<i class="fa fa-pen"></i>',
+						  title: 'Toggle notes canvas (C)',
+						  action: 'RevealChalkboard.toggleNotesCanvas();'
+						}
+				]
+			},
+			chart: {
+					defaults: { 
+						color: 'lightgray', // color of labels
+						scale: { 
+							beginAtZero: true, 
+							ticks: { stepSize: 1 },
+							grid: { color: "lightgray" } , // color of grid lines
+						},
+					},
+					line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] }, 
+					bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
+					pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+					radar: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
+			},
+			math: {
+				mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+				config: 'TeX-AMS_HTML-full',
+				// pass other options into `MathJax.Hub.Config()`
+				TeX: { Macros: { RR: "{\\bf R}" } }
+				},
+				anything: [ 
+				{
+		className: "plot",
+		defaults: {width:500, height: 500, grid:true},
+		initialize: (function(container, options){ options.target = "#"+container.id; functionPlot(options) })
+	 },
+	 {
+		className: "chart",  
+		initialize: (function(container, options){ container.chart = new Chart(container.getContext("2d"), options);  })
+	 },
+	 {
+		className: "anything",
+		initialize: (function(container, options){ if (options && options.initialize) { options.initialize(container)} })
+	 },
+					],
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: (window.location.search.match(/print-pdf/gi) ? printPlugins : plugins ) 
+		});
+			
+
+
+	    // Change chalkboard theme : 
+		function changeTheme(input) {
+			var config = {};
+			config.theme = input.value;
+			Reveal.getPlugin("RevealChalkboard").configure(config);
+			input.blur();
+		}
+
+		// // Handle the message inside the webview
+        // window.addEventListener('message', event => {
+
+        //     const message = event.data; // The JSON data our extension sent
+
+        //     switch (message.command) {
+        //         case 'refactor':
+        //             Reveal.toggleHelp();
+        //     }
+        // });
+
+		if (window.location.search.match(/print-pdf-now/gi)) {
+      		setTimeout(() => {
+				window.print();
+			  }, 2500);
+			
+    }
+		
+
+	</script>
+
+</body>
+
+</html>

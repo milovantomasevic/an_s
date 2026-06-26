@@ -1,0 +1,7 @@
+
+    User-agent: *
+    Disallow: /admin
+    Disallow: /private
+
+    Sitemap: https://www.advanexus.com/sitemap.xml
+    

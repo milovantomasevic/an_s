@@ -1,0 +1,1401 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>advanexus</title>
+
+	<meta name="description" content="advanexus: sloj kontrole i dokaza za regulisane tokove podataka">
+	<meta name="author" content="Milovan Tomašević">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="libs/reveal.js/4.1.3/reset.css">
+	<link rel="stylesheet" href="libs/reveal.js/4.1.3/reveal.css">
+
+	
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+	  <!-- highlight Theme -->
+  	
+	  <link rel="stylesheet" href="libs/highlight.js/11.3.1/styles/monokai.min.css">
+	
+	
+		
+	<link rel="stylesheet" href="libs/reveal.js/4.1.3/plugin/chalkboard/style.css">
+	
+	
+	
+	<link rel="stylesheet" href="libs/styles/tasklist.css">
+
+
+
+  <!-- Revealjs Theme -->
+  
+  	<link rel="stylesheet" href="libs/reveal.js/4.1.3/theme/white.css" id="theme">
+  
+  
+
+
+  <!-- Revealjs Theme -->
+  
+
+ 
+</head>
+
+<body>
+  
+    <div id="logo" style="position: fixed; top: 20px; left: 20px; z-index: 1; height:3rem;">
+        <img src="advanexus/logo-circle.png" style="height:100%"/>
+    </div>
+  
+
+
+  <div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+      
+
+
+    
+        <section data-transition="convex">
+            
+            <style scoped>
+:root {
+  --primary-color: #0ab39c;
+  --ink: #202431;
+  --muted: #65717f;
+  --line: #d9e2ea;
+  --soft: #f5fbfa;
+  --soft-2: #eef8f6;
+  --card: #ffffff;
+  --warn: #f4a261;
+  --secondary-color: white;
+  --text-color: #343541;
+}
+
+.reveal {
+  font-size: 30px;
+}
+
+.reveal .slides {
+  color: var(--ink);
+}
+
+.reveal .slides section {
+  text-align: left;
+}
+
+.reveal .slides h1,
+.reveal .slides h2,
+.reveal .slides h3 {
+  font-family: "Space Grotesk", sans-serif;
+  color: var(--ink);
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  margin: 0;
+}
+
+.reveal .slides h1 {
+  font-size: 2.25em;
+}
+
+.reveal .slides h2 {
+  font-size: 1.75em;
+}
+
+.reveal .slides h3 {
+  font-size: 1.25em;
+}
+
+.reveal .slides p,
+.reveal .slides div,
+.reveal .slides span,
+.reveal .slides li {
+  font-family: "Inter", "JetBrains Mono", sans-serif;
+}
+
+.advanexus {
+  color: var(--primary-color);
+}
+
+.slide {
+  width: 100%;
+  min-height: 650px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.kicker {
+  color: var(--primary-color);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.56em;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.lead {
+  color: var(--muted);
+  font-size: 0.78em;
+  line-height: 1.35;
+  max-width: 920px;
+  margin-top: 18px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 34px;
+  align-items: center;
+  width: 100%;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  width: 100%;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 26px;
+  box-shadow: 0 18px 50px rgba(21, 41, 53, 0.08);
+}
+
+.card.soft {
+  background: linear-gradient(180deg, var(--soft), #ffffff);
+}
+
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.pill {
+  border: 1px solid rgba(10, 179, 156, 0.35);
+  background: var(--soft);
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 10px 15px;
+  font-size: 0.50em;
+  font-weight: 800;
+}
+
+.big-line {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.12em;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.sub-line {
+  color: var(--muted);
+  font-size: 0.56em;
+  line-height: 1.35;
+  margin-top: 10px;
+}
+
+.logo-mark {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 18px;
+}
+
+.nexus-visual {
+  height: 370px;
+  position: relative;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at center, rgba(10,179,156,0.20), transparent 34%),
+    linear-gradient(180deg, #f7fffd, #ffffff);
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.nexus-core {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 128px;
+  height: 128px;
+  transform: translate(-50%, -50%);
+  border-radius: 28px;
+  background: var(--ink);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 2.0em;
+  font-weight: 900;
+  box-shadow: 0 0 0 12px rgba(10,179,156,0.12), 0 22px 55px rgba(10,179,156,0.28);
+}
+
+.node {
+  position: absolute;
+  width: 152px;
+  padding: 14px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: white;
+  text-align: center;
+  font-size: 0.46em;
+  font-weight: 900;
+  color: var(--ink);
+  box-shadow: 0 12px 30px rgba(21, 41, 53, 0.08);
+}
+
+.node.n1 { left: 30px; top: 46px; }
+.node.n2 { left: 30px; bottom: 46px; }
+.node.n3 { right: 30px; top: 46px; }
+.node.n4 { right: 30px; bottom: 46px; }
+
+.connector {
+  position: absolute;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+  opacity: 0.8;
+}
+
+.c1 { left: 172px; top: 91px; width: 210px; transform: rotate(14deg); }
+.c2 { left: 170px; bottom: 100px; width: 212px; transform: rotate(-14deg); }
+.c3 { right: 172px; top: 91px; width: 210px; transform: rotate(-14deg); }
+.c4 { right: 170px; bottom: 100px; width: 212px; transform: rotate(14deg); }
+
+.problem-flow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 26px;
+}
+
+.flow-box {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 20px 16px;
+  background: white;
+  min-height: 130px;
+}
+
+.flow-box strong {
+  display: block;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.78em;
+  margin-bottom: 8px;
+}
+
+.flow-box span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.46em;
+  line-height: 1.35;
+}
+
+.proof-gap {
+  margin-top: 26px;
+  border-radius: 24px;
+  padding: 22px 26px;
+  background: linear-gradient(90deg, #fff7ed, #ffffff);
+  border: 1px solid #f5d4aa;
+}
+
+.proof-gap .big-line {
+  color: #9a5a05;
+}
+
+.layer-stack {
+  display: grid;
+  gap: 14px;
+  margin-top: 26px;
+}
+
+.layer {
+  border-radius: 22px;
+  padding: 20px 24px;
+  border: 1px solid var(--line);
+  background: white;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 18px;
+  align-items: center;
+}
+
+.layer.core {
+  border: 2px solid var(--primary-color);
+  background: linear-gradient(90deg, var(--soft), #ffffff);
+  box-shadow: 0 14px 40px rgba(10,179,156,0.15);
+}
+
+.layer-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.72em;
+  font-weight: 900;
+}
+
+.layer-text {
+  font-size: 0.49em;
+  color: var(--muted);
+  line-height: 1.35;
+}
+.focus-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 26px;
+}
+
+.focus-card {
+  border-radius: 24px;
+  padding: 22px 18px;
+  background: white;
+  border: 1px solid var(--line);
+  min-height: 188px;
+  box-shadow: 0 16px 45px rgba(21, 41, 53, 0.07);
+}
+
+.focus-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  background: var(--ink);
+  border: 1px solid rgba(10,179,156,0.38);
+  box-shadow: 0 0 0 6px rgba(10,179,156,0.08), 0 12px 28px rgba(10,179,156,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.focus-icon img {
+  width: 112%;
+  height: 112%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.08);
+}
+
+.focus-card strong {
+  display: block;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.64em;
+  line-height: 1.08;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+
+.focus-text {
+  color: var(--muted);
+  font-size: 0.40em;
+  line-height: 1.22;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.market-strip {
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.metric {
+  border-radius: 24px;
+  padding: 24px;
+  background: var(--ink);
+  color: white;
+}
+
+.metric .num {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.65em;
+  font-weight: 900;
+  color: var(--primary-color);
+  line-height: 1;
+}
+
+.metric .label {
+  font-size: 0.50em;
+  line-height: 1.35;
+  margin-top: 10px;
+  color: rgba(255,255,255,0.84);
+}
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  align-items: stretch;
+  margin-top: 34px;
+}
+
+.step {
+  position: relative;
+  border-radius: 22px;
+  padding: 22px 14px;
+  background: white;
+  border: 1px solid var(--line);
+  min-height: 142px;
+  box-shadow: 0 16px 40px rgba(21, 41, 53, 0.06);
+}
+
+.step::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -10px;
+  width: 10px;
+  height: 2px;
+  background: var(--primary-color);
+}
+
+.step:last-child::after {
+  display: none;
+}
+
+.step .index {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.42em;
+  color: var(--primary-color);
+  font-weight: 900;
+}
+
+.step strong {
+  display: block;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.56em;
+  line-height: 1.1;
+  margin-top: 12px;
+}
+
+.step span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.38em;
+  line-height: 1.3;
+  margin-top: 8px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.experience-line {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.stat-card {
+  border-radius: 22px;
+  padding: 24px 16px;
+  background: var(--soft);
+  border: 1px solid rgba(10,179,156,0.25);
+  text-align: center;
+}
+
+.stat-card strong {
+  display: block;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.18em;
+  color: var(--primary-color);
+}
+
+.stat-card span {
+  display: block;
+  font-size: 0.42em;
+  color: var(--muted);
+  margin-top: 6px;
+  line-height: 1.2;
+}
+
+.ask-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.ask-item {
+  border-radius: 22px;
+  padding: 20px 22px;
+  background: white;
+  border: 1px solid var(--line);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.68em;
+  font-weight: 900;
+}
+
+.footnote {
+  margin-top: 12px;
+  font-size: 0.36em;
+  color: var(--muted);
+}
+
+.slide-number {
+  background-color: var(--ink) !important;
+}
+
+.slide-number-a,
+.slide-number-delimiter,
+.slide-number-b {
+  color: white;
+}
+
+.fa, .fas.fa-bars, .controls-arrow, span { color: var(--primary-color); }
+.slide-number { background-color: var(--text-color) !important; }
+.slide-number-a, .slide-number-delimiter, .slide-number-b { color: var(--secondary-color); }
+.small { font-size: 60%; }
+
+.logo-core {
+  background: #ffffff;
+  padding: 0;
+  overflow: hidden;
+}
+
+.logo-core img {
+  width: 118%;
+  height: 118%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.12);
+}
+
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800;900&display=swap"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&display=swap"/>
+<script src="https://cdn.lordicon.com/lordicon.js"></script>
+<script>
+(function () {
+  const FRAGMENT_DELAY = 700;
+  const FIRST_SLIDE_DELAY = 900;
+  const BACK_FRAGMENT_INDEX = 999;
+  const BACK_CONTROL_LOCK_MS = 450;
+
+  let timer = null;
+  let pausedBecauseBack = false;
+  let lastH = 0;
+  let lastV = 0;
+  let started = false;
+
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let lastBackControlAt = 0;
+
+  function hasReveal() {
+    return typeof window.Reveal !== "undefined"
+      && typeof Reveal.availableFragments === "function"
+      && typeof Reveal.nextFragment === "function"
+      && typeof Reveal.getIndices === "function"
+      && typeof Reveal.slide === "function";
+  }
+
+  function clearAutoTimer() {
+    if (timer) {
+      clearTimeout(timer);
+      timer = null;
+    }
+  }
+
+  function scheduleNextFragment(delay) {
+    clearAutoTimer();
+
+    if (!hasReveal()) return;
+    if (pausedBecauseBack) return;
+
+    const available = Reveal.availableFragments();
+
+    if (available && available.next) {
+      timer = setTimeout(function () {
+        if (!hasReveal()) return;
+        if (pausedBecauseBack) return;
+
+        const stillAvailable = Reveal.availableFragments();
+
+        if (stillAvailable && stillAvailable.next) {
+          Reveal.nextFragment();
+        }
+      }, delay);
+    }
+  }
+
+  function goToPreviousSlideComplete() {
+    if (!hasReveal()) return;
+
+    clearAutoTimer();
+    pausedBecauseBack = true;
+
+    const indices = Reveal.getIndices();
+    const currentH = indices.h || 0;
+    const currentV = indices.v || 0;
+
+    if (currentV > 0) {
+      Reveal.slide(currentH, currentV - 1, BACK_FRAGMENT_INDEX);
+    } else if (currentH > 0) {
+      Reveal.slide(currentH - 1, 0, BACK_FRAGMENT_INDEX);
+    }
+  }
+
+  function onSlideChanged(event) {
+    if (!hasReveal()) return;
+
+    clearAutoTimer();
+
+    const newH = event.indexh || 0;
+    const newV = event.indexv || 0;
+
+    const goingForward =
+      newH > lastH ||
+      (newH === lastH && newV > lastV);
+
+    lastH = newH;
+    lastV = newV;
+
+    if (goingForward) {
+      pausedBecauseBack = false;
+      scheduleNextFragment(FIRST_SLIDE_DELAY);
+    } else {
+      pausedBecauseBack = true;
+    }
+  }
+
+  function onFragmentShown() {
+    if (pausedBecauseBack) return;
+    scheduleNextFragment(FRAGMENT_DELAY);
+  }
+
+  function onFragmentHidden() {
+    clearAutoTimer();
+    pausedBecauseBack = true;
+  }
+
+  function getEventElement(event) {
+    let target = event.target;
+
+    if (!target) return null;
+
+    if (target.nodeType === 3) {
+      target = target.parentElement;
+    }
+
+    if (!target || typeof target.closest !== "function") {
+      return null;
+    }
+
+    return target;
+  }
+
+  function isBackControlTarget(event) {
+    const target = getEventElement(event);
+
+    if (!target) return false;
+
+    const controls = target.closest(".controls");
+    if (!controls) return false;
+
+    const directBackButton = target.closest(".navigate-left, .navigate-up");
+
+    if (directBackButton && controls.contains(directBackButton)) {
+      return true;
+    }
+
+    const controlsArrow = target.closest(".controls-arrow");
+
+    if (!controlsArrow || !controls.contains(controlsArrow)) {
+      return false;
+    }
+
+    const button = controlsArrow.closest("button, a, .navigate-left, .navigate-up");
+
+    if (!button) {
+      return false;
+    }
+
+    if (
+      button.classList.contains("navigate-left") ||
+      button.classList.contains("navigate-up")
+    ) {
+      return true;
+    }
+
+    const ariaLabel = (button.getAttribute("aria-label") || "").toLowerCase();
+    const title = (button.getAttribute("title") || "").toLowerCase();
+
+    return ariaLabel.includes("previous") ||
+      ariaLabel.includes("left") ||
+      ariaLabel.includes("up") ||
+      title.includes("previous") ||
+      title.includes("left") ||
+      title.includes("up");
+  }
+
+  function stopEvent(event) {
+    if (typeof event.preventDefault === "function") {
+      event.preventDefault();
+    }
+
+    if (typeof event.stopPropagation === "function") {
+      event.stopPropagation();
+    }
+
+    if (typeof event.stopImmediatePropagation === "function") {
+      event.stopImmediatePropagation();
+    }
+  }
+
+  function triggerPreviousSlideComplete(event) {
+    stopEvent(event);
+
+    const now = Date.now();
+
+    if (now - lastBackControlAt < BACK_CONTROL_LOCK_MS) {
+      return;
+    }
+
+    lastBackControlAt = now;
+    goToPreviousSlideComplete();
+  }
+
+  function interceptBackNavigation(event) {
+    const backKeys = [
+      "ArrowLeft",
+      "ArrowUp",
+      "PageUp",
+      "Backspace"
+    ];
+
+    if (!backKeys.includes(event.key)) return;
+
+    triggerPreviousSlideComplete(event);
+  }
+
+  function interceptBackControls(event) {
+    if (!isBackControlTarget(event)) return;
+
+    triggerPreviousSlideComplete(event);
+  }
+
+  function onTouchStart(event) {
+    if (!event.touches || event.touches.length !== 1) return;
+
+    touchStartX = event.touches[0].clientX;
+    touchStartY = event.touches[0].clientY;
+  }
+
+  function onTouchEnd(event) {
+    if (!event.changedTouches || event.changedTouches.length !== 1) return;
+
+    const touchEndX = event.changedTouches[0].clientX;
+    const touchEndY = event.changedTouches[0].clientY;
+
+    const deltaX = touchEndX - touchStartX;
+    const deltaY = touchEndY - touchStartY;
+
+    const isHorizontalSwipe = Math.abs(deltaX) > Math.abs(deltaY);
+    const isBackSwipe = deltaX > 60;
+
+    if (isHorizontalSwipe && isBackSwipe) {
+      triggerPreviousSlideComplete(event);
+    }
+  }
+
+  function start() {
+    if (started) return;
+
+    if (!hasReveal()) {
+      setTimeout(start, 100);
+      return;
+    }
+
+    started = true;
+
+    const indices = Reveal.getIndices();
+    lastH = indices.h || 0;
+    lastV = indices.v || 0;
+
+    Reveal.on("slidechanged", onSlideChanged);
+    Reveal.on("fragmentshown", onFragmentShown);
+    Reveal.on("fragmenthidden", onFragmentHidden);
+
+    document.addEventListener("keydown", interceptBackNavigation, true);
+
+    document.addEventListener("pointerdown", interceptBackControls, true);
+    document.addEventListener("mousedown", interceptBackControls, true);
+    document.addEventListener("click", interceptBackControls, true);
+
+    document.addEventListener("touchstart", interceptBackControls, {
+      capture: true,
+      passive: false
+    });
+
+    document.addEventListener("touchstart", onTouchStart, {
+      capture: true,
+      passive: false
+    });
+
+    document.addEventListener("touchend", onTouchEnd, {
+      capture: true,
+      passive: false
+    });
+
+    pausedBecauseBack = false;
+
+    scheduleNextFragment(FIRST_SLIDE_DELAY);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", start);
+  } else {
+    start();
+  }
+})();
+</script>
+<!-- .slide: data-transition="convex" -->
+<div class="slide">
+  <div class="grid-2">
+    <div>
+      <div class="kicker">advance + nexus</div>
+      <a href="https://www.advanexus.com" target="_blank"><img src="advanexus/logo.png" alt="Logo"></a>
+      <p class="lead">Napredni sloj koji povezuje sisteme, timove i podatke, da bi kritični tokovi podataka bili kontrolisani, ponovljivi i dokazivi.</p>
+      <div class="pill-row">
+        <span class="pill">B2B</span>
+        <span class="pill">Banke</span>
+        <span class="pill">Regulisane kompanije</span>
+        <span class="pill">Sloj kontrole i dokaza</span>
+        <span class="pill">SaaS</span>
+      </div>
+    </div>
+    <div class="nexus-visual">
+      <div class="connector c1"></div>
+      <div class="connector c2"></div>
+      <div class="connector c3"></div>
+      <div class="connector c4"></div>
+      <div class="node n1 fragment fade-up">Bankarski sistemi</div>
+      <div class="node n2 fragment fade-up">Skladište podataka</div>
+      <div class="node n3 fragment fade-up">AML i usklađenost</div>
+      <div class="node n4 fragment fade-up">AI i izveštavanje</div>
+      <div class="nexus-core logo-core">
+        <img src="advanexus/advanexus_dark_logo.png" alt="advanexus">
+      </div>
+    </div>
+  </div>
+<p><lord-icon src="https://cdn.lordicon.com/mrikdaqa.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:100px;height:100px"></lord-icon>
+<lord-icon src="https://cdn.lordicon.com/fqrjldna.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:100px;height:100px"></lord-icon>
+<lord-icon src="https://cdn.lordicon.com/pwdeppfh.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:100px;height:100px"></lord-icon></p>
+</div>
+<small><a href="mailto:info@advanexus.com" style="color: var(--primary-color);">info@advanexus.com</a></small>
+            </section>
+    
+
+
+
+    
+        <section data-transition="convex">
+            
+            <!-- .slide: data-transition="convex" -->
+<div class="slide">
+  <div class="kicker">Problem koji raste sa AI</div>
+  <h2>Podaci se izvršavaju. Dokaz se traži kasnije.</h2>
+  <p class="lead">U regulisanim kompanijama tokovi podataka sve više prolaze kroz odvojene sisteme, timove i ručne kontrole.</p>
+  <div class="problem-flow">
+    <div class="flow-box fragment fade-up">
+      <strong>Sistemi</strong>
+      <span>Core, DWH, cloud, reporting, AML i interni alati.</span>
+    </div>
+    <div class="flow-box fragment fade-up">
+      <strong>Timovi</strong>
+      <span>IT, data, risk, compliance, audit i business.</span>
+    </div>
+    <div class="flow-box fragment fade-up">
+      <strong>Ručni trag</strong>
+      <span>Excel, email, fajlovi, ad hoc provere i lokalni dokazi.</span>
+    </div>
+    <div class="flow-box fragment fade-up">
+      <strong>Incident</strong>
+      <span>Kada nastane problem, ceo tok mora ponovo da se sastavlja.</span>
+    </div>
+  </div>
+  <div class="proof-gap fragment fade-up">
+    <div class="big-line">Glavni problem nije samo izvršavanje. Glavni problem je dokaz.</div>
+    <div class="sub-line">Šta se desilo, po kojim pravilima, ko je odobrio i koji dokaz postoji?</div>
+  </div>
+</div>
+            </section>
+    
+
+
+
+    
+        <section data-transition="convex">
+            
+            <!-- .slide: data-transition="convex" -->
+<div class="slide">
+  <div class="kicker">Rešenje</div>
+  <h2>Sloj koji danas nedostaje</h2>
+  <p class="lead">advanexus ne zamenjuje postojeće platforme. On sedi iznad njih i uvodi kontrolu nad izvršavanjem, pravilima, odgovornošću i dokazima.</p>
+  <div class="layer-stack">
+    <div class="layer fragment fade-up">
+      <div class="layer-title">Poslovanje, revizija, usklađenost i veštačka inteligencija</div>
+      <div class="layer-text">Korisnicima nije dovoljan samo krajnji rezultat. Potrebni su im objašnjenje, odgovornost i dokaz.</div>
+    </div>
+    <div class="layer core fragment fade-up">
+      <div class="layer-title"><span class="advanexus">advanexus</span> sloj kontrole</div>
+      <div class="layer-text">Kontrolisano izvršenje, pravila, odobrenja, odgovornost, sledljivost i dokaz po svakom izvršenju.</div>
+    </div>
+    <div class="layer fragment fade-up">
+      <div class="layer-title">Postojeći sistemi i platforme za podatke</div>
+      <div class="layer-text">AWS, Snowflake, Databricks, Airflow, skladišta podataka, alati za obradu tokova, interni sistemi i regulativne aplikacije.</div>
+    </div>
+  </div>
+</div>
+            </section>
+    
+
+
+
+    
+        <section data-transition="convex">
+            
+            <!-- .slide: data-transition="convex" -->
+<div class="slide">
+  <div class="kicker">Prvi fokus</div>
+  <h2>Tamo gde greška najviše košta</h2>
+  <p class="lead">Ulazimo kroz jasno ograničene scenarije visoke vrednosti, a ne kroz zamenu cele enterprise platforme.</p>
+  <div class="focus-grid">
+    <div class="focus-card fragment fade-up">
+      <div class="focus-icon">
+        <img src="advanexus/advanexus_dark_green_logo.png" alt="advanexus">
+      </div>
+      <strong>AML</strong>
+      <div class="focus-text">Kontrolisana isporuka podataka za nadzor, analizu i regulatorni dokaz.</div>
+    </div>
+    <div class="focus-card fragment fade-up">
+      <div class="focus-icon">
+        <img src="advanexus/advanexus_dark_green_logo.png" alt="advanexus">
+      </div>
+      <strong>Izveštavanje za usklađenost</strong>
+      <div class="focus-text">Izveštaji koji moraju biti ponovljivi, sledljivi i spremni za reviziju.</div>
+    </div>
+    <div class="focus-card fragment fade-up">
+      <div class="focus-icon">
+        <img src="advanexus/advanexus_dark_green_logo.png" alt="advanexus">
+      </div>
+      <strong>Usklađivanja podataka</strong>
+      <div class="focus-text">Kritični tokovi kod kojih greška direktno utiče na poslovanje.</div>
+    </div>
+    <div class="focus-card fragment fade-up">
+      <div class="focus-icon">
+        <img src="advanexus/advanexus_dark_green_logo.png" alt="advanexus">
+      </div>
+      <strong>Kontrolisane predaje podataka</strong>
+      <div class="focus-text">Jasno ko isporučuje podatke, kome, kada i sa kojim dokazom.</div>
+    </div>
+  </div>
+  <div class="market-strip">
+    <div class="metric fragment fade-up">
+      <div class="num">3.909</div>
+      <div class="label">manjih i srednjih banaka u SAD kao jasan ulazni segment za fokusiranu B2B prodaju.</div>
+    </div>
+    <div class="metric fragment fade-up">
+      <div class="num">EU</div>
+      <div class="label">regulisane banke, fintech i osiguravajuća društva sa visokim zahtevima za dokazivost.</div>
+    </div>
+  </div>
+  <div class="footnote fragment fade-in">Izvor za SAD segment: FDIC Quarterly Banking Profile, Q4 2025.</div>
+</div>
+            </section>
+    
+
+
+
+    
+        <section data-transition="convex">
+            
+            <!-- .slide: data-transition="convex" -->
+<div class="slide">
+  <div class="kicker">Gde smo sada</div>
+  <h2>Izgrađeno disciplinovano. Spremno za skaliranje.</h2>
+  <p class="lead">Dosadašnji kapital je doveo proizvod do funkcionalnog demo rešenja. Sledeća faza je produkcija, plaćeni piloti i godišnja pretplata.</p>
+  <div class="timeline">
+    <div class="step fragment fade-up">
+      <div class="index">01</div>
+      <strong>Kapital osnivača</strong>
+      <span>Početna izgradnja proizvoda i validacija problema.</span>
+    </div>
+    <div class="step fragment fade-up">
+      <div class="index">02</div>
+      <strong>Rana anđel podrška</strong>
+      <span>Rani kapital i podrška za razvoj prve stabilne osnove.</span>
+    </div>
+    <div class="step fragment fade-up">
+      <div class="index">03</div>
+      <strong>Funkcionalni demo</strong>
+      <span>Proizvod se danas može prikazati kroz realan demo tok.</span>
+    </div>
+    <div class="step fragment fade-up">
+      <div class="index">04</div>
+      <strong>Skaliranje za produkciju</strong>
+      <span>Put sa AWS partnerom i jačanje za korporativno okruženje.</span>
+    </div>
+    <div class="step fragment fade-up">
+      <div class="index">05</div>
+      <strong>Plaćeni piloti</strong>
+      <span>Ograničen opseg, jasna vrednost i manji ulazni rizik.</span>
+    </div>
+    <div class="step fragment fade-up">
+      <div class="index">06</div>
+      <strong>Godišnja pretplata</strong>
+      <span>Ponovljiv prihod i širenje na više kritičnih tokova.</span>
+    </div>
+  </div>
+</div>
+            </section>
+    
+
+
+
+    
+        <section data-transition="convex">
+            
+            <!-- .slide: data-transition="convex" -->
+<div class="slide">
+  <div class="kicker">Tim i sledeći korak</div>
+  <h2>Iskustvo iz regulisanih sistema</h2>
+  <p class="lead">Tim kombinuje bankarstvo, fintech, veštačku inteligenciju, infrastrukturu u oblaku i arhitekturu velikih sistema. Problem je nastao iz prakse, ne iz teorije.</p>
+  <div class="team-grid">
+    <div class="card soft fragment fade-up">
+      <div class="big-line">Tim za kontrolisano izvršavanje</div>
+      <div class="pill-row">
+        <span class="pill">Bankarstvo</span>
+        <span class="pill">Fintech</span>
+        <span class="pill">Veštačka inteligencija</span>
+        <span class="pill">Oblak</span>
+        <span class="pill">Arhitektura velikih sistema</span>
+        <span class="pill">SaaS</span>
+      </div>
+      <div class="experience-line">
+        <div class="stat-card">
+          <strong>9</strong>
+          <span>banaka</span>
+        </div>
+        <div class="stat-card">
+          <strong>6</strong>
+          <span>država</span>
+        </div>
+        <div class="stat-card">
+          <strong>2 + 3</strong>
+          <span>doktorata i doktoranda</span>
+        </div>
+      </div>
+    </div>
+    <div class="card fragment fade-up">
+      <div class="big-line">Tražimo sledeću fazu rasta</div>
+      <div class="ask-list">
+        <div class="ask-item">Pilot klijente</div>
+        <div class="ask-item">Strateške partnere</div>
+        <div class="ask-item">Investitore</div>
+      </div>
+    </div>
+  </div>
+</div>
+            </section>
+    
+
+
+
+    
+        <section data-transition="convex">
+            
+            <!-- .slide: data-transition="convex" -->
+<div class="slide">
+  <div style="text-align:center; max-width: 880px; margin: 0 auto;">
+    <a href="https://www.advanexus.com" target="_blank"><img src="advanexus/advanexus-vc.png" alt="advanexus" style="width: 34%; margin-bottom: 20px;"></a>
+    <h2 style="font-size: 1.34em; margin-bottom: 12px; line-height: 1.05;">Sloj kontrole i dokaza<br>za regulisane tokove podataka</h2>
+    <p class="lead" style="font-size: 0.62em; line-height: 1.28; margin: 0 auto 18px auto; max-width: 700px;">Za banke, fintech i regulisane kompanije koje moraju da kritične data procese učine kontrolisanim, ponovljivim i dokazivim.</p>
+    <div class="pill-row" style="justify-content:center; margin-top: 0; margin-bottom: 22px; gap: 8px;">
+      <span class="pill" style="font-size: 0.43em; padding: 8px 12px;">Pilot klijenti</span>
+      <span class="pill" style="font-size: 0.43em; padding: 8px 12px;">Strateški partneri</span>
+      <span class="pill" style="font-size: 0.43em; padding: 8px 12px;">Investitori</span>
+    </div>
+    <div style="display:flex; align-items:center; justify-content:center; gap: 30px; margin-top: 0;">
+      <a href="https://www.advanexus.com" target="_blank"><img src="advanexus/advanexus.png" alt="advanexus logo" style="width: 128px;"></a>
+      <a href="https://www.milovantomasevic.com" target="_blank"><img src="advanexus/sign-mt.png" alt="Milovan Tomašević signature" style="width: 184px;"></a>
+    </div>
+    <p style="font-size: 0.40em; margin-top: 16px;"><a href="https://www.advanexus.com" target="_blank" style="color: var(--primary-color);">www.advanexus.com</a>&nbsp;|&nbsp;<a href="mailto:info@advanexus.com" style="color: var(--primary-color);">info@advanexus.com</a></p>
+  </div>
+</div>
+            </section>
+    
+
+
+    </div>
+
+
+  </div>
+
+  	
+	<script src="libs/reveal.js/4.1.3/reveal.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/zoom/zoom.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/notes/notes.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/search/search.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/markdown/markdown.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/highlight/highlight.js"></script>
+	
+	<script src="libs/reveal.js/4.1.3/plugin/math/math.js"></script>
+
+	<script src="libs/reveal.js/4.1.3/plugin/fullscreen/plugin.js"></script>
+  
+  	<script src="libs/reveal.js/4.1.3/plugin/animate/plugin.js"></script>
+  	<script src="libs/reveal.js/4.1.3/plugin/animate/svg.min.js"></script>
+  
+  	<script src="libs/reveal.js/4.1.3/plugin/anything/plugin.js"></script>
+	  <script src="libs/reveal.js/4.1.3/plugin/anything/Chart.min.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/anything/d3/d3.v3.min.js"></script>				
+	<script src="libs/reveal.js/4.1.3/plugin/anything/d3.patch.js"></script>			
+	<script src="libs/reveal.js/4.1.3/plugin/anything/d3/queue.v1.min.js"></script>		
+	<script src="libs/reveal.js/4.1.3/plugin/anything/d3/topojson.v1.min.js"></script>		
+	<script src="libs/reveal.js/4.1.3/plugin/anything/function-plot.js"></script>
+
+ <!--	<script src="libs/reveal.js/4.1.3/plugin/audio-slideshow/plugin.js"></script>  -->
+<!--	<script src="libs/reveal.js/4.1.3/plugin/audio-slideshow/recorder.js"></script>-->
+<!--	<script src="libs/reveal.js/4.1.3/plugin/audio-slideshow/RecordRTC.js"></script>-->
+
+<script src="libs/reveal.js/4.1.3/plugin/chalkboard/plugin.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/customcontrols/plugin.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/embed-tweet/plugin.js"></script>
+
+	<script src="libs/reveal.js/4.1.3/plugin/chart/chart.min.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/chart/plugin.js"></script>
+
+  <script>
+
+		const printPlugins = [
+			RevealNotes, 
+			RevealHighlight,
+			RevealMath,
+			RevealAnimate,
+			RevealChalkboard, 
+			RevealEmbedTweet,
+			RevealChart,
+		];
+
+		const plugins =  [...printPlugins,
+		RevealZoom, 
+		RevealSearch, 
+				RevealMarkdown, 
+				
+				RevealFullscreen,
+				RevealAnything,
+				//RevealAudioSlideshow,
+				//RevealAudioRecorder,
+				
+				// poll
+				// question
+				// seminar
+				 ]
+
+
+		// Also available as an ES module, see:
+		// https://revealjs.com/initialization/
+		Reveal.initialize({
+			controls: true,
+			controlsTutorial: true,
+			controlsLayout: 'bottom-right',
+			controlsBackArrows: 'faded',
+			progress: true,
+			slideNumber: true,
+			//#showSlideNumber "all" "print" "speaker"
+			hash: true,//#  hash: false,
+			//# respondToHashChanges: true,
+			//# history: false,
+			keyboard: true,
+			//#keyboardCondition: null,
+			overview: true,
+			center: true,
+			touch: true,
+			loop: false,
+			rtl: false,
+			//#navigationMode: 'default', linear grid
+			shuffle: false,
+			fragments: true,
+			fragmentInURL: false,
+			embedded: false,
+			help: true,
+			//#pause: true
+			showNotes: false,
+			autoPlayMedia: false, // TODO fix this to a nullable value
+			//#preloadIframes: null. true false
+			//#autoAnimate: true
+			//#autoAnimateMatcher: null,
+			//#autoAnimateEasing: 'ease',
+			//autoAnimateDuration: 1.0,
+			//#autoAnimateUnmatched: true
+			//#autoAnimateStyles: []
+			autoSlide: 0, // TODO fix this to a falseable value
+			autoSlideStoppable: true,
+			autoSlideMethod: '0',
+			defaultTiming: 120,
+			mouseWheel: false,
+			//#previewLinks: false
+			//#postMessage: true,  // TODO : this can cause issues with the vscode api ???
+			//#postMessageEvents: false,
+			//#focusBodyOnPageVisibilityChange: true,
+			transition: 'convex',
+			transitionSpeed: 'default',
+			backgroundTransition: 'convex',
+			//#pdfMaxPagesPerSlide: Number.POSITIVE_INFINITY,
+			//#pdfSeparateFragments: true,
+			//#pdfPageHeightOffset: -1,
+			viewDistance: 3,
+			//#mobileViewDistance: 2,
+			display: 'block',
+			//#hideInactiveCursor: true,
+			//#hideCursorTime: 5000
+
+			// Parallax Background
+			parallaxBackgroundImage: '',
+			parallaxBackgroundSize: '',
+			parallaxBackgroundHorizontal: 0,
+			parallaxBackgroundVertical: 0,
+			
+			//Presentation Size
+			width: 960,
+			height: 700,
+			margin: 0.04,
+			minScale: 0.2,
+			maxScale: 2,
+			disableLayout: false,
+
+			audio: {
+				prefix: 'audio/', 	// audio files are stored in the "audio" folder
+				suffix: '.ogg',		// audio files have the ".ogg" ending
+				textToSpeechURL: null,  // the URL to the text to speech converter
+				defaultNotes: false, 	// use slide notes as default for the text to speech converter
+				defaultText: false, 	// use slide text as default for the text to speech converter
+				advance: 0, 		// advance to next slide after given time in milliseconds after audio has played, use negative value to not advance
+				autoplay: false,	// automatically start slideshow
+				defaultDuration: 5,	// default duration in seconds if no audio is available
+				defaultAudios: true,	// try to play audios with names such as audio/1.2.ogg
+				playerOpacity: 0.05,	// opacity value of audio player if unfocused
+				playerStyle: 'position: fixed; bottom: 4px; left: 25%; width: 50%; height:75px; z-index: 33;', // style used for container of audio controls
+				startAtFragment: false, // when moving to a slide, start at the current fragment or at the start of the slide
+			},
+			
+			chalkboard: { // font-awesome.min.css must be available
+					//src: "chalkboard/chalkboard.json",
+					storage: "chalkboard-demo",
+				},
+			
+			customcontrols: {
+					controls: [
+      						{
+						  id: 'toggle-overview',
+						  title: 'Toggle overview (O)',
+						  icon: '<i class="fa fa-th"></i>',
+						  action: 'Reveal.toggleOverview();'
+						}
+						,
+						{ icon: '<i class="fa fa-pen-square"></i>',
+						  title: 'Toggle chalkboard (B)',
+						  action: 'RevealChalkboard.toggleChalkboard();'
+						},
+						{ icon: '<i class="fa fa-pen"></i>',
+						  title: 'Toggle notes canvas (C)',
+						  action: 'RevealChalkboard.toggleNotesCanvas();'
+						}
+				]
+			},
+			chart: {
+					defaults: { 
+						color: 'lightgray', // color of labels
+						scale: { 
+							beginAtZero: true, 
+							ticks: { stepSize: 1 },
+							grid: { color: "lightgray" } , // color of grid lines
+						},
+					},
+					line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] }, 
+					bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
+					pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+					radar: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
+			},
+			math: {
+				mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+				config: 'TeX-AMS_HTML-full',
+				// pass other options into `MathJax.Hub.Config()`
+				TeX: { Macros: { RR: "{\\bf R}" } }
+				},
+				anything: [ 
+				{
+		className: "plot",
+		defaults: {width:500, height: 500, grid:true},
+		initialize: (function(container, options){ options.target = "#"+container.id; functionPlot(options) })
+	 },
+	 {
+		className: "chart",  
+		initialize: (function(container, options){ container.chart = new Chart(container.getContext("2d"), options);  })
+	 },
+	 {
+		className: "anything",
+		initialize: (function(container, options){ if (options && options.initialize) { options.initialize(container)} })
+	 },
+					],
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: (window.location.search.match(/print-pdf/gi) ? printPlugins : plugins ) 
+		});
+			
+
+
+	    // Change chalkboard theme : 
+		function changeTheme(input) {
+			var config = {};
+			config.theme = input.value;
+			Reveal.getPlugin("RevealChalkboard").configure(config);
+			input.blur();
+		}
+
+		// // Handle the message inside the webview
+        // window.addEventListener('message', event => {
+
+        //     const message = event.data; // The JSON data our extension sent
+
+        //     switch (message.command) {
+        //         case 'refactor':
+        //             Reveal.toggleHelp();
+        //     }
+        // });
+
+		if (window.location.search.match(/print-pdf-now/gi)) {
+      		setTimeout(() => {
+				window.print();
+			  }, 2500);
+			
+    }
+		
+
+	</script>
+
+</body>
+
+</html>

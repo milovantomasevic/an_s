@@ -1,0 +1,121 @@
+[   
+    {
+        "id": 1,
+        "name": "Urska Tomasevic",
+        "status": "online",
+        "profile": "/static/an/team/urskatomasevic.png"
+    },
+    {
+        "id": 2,
+        "name": "MTech",
+        "status": "online",
+        "profile": "/static/an/team/milovantomasevic.png",
+        "messagecount" : 8
+    },
+    {
+        "id": 3,
+        "name": "Clifford Taylor",
+        "status": "away",
+        "nickname": "CT",
+        "profile": ""
+    },
+    {
+        "id": 4,
+        "name": "MTech",
+        "status": "online",
+        "profile": "/static/an/team/milovantomasevic.png"
+    },
+    {
+        "id": 5,
+        "name": "Ivan Lukovic",
+        "status": "online",
+        "profile": "/static/an/team/ivan-lukovic.jpg",
+        "messagecount" : 5
+    },
+    {
+        "id": 6,
+        "name": "Nino Rejc",
+        "status": "away",
+        "profile": "/static/an/team/nino.PNG",
+        "messagecount" : 2
+    },
+    {
+        "id": 7,
+        "name": "Chris Kiernan",
+        "status": "online",
+        "nickname": "CK",
+        "profile": ""
+    },
+    {
+        "id": 8,
+        "name": "Edith Evans",
+        "status": "away",
+        "nickname": "EE",
+        "profile": ""
+    },
+    {
+        "id": 9,
+        "name": "Matej Pirnat",
+        "status": "away",
+        "profile": "/static/an/team/matejpirnat.png"
+      },
+    {
+        "id": 10,
+        "name": "Ronald Downey",
+        "status": "online",
+        "nickname": "RD",
+        "profile": "",
+        "messagecount" : 18
+    },       
+    {
+        "id": 11,
+        "name": "Justyn Wisoky",
+        "status": "online",
+        "profile": "/static/images/users/avatar-1.jpg"
+    },
+    {
+        "id": 12,
+        "name": "Keaton King",
+        "status": "online",
+        "profile": "/static/an/team/ivan-lukovic.jpg"
+    }, 
+    {
+        "id": 13,
+        "nickname": "AC",
+        "name": "Alice Cruickshank",
+        "status": "online",
+        "profile": ""
+    },
+    {
+        "id": 14,
+        "nickname": "MM",
+        "name": "Marian Moen",
+        "status": "online",
+        "profile": ""
+    },
+    {
+        "id": 15,
+        "name": "MTech",
+        "status": "online",
+        "profile": "/static/an/team/milovantomasevic.png"
+    },  
+    {
+        "id": 16,
+        "name": "Victor Beahan",
+        "status": "online",
+        "profile": "/static/images/users/avatar-10.jpg"
+    },
+    {
+        "id": 17,
+        "nickname": "GB",
+        "name": "Gilbert Beer",
+        "status": "online",
+        "profile": ""
+    },
+    {
+        "id": 18,
+        "name": "Urska Tomasevic",
+        "status": "online",
+        "profile": "/static/an/team/urskatomasevic.png"
+    }      
+]

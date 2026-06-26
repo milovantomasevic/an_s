@@ -1,0 +1,856 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>advanexus</title>
+
+	<meta name="description" content="advanexus is an operating system for controlled, auditable, and accountable data operations.">
+	<meta name="author" content="Milovan Tomašević">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="libs/reveal.js/4.1.3/reset.css">
+	<link rel="stylesheet" href="libs/reveal.js/4.1.3/reveal.css">
+
+	
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+	  <!-- highlight Theme -->
+  	
+	  <link rel="stylesheet" href="libs/highlight.js/11.3.1/styles/monokai.min.css">
+	
+	
+		
+	<link rel="stylesheet" href="libs/reveal.js/4.1.3/plugin/chalkboard/style.css">
+	
+	
+	
+	<link rel="stylesheet" href="libs/styles/tasklist.css">
+
+
+
+  <!-- Revealjs Theme -->
+  
+  	<link rel="stylesheet" href="libs/reveal.js/4.1.3/theme/white.css" id="theme">
+  
+  
+
+
+  <!-- Revealjs Theme -->
+  
+
+ 
+</head>
+
+<body>
+  
+    <div id="logo" style="position: fixed; top: 20px; left: 20px; z-index: 1; height:3rem;">
+        <img src="advanexus/logo-circle.png" style="height:100%"/>
+    </div>
+  
+
+
+  <div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+      
+
+
+    
+    <section>
+        <section >
+            <style scoped>
+    :root {
+      --primary-color: #0ab39c;
+      --secondary-color: white;
+      --text-color: #343541;
+    }
+    ul.medium { font-size: 80%; }
+    ul.small { font-size: 60%; }
+    .advanexus {
+        color: var(--primary-color);
+        font-family: 'Space Grotesk', sans-serif;
+    }
+    .reveal .slides { color: var(--text-color); }
+    .reveal { font-size: 32px; }
+    .reveal .slides h1 { font-size: 150%; }
+    .reveal .slides h2 { font-size: 125%; }
+    .reveal .slides h3 { font-size: 120%; }
+    .reveal .slides h4 { font-size: 85%; }
+    .reveal .slides p { font-size: 85%; line-height: 1.4; }
+    .reveal .slides ul, .reveal .slides ol { font-size: 80%; line-height: 1.4; }
+    .reveal .slides li { margin-bottom: 0.4em; }
+    .text-medium { font-size: 70%; }
+    .text-small { font-size: 55%; }
+    .text-xsmall { font-size: 45%; }
+    .reveal .slides .footnote { font-size: 45%; opacity: 0.7; }
+    .reveal .slides h1, .reveal .slides h2, .reveal .slides h3 {
+      font-family: "Space Grotesk", monospace;
+      color: var(--primary-color);
+    }
+    .reveal .slides a { color: var(--primary-color); }
+    .fa, .fas.fa-bars, .controls-arrow, span { color: var(--primary-color); }
+    .slide-number { background-color: var(--text-color) !important; }
+    .slide-number-a, .slide-number-delimiter, .slide-number-b { color: var(--secondary-color); }
+    .reveal .slides p, .reveal .slides li, .reveal .slides div, .reveal .slides span {
+      font-family: "JetBrains Mono", monospace;
+    }
+</style>
+<script src="https://cdn.lordicon.com/lordicon.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap"/>
+<p><strong>The operational data layer for AI-driven organizations</strong></p>
+<p><a href="https://www.advanexus.com" :target="_blank"><img src="advanexus/logo.png" alt="Logo"></a></p>
+<p>A controlled and auditable operating model for data pipelines feeding BI and AI across clouds and enterprise systems.</p>
+<p><lord-icon src="https://cdn.lordicon.com/mrikdaqa.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon>
+<lord-icon src="https://cdn.lordicon.com/fqrjldna.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon>
+<lord-icon src="https://cdn.lordicon.com/pwdeppfh.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon></p>
+
+            </section>
+        
+            <section >
+                <h4>PROBLEM</h4>
+<p><lord-icon src="https://cdn.lordicon.com/vwtvwncw.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon>
+<lord-icon src="https://cdn.lordicon.com/hnxipqzk.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon>
+<lord-icon src="https://cdn.lordicon.com/xdwerdzf.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon>
+<lord-icon src="https://cdn.lordicon.com/llbjqxzl.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon></p>
+<h3>AI fails when data operations are not controlled</h3>
+<ul>
+<li>Data is fragmented across clouds, SaaS applications, and core enterprise systems</li>
+<li>Pipelines are assembled from disconnected tools, scripts, and tribal knowledge</li>
+<li>When an incident happens, teams cannot quickly answer: what changed, who owns it, what was delivered</li>
+<li>Result: unreliable AI context, slow decisions, and audit exposure</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <h4>WHY NOW</h4>
+<p><lord-icon src="https://cdn.lordicon.com/zywwafpn.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon>
+<lord-icon src="https://cdn.lordicon.com/wipwwnqj.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon>
+<lord-icon src="https://cdn.lordicon.com/sjoccsdj.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon>
+<lord-icon src="https://cdn.lordicon.com/yvjimpju.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon></p>
+<h3>The bottleneck shifted from models to data readiness</h3>
+<ul>
+<li>GenAI and agents require fresh, trusted context continuously</li>
+<li>Multi-cloud and SaaS are the enterprise default</li>
+<li>Governance, regulatory, and internal audit pressure is increasing</li>
+<li>“We can prove what happened” is becoming a buying requirement</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <h4>SOLUTION</h4>
+<p><lord-icon src="https://cdn.lordicon.com/jxyemgzp.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon>
+<lord-icon src="https://cdn.lordicon.com/oscijwdh.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon>
+<lord-icon src="https://cdn.lordicon.com/msgytrdr.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon>
+<lord-icon src="https://cdn.lordicon.com/nekffjzn.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon></p>
+<h3>One operational layer instead of five</h3>
+<h4>integration, execution, quality, delivery, evidence</h4>
+<blockquote>
+<p><em><span class="advanexus">advanexus</span> connects sources, runs versioned jobs, enforces rules, produces governed datasets, and generates delivery evidence for BI and AI.</em></p>
+</blockquote>
+<ul>
+<li>No full stack rebuild</li>
+<li>No disruptive platform migration</li>
+<li>One operating model between sources and consumers</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <h4>HOW IT WORKS</h4>
+<h3>From fragmented pipelines to AI-ready context</h3>
+<p><img src="advanexus/advanexus_data_platform.gif" alt="" style="" width="80%"></p>
+<div style="font-size: 50%">
+CLOUDS & SYSTEMS → <span class="advanexus">advanexus</span> → Governed delivery to BI / Analytics / AI
+</div>
+            </section>
+        
+            <section >
+                <h4>POSITIONING</h4>
+<p><lord-icon src="https://cdn.lordicon.com/bmkdunjh.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon>
+<lord-icon src="https://cdn.lordicon.com/nchegqgo.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon>
+<lord-icon src="https://cdn.lordicon.com/jectmwqf.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon>
+<lord-icon src="https://cdn.lordicon.com/ayjfxoly.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon></p>
+<h3>We complement winners, we do not replace them</h3>
+<ul>
+<li>Confluent: data in motion</li>
+<li>Databricks / Snowflake: storage and analytics</li>
+<li><span class="advanexus">advanexus</span>: control, accountability, auditability</li>
+<li>We sit between sources and consumers, where failures become business risk</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <h4>VALUE</h4>
+<p><lord-icon src="https://cdn.lordicon.com/zkveuwek.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon>
+<lord-icon src="https://cdn.lordicon.com/taqsdbhc.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon>
+<lord-icon src="https://cdn.lordicon.com/mjlntuvf.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon></p>
+<h3>Control reduces cost and risk</h3>
+<ul>
+<li>Deterministic execution and reproducibility</li>
+<li>Traceability from source to delivery, including context and enforced rules</li>
+<li>Explicit ownership for datasets, rules, and deliveries</li>
+<li>Audit readiness by default, evidence produced during execution</li>
+<li>Fewer tools, lower complexity, faster time to value</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <h4>MARKET</h4>
+<p><lord-icon src="https://cdn.lordicon.com/fqbvgezn.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon>
+<lord-icon src="https://cdn.lordicon.com/weqkkuwt.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon>
+<lord-icon src="https://cdn.lordicon.com/zowmdprl.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon></p>
+<h3>A wedge into a large and expanding spend category</h3>
+<ul>
+<li><strong>Buyers</strong>: data platform teams, heavily influenced by risk, compliance, and internal audit</li>
+<li><strong>Targets</strong>: regulated and complex enterprises where auditability is non-negotiable</li>
+<li><strong>Entry wedge</strong>: a small set of critical flows where failures have measurable cost</li>
+<li><strong>Expansion</strong>: more flows, higher criticality, broader delivery obligations, enterprise rollout</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <h4>BUSINESS MODEL</h4>
+<p><lord-icon src="https://cdn.lordicon.com/yqbrtxmj.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon>
+<lord-icon src="https://cdn.lordicon.com/pjwlqzvi.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon>
+<lord-icon src="https://cdn.lordicon.com/piwupaqb.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon></p>
+<h3>Scope-based annual contracts with clear expansion dynamics</h3>
+<ul>
+<li>Annual subscription priced by operational scope and criticality, not users or features</li>
+<li>Typical ACV ranges:
+<ul>
+<li>Controlled entry scope: €20k to €50k</li>
+<li>Business-critical scope: €60k to €150k</li>
+<li>Audit-critical enterprise scope: €180k+</li>
+</ul>
+</li>
+<li>Expansion drivers:
+<ul>
+<li>More flows, higher frequency, stricter controls</li>
+<li>External deliveries and accountability obligations</li>
+<li>SLAs, governance alignment, premium support</li>
+</ul>
+</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <h4>COMPETITION MAP</h4>
+<h3>Operational control vs analytics focus</h3>
+<div style="height:520px; background: rgba(255,255,255,0.92); border-radius: 12px; padding: 12px;">
+  <canvas data-chart="scatter">
+<!--
+{
+  "data": {
+    "datasets": [
+      {
+        "label": "BI / dashboards",
+        "data": [
+          {
+            "x": 2,
+            "y": 8
+          }
+        ],
+        "pointRadius": 9,
+        "pointHoverRadius": 12,
+        "pointBackgroundColor": "rgba(220,120,120,0.95)",
+        "pointBorderColor": "rgba(18,19,49,0.9)",
+        "pointBorderWidth": 2,
+        "backgroundColor": "rgba(220,120,120,0.95)",
+        "borderColor": "rgba(18,19,49,0.9)"
+      },
+      {
+        "label": "Warehouse / lakehouse",
+        "data": [
+          {
+            "x": 6.5,
+            "y": 8
+          }
+        ],
+        "pointRadius": 9,
+        "pointHoverRadius": 12,
+        "pointBackgroundColor": "rgba(20,220,220,0.95)",
+        "pointBorderColor": "rgba(18,19,49,0.9)",
+        "pointBorderWidth": 2,
+        "backgroundColor": "rgba(20,220,220,0.95)",
+        "borderColor": "rgba(18,19,49,0.9)"
+      },
+      {
+        "label": "Catalog / policy tools",
+        "data": [
+          {
+            "x": 8.5,
+            "y": 3
+          }
+        ],
+        "pointRadius": 9,
+        "pointHoverRadius": 12,
+        "pointBackgroundColor": "rgba(220,220,120,0.98)",
+        "pointBorderColor": "rgba(18,19,49,0.9)",
+        "pointBorderWidth": 2,
+        "backgroundColor": "rgba(220,220,120,0.98)",
+        "borderColor": "rgba(18,19,49,0.9)"
+      },
+      {
+        "label": "Ad-hoc scripts / tool sprawl",
+        "data": [
+          {
+            "x": 2,
+            "y": 2
+          }
+        ],
+        "pointRadius": 9,
+        "pointHoverRadius": 12,
+        "pointBackgroundColor": "rgba(160,160,160,0.90)",
+        "pointBorderColor": "rgba(18,19,49,0.9)",
+        "pointBorderWidth": 2,
+        "backgroundColor": "rgba(160,160,160,0.90)",
+        "borderColor": "rgba(18,19,49,0.9)"
+      },
+      {
+        "label": "advanexus",
+        "data": [
+          {
+            "x": 9,
+            "y": 6.5
+          }
+        ],
+        "pointRadius": 15,
+        "pointHoverRadius": 18,
+        "pointBackgroundColor": "rgba(10,179,156,1)",
+        "pointBorderColor": "rgba(18,19,49,0.95)",
+        "pointBorderWidth": 3,
+        "backgroundColor": "rgba(10,179,156,1)",
+        "borderColor": "rgba(18,19,49,0.95)"
+      }
+    ]
+  },
+  "options": {
+    "responsive": true,
+    "maintainAspectRatio": false,
+    "layout": {
+      "padding": {
+        "top": 10,
+        "right": 10,
+        "bottom": 10,
+        "left": 10
+      }
+    },
+    "plugins": {
+      "legend": {
+        "display": true,
+        "position": "bottom",
+        "labels": {
+          "color": "rgba(18,19,49,0.92)",
+          "font": {
+            "size": 15,
+            "weight": "800"
+          },
+          "boxWidth": 18,
+          "boxHeight": 18,
+          "usePointStyle": true,
+          "pointStyle": "circle",
+          "padding": 14
+        }
+      },
+      "tooltip": {
+        "enabled": true,
+        "backgroundColor": "rgba(18,19,49,0.95)",
+        "titleColor": "rgba(255,255,255,0.98)",
+        "bodyColor": "rgba(255,255,255,0.95)",
+        "borderColor": "rgba(10,179,156,1)",
+        "borderWidth": 1
+      },
+      "pointLabels": {
+        "color": "rgba(18,19,49,0.92)",
+        "fontSize": 14,
+        "fontWeight": "800",
+        "offsetX": 12,
+        "offsetY": -12
+      },
+      "quadrantTitles": {
+        "color": "rgba(18,19,49,0.70)",
+        "fontSize": 14,
+        "fontWeight": "800",
+        "q1": "High analytics, low control",
+        "q2": "High analytics, high control",
+        "q3": "Low analytics, low control",
+        "q4": "Low analytics, high control"
+      },
+      "crosshair": {
+        "midX": 5,
+        "midY": 5,
+        "lineColor": "rgba(18,19,49,0.30)",
+        "lineWidth": 2
+      }
+    },
+    "scales": {
+      "x": {
+        "min": 0,
+        "max": 10,
+        "grid": {
+          "color": "rgba(18,19,49,0.10)"
+        },
+        "ticks": {
+          "stepSize": 1,
+          "color": "rgba(18,19,49,0.85)",
+          "font": {
+            "weight": "800",
+            "size": 12
+          }
+        },
+        "title": {
+          "display": true,
+          "text": "Operational control and auditability (low → high)",
+          "color": "rgba(18,19,49,0.92)",
+          "font": {
+            "size": 15,
+            "weight": "900"
+          }
+        }
+      },
+      "y": {
+        "min": 0,
+        "max": 10,
+        "grid": {
+          "color": "rgba(18,19,49,0.10)"
+        },
+        "ticks": {
+          "stepSize": 1,
+          "color": "rgba(18,19,49,0.85)",
+          "font": {
+            "weight": "800",
+            "size": 12
+          }
+        },
+        "title": {
+          "display": true,
+          "text": "Focus on analytics and storage (low → high)",
+          "color": "rgba(18,19,49,0.92)",
+          "font": {
+            "size": 15,
+            "weight": "900"
+          }
+        }
+      }
+    }
+  },
+  "plugins": [
+    {
+      "id": "crosshair",
+      "afterDraw": "function(chart,args,opts){const area=chart.chartArea;if(!area)return;const ctx=chart.ctx;const x=chart.scales.x;const y=chart.scales.y;const midX=x.getPixelForValue(opts.midX||5);const midY=y.getPixelForValue(opts.midY||5);ctx.save();ctx.strokeStyle=opts.lineColor||'rgba(0,0,0,0.25)';ctx.lineWidth=opts.lineWidth||2;ctx.beginPath();ctx.moveTo(midX,area.top);ctx.lineTo(midX,area.bottom);ctx.stroke();ctx.beginPath();ctx.moveTo(area.left,midY);ctx.lineTo(area.right,midY);ctx.stroke();ctx.restore();}"
+    },
+    {
+      "id": "pointLabels",
+      "afterDatasetsDraw": "function(chart,args,opts){const ctx=chart.ctx;ctx.save();ctx.fillStyle=(opts&&opts.color)?opts.color:'rgba(0,0,0,0.85)';const fs=(opts&&opts.fontSize)?opts.fontSize:12;const fw=(opts&&opts.fontWeight)?opts.fontWeight:'700';ctx.font=fw+' '+fs+'px Arial';const offX=(opts&&opts.offsetX)?opts.offsetX:10;const offY=(opts&&opts.offsetY)?opts.offsetY:-10;chart.data.datasets.forEach(function(ds,i){const meta=chart.getDatasetMeta(i);if(!meta||meta.hidden)return;meta.data.forEach(function(pt){const p=pt.getProps(['x','y'],true);const txt=ds.label||'';if(!txt)return;ctx.fillText(txt,p.x+offX,p.y+offY);});});ctx.restore();}"
+    },
+    {
+      "id": "quadrantTitles",
+      "afterDraw": "function(chart,args,opts){const area=chart.chartArea;if(!area||!opts)return;const ctx=chart.ctx;const x=chart.scales.x;const y=chart.scales.y;const midX=x.getPixelForValue(5);const midY=y.getPixelForValue(5);ctx.save();ctx.fillStyle=opts.color||'rgba(0,0,0,0.55)';ctx.font=(opts.fontWeight||'700')+' '+(opts.fontSize||12)+'px Arial';ctx.fillText(opts.q1||'',area.left+8,area.top+18);ctx.fillText(opts.q2||'',midX+8,area.top+18);ctx.fillText(opts.q3||'',area.left+8,area.bottom-8);ctx.fillText(opts.q4||'',midX+8,area.bottom-8);ctx.restore();}"
+    }
+  ]
+}
+-->
+  </canvas>
+</div>
+            </section>
+        
+            <section >
+                <h4>MOAT</h4>
+<h3>Why it is hard to copy</h3>
+<ol>
+<li>
+<p><strong>Core runtime, not a feature</strong><br>
+<small><span class="advanexus">advanexus</span> is not an add-on to an existing stack. It is an operational layer that defines how a run behaves: execution identity, context, rules, delivery, and evidence are one lifecycle.<br>
+<strong>To copy this, competitors must change the core execution model, not add a module.</strong></small></p>
+</li>
+<li>
+<p><strong>Evidence plus deterministic replay by default</strong><br>
+<small>Evidence is produced during the run, and deterministic replay enables independent verification (same input → same output). This requires a disciplined runtime: versioning, dependency control, standardized context, and repeatable execution.<br>
+<strong>Retrofitting this into mature platforms is slow, risky, and expensive because it changes the core, not the UI.</strong></small></p>
+</li>
+<li>
+<p><strong>Lock-in through critical flows and operational accountability</strong><br>
+<small>Once evidence, replay, and ownership become the standard for business-critical and audit-critical flows, switching costs increase sharply: revalidation of controls, rebuilding evidence, migration risk, and renewed audit alignment.<br>
+<strong>This is not a tool swap. It is an operational change with measurable risk.</strong></small></p>
+</li>
+</ol>
+<div style="font-size: 88%">
+<blockquote>
+<p><strong><span class="advanexus">Point: advanexus is defensible because it changes the operating model of execution, proof, and accountability. Competitors cannot solve this with an add-on, only with an expensive and risky rebuild of the core.</span></strong></p>
+</blockquote>
+</div>
+            </section>
+        
+            <section >
+                <h4>GO-TO-MARKET</h4>
+<p><lord-icon src="https://cdn.lordicon.com/csxbxlji.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon>
+<lord-icon src="https://cdn.lordicon.com/weqkkuwt.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon></p>
+<h3>Start where pain is highest and budgets exist</h3>
+<ul>
+<li>Regulated verticals first: banking, insurance, telecom, healthcare</li>
+<li>Land: 3 to 10 critical flows, governed delivery to BI and AI consumers</li>
+<li>Expand: lineage, evidence, cross-domain ownership, enterprise governance</li>
+<li>Channels: direct enterprise sales, integrator partnerships, focused thought leadership</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <h4>TRACTION</h4>
+<p><lord-icon src="https://cdn.lordicon.com/zwgkioyr.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon>
+<lord-icon src="https://cdn.lordicon.com/hcsnfpqp.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon></p>
+<h3>Early validation with clear proof points</h3>
+<ul>
+<li>Working platform and demo environment exist</li>
+<li>Validated through real enterprise scenarios and feedback loops</li>
+<li>Differentiation confirmed: operational control and auditability, not another analytics tool</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <h4>6-MONTH PLAN</h4>
+<p><lord-icon src="https://cdn.lordicon.com/ogwwyiqt.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:130px;height:130px"></lord-icon>
+<lord-icon src="https://cdn.lordicon.com/npfhhfza.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:130px;height:130px"></lord-icon></p>
+<h3>Milestones and KPIs</h3>
+<ul>
+<li><strong>Milestones</strong>
+<ul>
+<li>3 design partners</li>
+<li>1 to 2 paid pilots</li>
+<li>Production v1 (security, evidence, replay, scoped onboarding)</li>
+</ul>
+</li>
+<li><strong>KPIs</strong>
+<ul>
+<li>Signed design partners: 3</li>
+<li>Paid pilots launched: 1 to 2</li>
+<li>Time to first critical flow: ≤ 4 weeks</li>
+<li>Controlled critical flows per customer: 3 to 10</li>
+<li>Evidence coverage: 100% governed deliveries</li>
+<li>Replay success rate: ≥ 95% on target flows</li>
+<li>Conversion: at least 1 pilot → annual contract</li>
+</ul>
+</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <h4>TEAM</h4>
+<p><lord-icon src="https://cdn.lordicon.com/cfoaotmk.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon></p>
+<h3>Founder-led execution with deep domain advantage</h3>
+<ul>
+<li>Founder with 10+ years in complex enterprise and regulated data operations</li>
+<li>Built and operated systems in banking environments with real audit constraints</li>
+<li>Hands-on product and engineering delivery</li>
+<li>Supported by business development and go-to-market advisory</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <h4>ASK</h4>
+<p><lord-icon src="https://cdn.lordicon.com/kqaqakkv.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon>
+<lord-icon src="https://cdn.lordicon.com/dlchtpur.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon>
+<lord-icon src="https://cdn.lordicon.com/hxcttyly.json" trigger="loop" colors="primary:#0ab39c,secondary:#343541" style="width:150px;height:150px"></lord-icon></p>
+<h3>Funding to productize and scale go-to-market</h3>
+<ul>
+<li>We are raising capital to:
+<ul>
+<li>Build a focused product team (core, governance, reliability)</li>
+<li>Harden security, audit evidence, and operational guarantees</li>
+<li>Productize onboarding and scoping into a repeatable deployment model</li>
+<li>Execute design partners and paid pilots through focused go-to-market</li>
+</ul>
+</li>
+<li>Target outcomes:
+<ul>
+<li>3 design partners</li>
+<li>1 to 2 paid pilots</li>
+<li>1 pilot converted to an annual contract</li>
+<li>Production version ready for broader enterprise rollout</li>
+</ul>
+</li>
+</ul>
+
+            </section>
+        
+            <section >
+                <p><a href="https://www.advanexus.com" :target="_blank"><img src="advanexus/advanexus-vc.png" alt="Logo" style="" width="45%"></a></p>
+<p><a href="https://www.advanexus.com" :target="_blank"><img src="advanexus/advanexus.png" alt="Logo" style="" width="20%"></a>
+<a href="https://www.milovantomasevic.com" :target="_blank"><img src="advanexus/sign-mt.png" alt="Logo" style="" width="30%"></a></p>
+
+            </section>
+        
+
+    </section>
+    
+
+
+    </div>
+
+
+  </div>
+
+  	
+	<script src="libs/reveal.js/4.1.3/reveal.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/zoom/zoom.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/notes/notes.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/search/search.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/markdown/markdown.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/highlight/highlight.js"></script>
+	
+	<script src="libs/reveal.js/4.1.3/plugin/math/math.js"></script>
+
+	<script src="libs/reveal.js/4.1.3/plugin/fullscreen/plugin.js"></script>
+  
+  	<script src="libs/reveal.js/4.1.3/plugin/animate/plugin.js"></script>
+  	<script src="libs/reveal.js/4.1.3/plugin/animate/svg.min.js"></script>
+  
+  	<script src="libs/reveal.js/4.1.3/plugin/anything/plugin.js"></script>
+	  <script src="libs/reveal.js/4.1.3/plugin/anything/Chart.min.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/anything/d3/d3.v3.min.js"></script>				
+	<script src="libs/reveal.js/4.1.3/plugin/anything/d3.patch.js"></script>			
+	<script src="libs/reveal.js/4.1.3/plugin/anything/d3/queue.v1.min.js"></script>		
+	<script src="libs/reveal.js/4.1.3/plugin/anything/d3/topojson.v1.min.js"></script>		
+	<script src="libs/reveal.js/4.1.3/plugin/anything/function-plot.js"></script>
+
+ <!--	<script src="libs/reveal.js/4.1.3/plugin/audio-slideshow/plugin.js"></script>  -->
+<!--	<script src="libs/reveal.js/4.1.3/plugin/audio-slideshow/recorder.js"></script>-->
+<!--	<script src="libs/reveal.js/4.1.3/plugin/audio-slideshow/RecordRTC.js"></script>-->
+
+<script src="libs/reveal.js/4.1.3/plugin/chalkboard/plugin.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/customcontrols/plugin.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/embed-tweet/plugin.js"></script>
+
+	<script src="libs/reveal.js/4.1.3/plugin/chart/chart.min.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/chart/plugin.js"></script>
+
+  <script>
+
+		const printPlugins = [
+			RevealNotes, 
+			RevealHighlight,
+			RevealMath,
+			RevealAnimate,
+			RevealChalkboard, 
+			RevealEmbedTweet,
+			RevealChart,
+		];
+
+		const plugins =  [...printPlugins,
+		RevealZoom, 
+		RevealSearch, 
+				RevealMarkdown, 
+				
+				RevealFullscreen,
+				RevealAnything,
+				//RevealAudioSlideshow,
+				//RevealAudioRecorder,
+				
+				// poll
+				// question
+				// seminar
+				 ]
+
+
+		// Also available as an ES module, see:
+		// https://revealjs.com/initialization/
+		Reveal.initialize({
+			controls: true,
+			controlsTutorial: true,
+			controlsLayout: 'bottom-right',
+			controlsBackArrows: 'faded',
+			progress: true,
+			slideNumber: true,
+			//#showSlideNumber "all" "print" "speaker"
+			hash: true,//#  hash: false,
+			//# respondToHashChanges: true,
+			//# history: false,
+			keyboard: true,
+			//#keyboardCondition: null,
+			overview: true,
+			center: true,
+			touch: true,
+			loop: false,
+			rtl: false,
+			//#navigationMode: 'default', linear grid
+			shuffle: false,
+			fragments: true,
+			fragmentInURL: false,
+			embedded: false,
+			help: true,
+			//#pause: true
+			showNotes: false,
+			autoPlayMedia: false, // TODO fix this to a nullable value
+			//#preloadIframes: null. true false
+			//#autoAnimate: true
+			//#autoAnimateMatcher: null,
+			//#autoAnimateEasing: 'ease',
+			//autoAnimateDuration: 1.0,
+			//#autoAnimateUnmatched: true
+			//#autoAnimateStyles: []
+			autoSlide: 0, // TODO fix this to a falseable value
+			autoSlideStoppable: true,
+			autoSlideMethod: '0',
+			defaultTiming: 120,
+			mouseWheel: false,
+			//#previewLinks: false
+			//#postMessage: true,  // TODO : this can cause issues with the vscode api ???
+			//#postMessageEvents: false,
+			//#focusBodyOnPageVisibilityChange: true,
+			transition: 'slide',
+			transitionSpeed: 'default',
+			backgroundTransition: 'convex',
+			//#pdfMaxPagesPerSlide: Number.POSITIVE_INFINITY,
+			//#pdfSeparateFragments: true,
+			//#pdfPageHeightOffset: -1,
+			viewDistance: 3,
+			//#mobileViewDistance: 2,
+			display: 'block',
+			//#hideInactiveCursor: true,
+			//#hideCursorTime: 5000
+
+			// Parallax Background
+			parallaxBackgroundImage: '',
+			parallaxBackgroundSize: '',
+			parallaxBackgroundHorizontal: 0,
+			parallaxBackgroundVertical: 0,
+			
+			//Presentation Size
+			width: 960,
+			height: 700,
+			margin: 0.04,
+			minScale: 0.2,
+			maxScale: 2,
+			disableLayout: false,
+
+			audio: {
+				prefix: 'audio/', 	// audio files are stored in the "audio" folder
+				suffix: '.ogg',		// audio files have the ".ogg" ending
+				textToSpeechURL: null,  // the URL to the text to speech converter
+				defaultNotes: false, 	// use slide notes as default for the text to speech converter
+				defaultText: false, 	// use slide text as default for the text to speech converter
+				advance: 0, 		// advance to next slide after given time in milliseconds after audio has played, use negative value to not advance
+				autoplay: false,	// automatically start slideshow
+				defaultDuration: 5,	// default duration in seconds if no audio is available
+				defaultAudios: true,	// try to play audios with names such as audio/1.2.ogg
+				playerOpacity: 0.05,	// opacity value of audio player if unfocused
+				playerStyle: 'position: fixed; bottom: 4px; left: 25%; width: 50%; height:75px; z-index: 33;', // style used for container of audio controls
+				startAtFragment: false, // when moving to a slide, start at the current fragment or at the start of the slide
+			},
+			
+			chalkboard: { // font-awesome.min.css must be available
+					//src: "chalkboard/chalkboard.json",
+					storage: "chalkboard-demo",
+				},
+			
+			customcontrols: {
+					controls: [
+      						{
+						  id: 'toggle-overview',
+						  title: 'Toggle overview (O)',
+						  icon: '<i class="fa fa-th"></i>',
+						  action: 'Reveal.toggleOverview();'
+						}
+						,
+						{ icon: '<i class="fa fa-pen-square"></i>',
+						  title: 'Toggle chalkboard (B)',
+						  action: 'RevealChalkboard.toggleChalkboard();'
+						},
+						{ icon: '<i class="fa fa-pen"></i>',
+						  title: 'Toggle notes canvas (C)',
+						  action: 'RevealChalkboard.toggleNotesCanvas();'
+						}
+				]
+			},
+			chart: {
+					defaults: { 
+						color: 'lightgray', // color of labels
+						scale: { 
+							beginAtZero: true, 
+							ticks: { stepSize: 1 },
+							grid: { color: "lightgray" } , // color of grid lines
+						},
+					},
+					line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] }, 
+					bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
+					pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+					radar: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
+			},
+			math: {
+				mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+				config: 'TeX-AMS_HTML-full',
+				// pass other options into `MathJax.Hub.Config()`
+				TeX: { Macros: { RR: "{\\bf R}" } }
+				},
+				anything: [ 
+				{
+		className: "plot",
+		defaults: {width:500, height: 500, grid:true},
+		initialize: (function(container, options){ options.target = "#"+container.id; functionPlot(options) })
+	 },
+	 {
+		className: "chart",  
+		initialize: (function(container, options){ container.chart = new Chart(container.getContext("2d"), options);  })
+	 },
+	 {
+		className: "anything",
+		initialize: (function(container, options){ if (options && options.initialize) { options.initialize(container)} })
+	 },
+					],
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: (window.location.search.match(/print-pdf/gi) ? printPlugins : plugins ) 
+		});
+			
+
+
+	    // Change chalkboard theme : 
+		function changeTheme(input) {
+			var config = {};
+			config.theme = input.value;
+			Reveal.getPlugin("RevealChalkboard").configure(config);
+			input.blur();
+		}
+
+		// // Handle the message inside the webview
+        // window.addEventListener('message', event => {
+
+        //     const message = event.data; // The JSON data our extension sent
+
+        //     switch (message.command) {
+        //         case 'refactor':
+        //             Reveal.toggleHelp();
+        //     }
+        // });
+
+		if (window.location.search.match(/print-pdf-now/gi)) {
+      		setTimeout(() => {
+				window.print();
+			  }, 2500);
+			
+    }
+		
+
+	</script>
+
+</body>
+
+</html>

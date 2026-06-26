@@ -1,0 +1,1224 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>advanexus</title>
+
+	<meta name="description" content="advanexus data development and analysis platform">
+	<meta name="author" content="Milovan Tomašević">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="libs/reveal.js/4.1.3/reset.css">
+	<link rel="stylesheet" href="libs/reveal.js/4.1.3/reveal.css">
+
+	
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+	  <!-- highlight Theme -->
+  	
+	  <link rel="stylesheet" href="libs/highlight.js/11.3.1/styles/monokai.min.css">
+	
+	
+		
+	<link rel="stylesheet" href="libs/reveal.js/4.1.3/plugin/chalkboard/style.css">
+	
+	
+	
+		<link rel="stylesheet" href="libs/reveal.js/4.1.3/plugin/customcontrols/style.css">
+	
+	<link rel="stylesheet" href="libs/styles/tasklist.css">
+
+
+
+  <!-- Revealjs Theme -->
+  
+  	<link rel="stylesheet" href="libs/reveal.js/4.1.3/theme/white.css" id="theme">
+  
+  
+
+
+  <!-- Revealjs Theme -->
+  
+
+ 
+</head>
+
+<body>
+  
+    <div id="logo" style="position: fixed; top: 20px; left: 20px; z-index: 1; height:3rem;">
+        <img src="advanexus/logo-circle.png" style="height:100%"/>
+    </div>
+  
+
+
+  <div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+      
+
+
+    
+    <section>
+        <section >
+            <style scoped>
+    :root {
+      --primary-color: #0ab39c;
+      --secondary-color: white;
+      --text-color: #343541;
+    }
+    ul.medium {
+        font-size: 80%;
+    }
+
+    ul.small {
+        font-size: 60%;
+    }
+    .advanexus {
+        color: var(--primary-color);
+        font-family: 'Space Grotesk', sans-serif;
+    }
+    .reveal .slides {
+      color: var(--text-color);
+    }
+    .reveal .slides h1,
+    .reveal .slides h2,
+    .reveal .slides h3 {
+      font-family: "Space Grotesk", monospace;
+      color: var(--primary-color);
+    }
+    .reveal .slides a {
+      color: var(--primary-color);
+    }
+    .fa,
+    .fas.fa-bars,
+    .controls-arrow,
+    span {
+      color: var(--primary-color);
+    }
+    .slide-number {
+      background-color: var(--text-color) !important;
+    }
+    .slide-number-a,
+    .slide-number-delimiter,
+    .slide-number-b {
+      color: var(--secondary-color);
+    }
+    .reveal .slides p,
+  .reveal .slides li,
+  .reveal .slides div,
+  .reveal .slides span {
+    font-family: "JetBrains Mono", monospace;
+  }
+</style>
+<script src="https://cdn.lordicon.com/lordicon.js"></script>
+<link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap"
+/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap">
+<p><strong>Enterprise platforma za kontrolu i automatizaciju podataka</strong></p>
+<p><a href="https://www.advanexus.com" :target="_blank"><img src="advanexus/logo.png" alt="Logo"></a></p>
+<p>omogućava potpunu kontrolu, automatizaciju i pouzdanost procesa rada sa podacima
+u kompleksnim i regulisanim sistemima</p>
+<div style="font-size: 50%">
+<p>Razvijeno za enterprise okruženja. Dizajnirano za potpunu kontrolu.</p>
+<p><strong>Osnivač:</strong> dr Milovan Tomašević</p>
+</div>
+            </section>
+        
+            <section >
+                <h3>Stvarni problem enterprise organizacija</h3>
+<p><lord-icon
+    src="https://cdn.lordicon.com/xdwerdzf.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/llbjqxzl.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon></p>
+<div style="font-size: 45%">
+<table>
+<thead>
+<tr>
+<th><strong>Problem (kako izgleda danas)</strong></th>
+<th><strong>Posledice (zašto je to ozbiljno)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Podaci su rasuti kroz desetine sistema</td>
+<td>Visoki operativni troškovi</td>
+</tr>
+<tr>
+<td>Procesi su ručni ili krhki</td>
+<td>Dug time-to-value</td>
+</tr>
+<tr>
+<td>Teško auditabilni i slabo dokumentovani</td>
+<td>Povećan regulatorni rizik</td>
+</tr>
+<tr>
+<td>Spori za promene, migracije i analitiku</td>
+<td>Zavisnost od pojedinaca</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Rezultat:</strong> sistemi su spori, komplikovani i nepouzdani.<br>
+<strong>Ključni uzrok:</strong> nije nedostatak alata, već nedostatak kontrole i orkestracije iznad postojećeg stack-a.</p>
+</div>
+            </section>
+        
+            <section >
+                <h3>Rešenje</h3>
+<p><lord-icon
+    src="https://cdn.lordicon.com/jxyemgzp.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/oscijwdh.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/msgytrdr.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/zkveuwek.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/nekffjzn.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon></p>
+<div style="font-size: 45%">
+<table>
+<thead>
+<tr>
+<th><strong>Problem danas</strong></th>
+<th><strong>Kako <span class="advanexus">advanexus</span> to rešava</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Razbacani sistemi i izvori podataka</td>
+<td>Jedan kontrolisani tok iznad svih postojećih sistema</td>
+</tr>
+<tr>
+<td>Ručni, krhki i nepouzdani procesi</td>
+<td>Automatizovano i determinističko izvršavanje procesa</td>
+</tr>
+<tr>
+<td>Nejasan redosled i zavisnosti</td>
+<td>Algoritamski engine za zavisnosti i redoslede</td>
+</tr>
+<tr>
+<td>Slaba kontrola kvaliteta</td>
+<td>Ugrađena data quality pravila u svaki proces</td>
+</tr>
+<tr>
+<td>Nedostatak evidencije i audita</td>
+<td>Potpun audit trail svakog koraka</td>
+</tr>
+<tr>
+<td>Spora analitika i ad-hoc alati</td>
+<td>Analitika, sandbox i vizualizacija u istom okruženju</td>
+</tr>
+</tbody>
+</table>
+<p><strong><span class="advanexus">advanexus</span> je control &amp; automation layer iznad postojećih data sistema.</strong><br>
+Bez replatforminga. Bez zamene postojećih core sistema.</p>
+</div>
+            </section>
+        
+            <section >
+                <h3>Kako Advanexus isporučuje vrednost</h3>
+<div style="font-size: 45%">
+<table>
+<thead>
+<tr>
+<th><strong>Kako radi (end-to-end)</strong></th>
+<th><strong>Šta to donosi (Core value)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ingest &amp; Integracija (DB/ API/ fajlovi)</td>
+<td>Manja operativna kompleksnost</td>
+</tr>
+<tr>
+<td>Orkestracija (zavisnosti, scheduler)</td>
+<td>Brže migracije i promene</td>
+</tr>
+<tr>
+<td>Data Quality (pravila, kontrole, notifikacije)</td>
+<td>Niži regulatorni i operativni rizik</td>
+</tr>
+<tr>
+<td>Execution Engine (SQL + cross-DB)</td>
+<td>Brži pristup pouzdanim podacima</td>
+</tr>
+<tr>
+<td>Evidence &amp; Audit (dokaz svakog koraka)</td>
+<td>Manja zavisnost od pojedinaca</td>
+</tr>
+<tr>
+<td>Sandbox &amp; Vizualizacija (analitika u istom sistemu)</td>
+<td>Brži rezultati i bolja odluka</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Šta omogućava (grupisani use-case-ovi):</strong></p>
+<ul>
+<li><strong>Integracija i ingest:</strong> fajlovi → SQL tabele, DB/API konektori, brza analiza fajlova</li>
+<li><strong>Migracije i automatizacija:</strong> cross-DB prenos šema/podataka, determinističko SQL izvršavanje, scheduler</li>
+<li><strong>Pouzdanost i usklađenost:</strong> DQ u pipeline-u, audit evidence, backup &amp; restore</li>
+<li><strong>Analitika i znanje:</strong> vizualizacija i dashboardi, Python sandbox, knowledge base</li>
+</ul>
+<p><strong>Jednostavnije upravljanje podacima. Veća pouzdanost. Brži rezultati.</strong></p>
+</div>
+            </section>
+        
+            <section >
+                <h3>Ko su kupci Advanexus platforme</h3>
+<p><lord-icon
+    src="https://cdn.lordicon.com/fqbvgezn.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon></p>
+<div style="font-size: 60%">
+<p>Primarni kupsi su organizacije sa kompleksnim i regulisanim data okruženjem:</p>
+<ul>
+<li>Banke (Tier-1 i Tier-2)</li>
+<li>Osiguranje</li>
+<li>Fintech i payment
+<ul>
+<li>Visoki regulatorni zahtevi</li>
+<li>Heterogeni sistemi</li>
+</ul>
+</li>
+<li>Velike enterprise organizacije</li>
+</ul>
+</div>
+            </section>
+        
+            <section >
+                <h3>Tržište Data Platformi</h3>
+<p><lord-icon
+    src="https://cdn.lordicon.com/zowmdprl.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon></p>
+<div style="font-size: 35%">
+<table>
+<thead>
+<tr>
+<th><strong>Tržište</strong></th>
+<th style="text-align:right"><strong>Veličina (osnovna, $B)</strong></th>
+<th style="text-align:right"><strong>Veličina 2030 ($B)</strong></th>
+<th style="text-align:right"><strong>CAGR (%)</strong></th>
+<th><strong>Najbrže rastući region</strong></th>
+<th><strong>Najveće tržište</strong></th>
+<th><strong>Izvor</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="advanexus"><strong>Customer Data Platforms (CDP)</strong></span></td>
+<td style="text-align:right"><span class="advanexus">5.37 (2023)</span></td>
+<td style="text-align:right"><span class="advanexus">51.95</span></td>
+<td style="text-align:right"><span class="advanexus">39.5%</span></td>
+<td>Azija-Pacifik</td>
+<td>Severna Amerika</td>
+<td><a href="https://www.grandviewresearch.com/industry-analysis/customer-data-platform-market">Grand View Research</a></td>
+</tr>
+<tr>
+<td><span class="advanexus"><strong>Autonomous Data Platforms</strong></span></td>
+<td style="text-align:right"><span class="advanexus">2.13 (2025)</span></td>
+<td style="text-align:right"><span class="advanexus">5.37</span></td>
+<td style="text-align:right"><span class="advanexus">20.3%</span></td>
+<td>Azija-Pacifik</td>
+<td>Severna Amerika</td>
+<td><a href="https://www.mordorintelligence.com/industry-reports/autonomous-data-platform-market">Mordor Intelligence</a></td>
+</tr>
+<tr>
+<td><span class="advanexus"><strong>Data Science Platforms</strong></span></td>
+<td style="text-align:right"><span class="advanexus">111.23 (2025)</span></td>
+<td style="text-align:right"><span class="advanexus">275.67</span></td>
+<td style="text-align:right"><span class="advanexus">21.4%</span></td>
+<td>Azija-Pacifik</td>
+<td>Severna Amerika</td>
+<td><a href="https://www.mordorintelligence.com/industry-reports/data-science-platform-market">Mordor Intelligence</a></td>
+</tr>
+<tr>
+<td><span class="advanexus"><strong>DataOps Platforms</strong></span></td>
+<td style="text-align:right"><span class="advanexus">4.22 (2023)</span></td>
+<td style="text-align:right"><span class="advanexus">17.17</span></td>
+<td style="text-align:right"><span class="advanexus">22.5%</span></td>
+<td>Azija-Pacifik</td>
+<td>Severna Amerika</td>
+<td><a href="https://www.grandviewresearch.com/industry-analysis/dataops-platform-market">Grand View Research</a></td>
+</tr>
+<tr>
+<td><span class="advanexus"><strong>Data Integration Platforms (ETL/ELT)</strong></span></td>
+<td style="text-align:right"><span class="advanexus">15.18 (2024)</span></td>
+<td style="text-align:right"><span class="advanexus">30.27</span></td>
+<td style="text-align:right"><span class="advanexus">12.1%</span></td>
+<td>Azija-Pacifik</td>
+<td>Severna Amerika</td>
+<td><a href="https://www.grandviewresearch.com/industry-analysis/data-integration-market">Grand View Research</a></td>
+</tr>
+<tr>
+<td><strong>Data Fabric Platforms</strong></td>
+<td style="text-align:right">2.29 (2023)</td>
+<td style="text-align:right">12.91 (2032)</td>
+<td style="text-align:right">21.2%</td>
+<td>Azija-Pacifik</td>
+<td>Severna Amerika</td>
+<td><a href="https://www.fortunebusinessinsights.com/data-fabric-market-105272">Fortune Business Insights</a></td>
+</tr>
+<tr>
+<td><strong>Master Data Management (MDM)</strong></td>
+<td style="text-align:right">18.23 (2025)</td>
+<td style="text-align:right">43.38</td>
+<td style="text-align:right">18.9%</td>
+<td>Azija-Pacifik</td>
+<td>Severna Amerika</td>
+<td><a href="https://www.mordorintelligence.com/industry-reports/master-data-management-market">Mordor Intelligence</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+            </section>
+        
+            <section >
+                <h3>Industrijsko poređenje</h3>
+<div style="font-size: 33%">
+<table>
+<thead>
+<tr>
+<th><strong>Kriterijum (Gartner DI/ETL)</strong></th>
+<th><strong><span class="advanexus">advanexus</span></strong></th>
+<th><strong>Databricks</strong></th>
+<th><strong>Snowflake</strong></th>
+<th><strong>Talend</strong></th>
+<th><strong>Informatica IICS</strong></th>
+<th><strong>Alteryx</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Uvoz fajlova (CSV/JSON/Excel/Logovi)</strong></td>
+<td>✔ Native ingest</td>
+<td>🔄 Spark ingest</td>
+<td>🚫 Stage + COPY</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td><strong>2. Auto fajl → SQL tabela</strong></td>
+<td>✔ Jedinstveno</td>
+<td>🚫</td>
+<td>🚫</td>
+<td>🚫</td>
+<td>🚫</td>
+<td>🚫</td>
+</tr>
+<tr>
+<td><strong>3. DB → DB prenos podataka</strong></td>
+<td>✔ Ugrađeno</td>
+<td>🚫</td>
+<td>🚫</td>
+<td>🔄</td>
+<td>🔄</td>
+<td>🚫</td>
+</tr>
+<tr>
+<td><strong>4. Migracija šema i zavisnosti</strong></td>
+<td>✔ Algoritamski</td>
+<td>🚫</td>
+<td>🚫</td>
+<td>🚫</td>
+<td>🚫</td>
+<td>🚫</td>
+</tr>
+<tr>
+<td><strong>5. Orkestracija (real-time jobs)</strong></td>
+<td>✔ Ugrađena</td>
+<td>🔄 Workflows</td>
+<td>🚫 SQL Tasks</td>
+<td>🔄</td>
+<td>✔</td>
+<td>🔄</td>
+</tr>
+<tr>
+<td><strong>6. Automatsko izvršavanje SQL skripti</strong></td>
+<td>✔ SQL Engine</td>
+<td>✔</td>
+<td>🚫</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td><strong>7. Upravljanje zavisnostima i paralelizmom</strong></td>
+<td>✔ Inteligentno</td>
+<td>🔄 DAG-ručno</td>
+<td>🚫</td>
+<td>🔄</td>
+<td>🔄</td>
+<td>🚫</td>
+</tr>
+<tr>
+<td><strong>8. Ugrađena Data Quality pravila</strong></td>
+<td>✔ Real-time DQ</td>
+<td>🔄 (DLT)</td>
+<td>🚫</td>
+<td>✔</td>
+<td>✔</td>
+<td>🔄</td>
+</tr>
+<tr>
+<td><strong>9. Monitoring i alerting</strong></td>
+<td>✔ Centralno</td>
+<td>✔</td>
+<td>🔄</td>
+<td>✔</td>
+<td>✔</td>
+<td>🔄</td>
+</tr>
+<tr>
+<td><strong>10. Python sandbox / notebooks</strong></td>
+<td>✔ Ugrađeno</td>
+<td>✔ Notebooks</td>
+<td>🚫</td>
+<td>🚫</td>
+<td>🚫</td>
+<td>🚫</td>
+</tr>
+<tr>
+<td><strong>11. Ugrađena vizualizacija (grafikoni/dashboardi)</strong></td>
+<td>✔ Vizualizer</td>
+<td>🔄 Osnovno</td>
+<td>🚫</td>
+<td>🚫</td>
+<td>🚫</td>
+<td>✔</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="font-size: 33%">
+<p><strong>Reference:</strong></p>
+<ol>
+<li><a href="https://docs.databricks.com/">Databricks Documentation – Ingestion, Workflows, DLT</a></li>
+<li><a href="https://docs.snowflake.com/">Snowflake Documentation – Data Loading, Tasks</a></li>
+<li><a href="https://help.talend.com/">Talend Documentation – Components &amp; Data Quality</a></li>
+<li><a href="https://docs.informatica.com/">Informatica IICS Documentation – Taskflows, Monitoring</a></li>
+<li><a href="https://help.alteryx.com/">Alteryx Documentation – Designer, Server, Analytics</a></li>
+</ol>
+<p>✔ = podržano  🔄 = delimično  🚫 = nije podržano</p>
+</div>
+            </section>
+        
+            <section >
+                <h3>Trakcija – Gde smo danas</h3>
+<p><lord-icon
+    src="https://cdn.lordicon.com/zwgkioyr.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/hcsnfpqp.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon></p>
+<div style="font-size: 60%">
+<ul>
+<li>Funkcionalan <strong>MVP</strong> i demo okruženje</li>
+<li>Dokazani <strong>realni use-case-ovi</strong>:
+<ul>
+<li>migracije podataka i šema</li>
+<li>automatizovano SQL izvršavanje</li>
+<li>data quality i audit evidencija</li>
+</ul>
+</li>
+<li><strong>Ponovljivi PoC modeli</strong> (bez custom razvoja)</li>
+<li>Testirano u <strong>realnim enterprise scenarijima</strong></li>
+</ul>
+<p><strong>Status:</strong> Advanexus je operativna platforma u ranoj fazi validacije, spremna za PoC i pilot implementacije kod enterprise klijenata.</p>
+</div>
+            </section>
+        
+            <section >
+                <h3>Biznis model</h3>
+<p><lord-icon
+    src="https://cdn.lordicon.com/yqbrtxmj.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/pjwlqzvi.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/piwupaqb.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon></p>
+<div style="font-size: 45%">
+<table>
+<thead>
+<tr>
+<th><strong>Element</strong></th>
+<th><strong>Kako je model postavljen</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ulazak kod klijenta</td>
+<td>PoC i pilot faze kao kontrolisan ulaz</td>
+</tr>
+<tr>
+<td>Osnovni prihod</td>
+<td>Enterprise licenciranje (godišnja pretplata)</td>
+</tr>
+<tr>
+<td>Rast po klijentu</td>
+<td>“Land &amp; expand” po timu, use-case-u i obimu</td>
+</tr>
+<tr>
+<td>Ugovorni okvir</td>
+<td>Dugoročni ugovori (3–5 godina)</td>
+</tr>
+<tr>
+<td>Implementacija</td>
+<td>Partner-led deployment ili uz podršku tima</td>
+</tr>
+<tr>
+<td>Dodatni prihodi</td>
+<td>Implementacija, onboarding, premium podrška</td>
+</tr>
+<tr>
+<td>Operativne karakteristike</td>
+<td>Visoke gross margine, nizak churn, visoka LTV</td>
+</tr>
+</tbody>
+</table>
+</div>
+            </section>
+        
+            <section >
+                <h3>Go-To-Market model</h3>
+<p><lord-icon
+    src="https://cdn.lordicon.com/csxbxlji.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/weqkkuwt.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon></p>
+<div style="font-size: 45%">
+<table>
+<thead>
+<tr>
+<th><strong>Faza</strong></th>
+<th><strong>Pristup</strong></th>
+<th><strong>Cilj</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rani ulazak</td>
+<td>Prodaja vođena od strane osnivača</td>
+<td>Prve PoC i pilot validacije</td>
+</tr>
+<tr>
+<td>Ulazna tačka</td>
+<td>Fokus na ključne (wedge) use-case-ove</td>
+<td>Brza vrednost uz nizak rizik</td>
+</tr>
+<tr>
+<td>Standardizacija</td>
+<td>PoC fabrika</td>
+<td>Ponovljivi i kontrolisani ulazi</td>
+</tr>
+<tr>
+<td>Skaliranje</td>
+<td>Partneri (SI i regionalni integratori)</td>
+<td>Širenje bez rasta internog tima</td>
+</tr>
+<tr>
+<td>Rast</td>
+<td>Prodaja zasnovana na referencama</td>
+<td>Kredibilitet i brže zatvaranje</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Princip:</strong> mali početni zahvat → dokaz vrednosti → kontrolisano širenje.</p>
+</div>
+            </section>
+        
+            <section >
+                <h3>Tim</h3>
+<p><lord-icon
+    src="https://cdn.lordicon.com/pjkwunvs.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/oswwkrzw.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon></p>
+<div style="font-size: 70%">
+<ul>
+<li>Osnivač sa dubokim enterprise i bankarskim iskustvom</li>
+<li>Mali, senior tim eksperata (platforma, DevOps, data &amp; AI)</li>
+<li>Fokus na pouzdanost, skalabilnost i regulisana okruženja</li>
+</ul>
+</div>
+            </section>
+        
+            <section >
+                <h3>Potreba za kapitalom</h3>
+<p><lord-icon
+    src="https://cdn.lordicon.com/kqaqakkv.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/hxcttyly.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon></p>
+<div style="font-size: 70%">
+<ul>
+<li>Skaliranje postojećeg MVP-a u enterprise-ready platformu</li>
+<li>PoC i pilot validacija na tržištu</li>
+<li>Izgradnja prodajnog i partnerskog modela</li>
+</ul>
+</div>
+            </section>
+        
+            <section >
+                <h3>Exit strategija</h3>
+<p><lord-icon
+    src="https://cdn.lordicon.com/lgaqqvqw.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/yfgatqxp.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon></p>
+<div style="font-size: 45%">
+<table>
+<thead>
+<tr>
+<th><strong>Element</strong></th>
+<th><strong>Opis</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primarni izlaz</td>
+<td>Strateška akvizicija od strane enterprise, data ili cloud vendora</td>
+</tr>
+<tr>
+<td>Profil kupca</td>
+<td>Kompanije kojima je potreban kontrolni i automation sloj iznad postojećih sistema</td>
+</tr>
+<tr>
+<td>Alternativni izlazi</td>
+<td>Growth / buy-and-build Private Equity<br> Sekundarni izlaz u fazi rasta</td>
+</tr>
+<tr>
+<td>Razlozi za akviziciju</td>
+<td>Modularna i integrabilna arhitektura<br> Fokus na regulisane industrije<br> Popunjavanje praznine u postojećim data platformama<br> Ponovljivi enterprise use-case-ovi i reference</td>
+</tr>
+<tr>
+<td>Vremenski okvir</td>
+<td>Srednjoročni horizont (5–7 godina)</td>
+</tr>
+</tbody>
+</table>
+</div>
+            </section>
+        
+            <section >
+                <h3>Roadmap razvoja i validacije</h3>
+<p><lord-icon
+    src="https://cdn.lordicon.com/mjlntuvf.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/dlchtpur.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/xpnynjpe.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon></p>
+<div style="font-size: 45%">
+<table>
+<thead>
+<tr>
+<th>Aktivnost</th>
+<th>Q1</th>
+<th>Q2</th>
+<th>Q3</th>
+<th>Q4</th>
+<th>Q5</th>
+<th>Q6</th>
+<th>Q7</th>
+<th>Q8</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stabilizacija MVP-a i core arhitekture</td>
+<td>✔️</td>
+<td>✔️</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PoC factory (standardizovani use-case-ovi)</td>
+<td>✔️</td>
+<td>✔️</td>
+<td>✔️</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Pilot implementacije kod klijenata</td>
+<td></td>
+<td>✔️</td>
+<td>✔️</td>
+<td>✔️</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Multi-tenant hardening i izolacija</td>
+<td></td>
+<td></td>
+<td>✔️</td>
+<td>✔️</td>
+<td>✔️</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Bezbednost, audit i compliance priprema</td>
+<td></td>
+<td></td>
+<td>✔️</td>
+<td>✔️</td>
+<td>✔️</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Partner model i enablement</td>
+<td></td>
+<td></td>
+<td></td>
+<td>✔️</td>
+<td>✔️</td>
+<td>✔️</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Skaliranje prodaje (GTM)</td>
+<td></td>
+<td></td>
+<td></td>
+<td>✔️</td>
+<td>✔️</td>
+<td>✔️</td>
+<td>✔️</td>
+<td></td>
+</tr>
+<tr>
+<td>Internacionalizacija i regionalni rollout</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>✔️</td>
+<td>✔️</td>
+<td>✔️</td>
+<td></td>
+</tr>
+<tr>
+<td>Exit readiness (IP, struktura, reference)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>✔️</td>
+<td>✔️</td>
+<td>✔️</td>
+</tr>
+</tbody>
+</table>
+</div>
+            </section>
+        
+            <section >
+                <h3>Poziv na akciju</h3>
+<p><lord-icon
+    src="https://cdn.lordicon.com/lzwfzdul.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/rmjnvgsm.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/rcuovkuy.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon></p>
+<div style="font-size: 75%">
+<p><span class="advanexus">advanexus</span> gradi kontrolni i automatizacioni sloj
+za sledeću generaciju enterprise data operacija.</p>
+<p>Tražimo:</p>
+<ul>
+<li>strateške investitore,</li>
+<li>design-partner klijente,</li>
+<li>dugoročne partnere za zajednički rast.</li>
+</ul>
+</div>
+            </section>
+        
+            <section >
+                <p><a href="https://www.advanexus.com" :target="_blank"><img src="advanexus/advanexus-vc.png" alt="Logo" style="" width="45%"></a></p>
+<p><a href="https://www.advanexus.com" :target="_blank"><img src="advanexus/advanexus.png" alt="Logo" style="" width="20%"></a>
+<a href="https://www.milovantomasevic.com" :target="_blank"><img src="advanexus/sign-mt.png" alt="Logo" style="" width="30%"></a></p>
+
+            </section>
+        
+
+    </section>
+    
+
+
+    </div>
+
+
+  </div>
+
+  	
+	<script src="libs/reveal.js/4.1.3/reveal.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/zoom/zoom.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/notes/notes.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/search/search.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/markdown/markdown.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/highlight/highlight.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/menu/menu.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/math/math.js"></script>
+
+	<script src="libs/reveal.js/4.1.3/plugin/fullscreen/plugin.js"></script>
+  
+  	<script src="libs/reveal.js/4.1.3/plugin/animate/plugin.js"></script>
+  	<script src="libs/reveal.js/4.1.3/plugin/animate/svg.min.js"></script>
+  
+  	<script src="libs/reveal.js/4.1.3/plugin/anything/plugin.js"></script>
+	  <script src="libs/reveal.js/4.1.3/plugin/anything/Chart.min.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/anything/d3/d3.v3.min.js"></script>				
+	<script src="libs/reveal.js/4.1.3/plugin/anything/d3.patch.js"></script>			
+	<script src="libs/reveal.js/4.1.3/plugin/anything/d3/queue.v1.min.js"></script>		
+	<script src="libs/reveal.js/4.1.3/plugin/anything/d3/topojson.v1.min.js"></script>		
+	<script src="libs/reveal.js/4.1.3/plugin/anything/function-plot.js"></script>
+
+ <!--	<script src="libs/reveal.js/4.1.3/plugin/audio-slideshow/plugin.js"></script>  -->
+<!--	<script src="libs/reveal.js/4.1.3/plugin/audio-slideshow/recorder.js"></script>-->
+<!--	<script src="libs/reveal.js/4.1.3/plugin/audio-slideshow/RecordRTC.js"></script>-->
+
+<script src="libs/reveal.js/4.1.3/plugin/chalkboard/plugin.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/customcontrols/plugin.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/embed-tweet/plugin.js"></script>
+
+	<script src="libs/reveal.js/4.1.3/plugin/chart/chart.min.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/chart/plugin.js"></script>
+
+  <script>
+
+		const printPlugins = [
+			RevealNotes, 
+			RevealHighlight,
+			RevealMath,
+			RevealAnimate,
+			RevealChalkboard, 
+			RevealEmbedTweet,
+			RevealChart,
+		];
+
+		const plugins =  [...printPlugins,
+		RevealZoom, 
+		RevealSearch, 
+				RevealMarkdown, 
+				RevealMenu, 
+				RevealFullscreen,
+				RevealAnything,
+				//RevealAudioSlideshow,
+				//RevealAudioRecorder,
+				RevealCustomControls, 
+				// poll
+				// question
+				// seminar
+				 ]
+
+
+		// Also available as an ES module, see:
+		// https://revealjs.com/initialization/
+		Reveal.initialize({
+			controls: true,
+			controlsTutorial: true,
+			controlsLayout: 'bottom-right',
+			controlsBackArrows: 'faded',
+			progress: true,
+			slideNumber: true,
+			//#showSlideNumber "all" "print" "speaker"
+			hash: true,//#  hash: false,
+			//# respondToHashChanges: true,
+			//# history: false,
+			keyboard: true,
+			//#keyboardCondition: null,
+			overview: true,
+			center: true,
+			touch: true,
+			loop: false,
+			rtl: false,
+			//#navigationMode: 'default', linear grid
+			shuffle: false,
+			fragments: true,
+			fragmentInURL: false,
+			embedded: false,
+			help: true,
+			//#pause: true
+			showNotes: false,
+			autoPlayMedia: false, // TODO fix this to a nullable value
+			//#preloadIframes: null. true false
+			//#autoAnimate: true
+			//#autoAnimateMatcher: null,
+			//#autoAnimateEasing: 'ease',
+			//autoAnimateDuration: 1.0,
+			//#autoAnimateUnmatched: true
+			//#autoAnimateStyles: []
+			autoSlide: 0, // TODO fix this to a falseable value
+			autoSlideStoppable: true,
+			autoSlideMethod: '0',
+			defaultTiming: 120,
+			mouseWheel: false,
+			//#previewLinks: false
+			//#postMessage: true,  // TODO : this can cause issues with the vscode api ???
+			//#postMessageEvents: false,
+			//#focusBodyOnPageVisibilityChange: true,
+			transition: 'slide',
+			transitionSpeed: 'default',
+			backgroundTransition: 'convex',
+			//#pdfMaxPagesPerSlide: Number.POSITIVE_INFINITY,
+			//#pdfSeparateFragments: true,
+			//#pdfPageHeightOffset: -1,
+			viewDistance: 3,
+			//#mobileViewDistance: 2,
+			display: 'block',
+			//#hideInactiveCursor: true,
+			//#hideCursorTime: 5000
+
+			// Parallax Background
+			parallaxBackgroundImage: '',
+			parallaxBackgroundSize: '',
+			parallaxBackgroundHorizontal: 0,
+			parallaxBackgroundVertical: 0,
+			
+			//Presentation Size
+			width: 960,
+			height: 700,
+			margin: 0.04,
+			minScale: 0.2,
+			maxScale: 2,
+			disableLayout: false,
+
+			audio: {
+				prefix: 'audio/', 	// audio files are stored in the "audio" folder
+				suffix: '.ogg',		// audio files have the ".ogg" ending
+				textToSpeechURL: null,  // the URL to the text to speech converter
+				defaultNotes: false, 	// use slide notes as default for the text to speech converter
+				defaultText: false, 	// use slide text as default for the text to speech converter
+				advance: 0, 		// advance to next slide after given time in milliseconds after audio has played, use negative value to not advance
+				autoplay: false,	// automatically start slideshow
+				defaultDuration: 5,	// default duration in seconds if no audio is available
+				defaultAudios: true,	// try to play audios with names such as audio/1.2.ogg
+				playerOpacity: 0.05,	// opacity value of audio player if unfocused
+				playerStyle: 'position: fixed; bottom: 4px; left: 25%; width: 50%; height:75px; z-index: 33;', // style used for container of audio controls
+				startAtFragment: false, // when moving to a slide, start at the current fragment or at the start of the slide
+			},
+			
+			chalkboard: { // font-awesome.min.css must be available
+					//src: "chalkboard/chalkboard.json",
+					storage: "chalkboard-demo",
+				},
+			
+			customcontrols: {
+					controls: [
+      						{
+						  id: 'toggle-overview',
+						  title: 'Toggle overview (O)',
+						  icon: '<i class="fa fa-th"></i>',
+						  action: 'Reveal.toggleOverview();'
+						}
+						,
+						{ icon: '<i class="fa fa-pen-square"></i>',
+						  title: 'Toggle chalkboard (B)',
+						  action: 'RevealChalkboard.toggleChalkboard();'
+						},
+						{ icon: '<i class="fa fa-pen"></i>',
+						  title: 'Toggle notes canvas (C)',
+						  action: 'RevealChalkboard.toggleNotesCanvas();'
+						}
+				]
+			},
+			chart: {
+					defaults: { 
+						color: 'lightgray', // color of labels
+						scale: { 
+							beginAtZero: true, 
+							ticks: { stepSize: 1 },
+							grid: { color: "lightgray" } , // color of grid lines
+						},
+					},
+					line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] }, 
+					bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
+					pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+					radar: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
+			},
+			math: {
+				mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+				config: 'TeX-AMS_HTML-full',
+				// pass other options into `MathJax.Hub.Config()`
+				TeX: { Macros: { RR: "{\\bf R}" } }
+				},
+				anything: [ 
+				{
+		className: "plot",
+		defaults: {width:500, height: 500, grid:true},
+		initialize: (function(container, options){ options.target = "#"+container.id; functionPlot(options) })
+	 },
+	 {
+		className: "chart",  
+		initialize: (function(container, options){ container.chart = new Chart(container.getContext("2d"), options);  })
+	 },
+	 {
+		className: "anything",
+		initialize: (function(container, options){ if (options && options.initialize) { options.initialize(container)} })
+	 },
+					],
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: (window.location.search.match(/print-pdf/gi) ? printPlugins : plugins ) 
+		});
+			
+
+
+	    // Change chalkboard theme : 
+		function changeTheme(input) {
+			var config = {};
+			config.theme = input.value;
+			Reveal.getPlugin("RevealChalkboard").configure(config);
+			input.blur();
+		}
+
+		// // Handle the message inside the webview
+        // window.addEventListener('message', event => {
+
+        //     const message = event.data; // The JSON data our extension sent
+
+        //     switch (message.command) {
+        //         case 'refactor':
+        //             Reveal.toggleHelp();
+        //     }
+        // });
+
+		if (window.location.search.match(/print-pdf-now/gi)) {
+      		setTimeout(() => {
+				window.print();
+			  }, 2500);
+			
+    }
+		
+
+	</script>
+
+</body>
+
+</html>

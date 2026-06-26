@@ -1,0 +1,903 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>advanexus</title>
+
+	<meta name="description" content="advanexus data development and analysis platform">
+	<meta name="author" content="Milovan Tomašević">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="libs/reveal.js/4.1.3/reset.css">
+	<link rel="stylesheet" href="libs/reveal.js/4.1.3/reveal.css">
+
+	
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+	  <!-- highlight Theme -->
+  	
+	  <link rel="stylesheet" href="libs/highlight.js/11.3.1/styles/monokai.min.css">
+	
+	
+		
+	<link rel="stylesheet" href="libs/reveal.js/4.1.3/plugin/chalkboard/style.css">
+	
+	
+	
+		<link rel="stylesheet" href="libs/reveal.js/4.1.3/plugin/customcontrols/style.css">
+	
+	<link rel="stylesheet" href="libs/styles/tasklist.css">
+
+
+
+  <!-- Revealjs Theme -->
+  
+  	<link rel="stylesheet" href="libs/reveal.js/4.1.3/theme/white.css" id="theme">
+  
+  
+
+
+  <!-- Revealjs Theme -->
+  
+
+ 
+</head>
+
+<body>
+  
+    <div id="logo" style="position: fixed; top: 20px; left: 20px; z-index: 1; height:3rem;">
+        <img src="advanexus/logo-circle.png" style="height:100%"/>
+    </div>
+  
+
+
+  <div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+      
+
+
+    
+    <section>
+        <section >
+            <p><a href="https://www.advanexus.com" :target="_blank"><img src="advanexus/logo.png" alt="Logo" style="" width="45%"></a></p>
+<h5>Modular Data Platform for the Banking Ecosystem</h5>
+<h3><strong>The Platform for Data Integration, Visualization, Processing, and Control</strong></h3>
+<div style="font-size: 50%">
+<p><em>Engineered</em> with precision.<br>
+<em>Designed</em> around the real needs of institutional systems.<br>
+<em>Adapted</em> for highly regulated operational environments.<br></p>
+<p><strong>Founder:</strong> Milovan Tomašević, PhD</p>
+<p><strong>Concept:</strong>
+<em><span class="advanexus">advanexus</span> operates as a technical layer above existing operational systems, automating data integration, migration, standardization, and control — across the entire financial ecosystem.</em></p>
+</div>
+<style scoped>
+    :root {
+      --primary-color: #0ab39c;
+      --secondary-color: white;
+      --text-color: #343541;
+    }
+    ul.medium {
+        font-size: 80%;
+    }
+
+    ul.small {
+        font-size: 60%;
+    }
+    .advanexus {
+        color: var(--primary-color);
+        font-family: 'Space Grotesk', sans-serif;
+    }
+    .reveal .slides {
+      color: var(--text-color);
+    }
+    .reveal .slides h1,
+    .reveal .slides h2,
+    .reveal .slides h3 {
+      font-family: "Space Grotesk", monospace;
+      color: var(--primary-color);
+    }
+    .reveal .slides a {
+      color: var(--primary-color);
+    }
+    .fa,
+    .fas.fa-bars,
+    .controls-arrow,
+    span {
+      color: var(--primary-color);
+    }
+    .slide-number {
+      background-color: var(--text-color) !important;
+    }
+    .slide-number-a,
+    .slide-number-delimiter,
+    .slide-number-b {
+      color: var(--secondary-color);
+    }
+    .shrink {
+        font-size: 70% !important;
+        line-height: 1.1em !important; /* manji line-height */
+        text-align: left !important;
+
+        display: block !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding-left: 0.4em !important;
+    }
+
+    /* Umanjena i profesionalno uvučena lista */
+    .shrink ul,
+    .shrink ol {
+        margin-left: 1em !important;
+        padding-left: 0.4em !important;
+        font-size: 92% !important;
+    }
+
+    .shrink li {
+        margin-bottom: 0.15em !important; /* vrlo kompaktno */
+        line-height: 1.15em !important;   /* još dodatno sabija listu */
+    }
+
+
+</style>
+<script src="https://cdn.lordicon.com/lordicon.js"></script>
+<link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap"
+/>
+            </section>
+        
+            <section >
+                <h3>Shared Challenges Across the Banking Ecosystem</h3>
+<p><lord-icon
+ src="https://cdn.lordicon.com/uxqqsiyx.json"
+ trigger="loop"
+ colors="primary:#0ab39c,secondary:#343541"
+ style="width:150px;height:150px"> </lord-icon> <lord-icon
+ src="https://cdn.lordicon.com/vwtvwncw.json"
+ trigger="loop"
+ colors="primary:#0ab39c,secondary:#343541"
+ style="width:150px;height:150px"> </lord-icon> <lord-icon
+ src="https://cdn.lordicon.com/hnxipqzk.json"
+ trigger="loop"
+ colors="primary:#0ab39c,secondary:#343541"
+ style="width:150px;height:150px"> </lord-icon> <lord-icon
+ src="https://cdn.lordicon.com/lrgepzxr.json"
+ trigger="loop"
+ colors="primary:#0ab39c,secondary:#343541"
+ style="width:150px;height:150px">
+</lord-icon></p>
+<div class="shrink">
+<table style="width:100%; font-size: 60%; border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th style="text-align:left; color: var(--primary-color); font-size:90%;">Banks</th>
+      <th style="text-align:left; color: var(--primary-color); font-size:90%;">Central Bank</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <ul>
+          <li>multiple database systems (DB2, Oracle, MSSQL, PostgreSQL…)</li>
+          <li>CSV / XML / JSON + internal proprietary formats</li>
+          <li>manual procedures and Excel dependencies</li>
+          <li>large daily and monthly batch processes</li>
+          <li>inconsistent technical interpretation of rules</li>
+          <li>difficult implementation of new regulatory changes</li>
+          <li>incidents without a clear audit trail</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>no unified technical model across banks</li>
+          <li>inconsistent technical implementations of the same regulation</li>
+          <li>complex data consolidation and comparison</li>
+          <li>limited visibility into banks’ data preparation</li>
+          <li>need for a centralized sandbox environment</li>
+          <li>need for stronger DQ rules and validations</li>
+          <li>technically complex changes for new regulations</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" style="padding-top: 0.5em;">
+        <strong style="color: var(--primary-color);">Shared reality:</strong>
+        Data comes from different systems, in different formats, and with varying quality —  
+        and must be unified, stabilized, and standardized.
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+            </section>
+        
+            <section >
+                <h3>The platform that accelerates, standardizes, and simplifies data operations</h3>
+<div class="shrink">
+<ul>
+<li><strong><span class="advanexus">advanexus</span> removes key technical barriers</strong>: slow data transfer, inconsistent formats, complex workflows, real-time limitations, and lack of standardization.</li>
+<li>Designed for the <strong>entire data ecosystem</strong>: non-technical users, data engineers, and data scientists.</li>
+<li>Delivers <strong>zero-downtime operations</strong>, <strong>high speed and efficiency</strong>, and <strong>simplified workflows</strong>.</li>
+<li>A <strong>single platform</strong> that accelerates operations, improves data quality, and streamlines the development and management of critical processes.</li>
+</ul>
+</div>
+            </section>
+        
+            <section >
+                <h3>Data Integration &amp; Standardization</h3>
+<p><lord-icon
+ src="https://cdn.lordicon.com/taqsdbhc.json"
+ trigger="loop"
+ colors="primary:#0ab39c,secondary:#343541"
+ style="width:150px;height:150px"> </lord-icon> <lord-icon
+ src="https://cdn.lordicon.com/mjlntuvf.json"
+ trigger="loop"
+ colors="primary:#0ab39c,secondary:#343541"
+ style="width:150px;height:150px"> </lord-icon></p>
+<div style="font-size: 33%">
+<table>
+<thead>
+<tr>
+<th><strong>Area</strong></th>
+<th><strong>For Banks</strong></th>
+<th><strong>For the Central Bank</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Source Integration</strong></td>
+<td>Connects to DB2, Oracle, PostgreSQL, MSSQL, CSV/XML/JSON, APIs, MQ, and internal formats — without modifying core systems</td>
+<td>Unified, stable, and controlled technical data flow from all banks</td>
+</tr>
+<tr>
+<td><strong>Data Standardization</strong></td>
+<td>Maps existing structures to standardized models (transactions, liquidity, DWH feeds, new regulations)</td>
+<td>Identical format from all banks → easier comparison, consolidation, and supervisory insight</td>
+</tr>
+<tr>
+<td><strong>Flexibility</strong></td>
+<td>Banks retain their internal models and architectures</td>
+<td>The central bank gains a unified, technically consistent data model</td>
+</tr>
+<tr>
+<td><strong>Implementation</strong></td>
+<td>Introduced gradually — from a single domain to full workflows</td>
+<td>A unified technical implementation for all participants in the ecosystem</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+            </section>
+        
+            <section >
+                <h3>C++ High-Performance Modules</h3>
+<p><lord-icon
+ src="https://cdn.lordicon.com/zkveuwek.json"
+ trigger="loop"
+ colors="primary:#0ab39c,secondary:#343541"
+ style="width:150px;height:150px"> </lord-icon> <lord-icon
+ src="https://cdn.lordicon.com/fqrjldna.json"
+ trigger="loop"
+ colors="primary:#0ab39c,secondary:#343541"
+ style="width:150px;height:150px"> </lord-icon> <lord-icon
+ src="https://cdn.lordicon.com/oscijwdh.json"
+ trigger="loop"
+ colors="primary:#0ab39c,secondary:#343541"
+ style="width:150px;height:150px">
+</lord-icon></p>
+<div class="shrink">
+<table>
+<thead>
+<tr>
+<th><strong>Banks</strong></th>
+<th><strong>Central Bank</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Processes massive batch workloads in minutes instead of hours</td>
+<td>Stable and deterministic execution times</td>
+</tr>
+<tr>
+<td>Fast migrations and large-scale transformations with no downtime</td>
+<td>Reliable alignment with regulatory deadlines and daily cut-offs</td>
+</tr>
+<tr>
+<td>Minimal resource usage during critical overnight windows</td>
+<td>Predictable, consistent sector-wide processing</td>
+</tr>
+</tbody>
+</table>
+</div>
+            </section>
+        
+            <section >
+                <h3>Audit, Versioning &amp; Incident Forensics</h3>
+<p><lord-icon
+ src="https://cdn.lordicon.com/bmkdunjh.json"
+ trigger="loop"
+ colors="primary:#0ab39c,secondary:#343541"
+ style="width:150px;height:150px"> </lord-icon> <lord-icon
+ src="https://cdn.lordicon.com/nchegqgo.json"
+ trigger="loop"
+ colors="primary:#0ab39c,secondary:#343541"
+ style="width:150px;height:150px"> </lord-icon> <lord-icon
+ src="https://cdn.lordicon.com/cnfrxixw.json"
+ trigger="loop"
+ colors="primary:#0ab39c,secondary:#343541"
+ style="width:150px;height:150px">
+</lord-icon></p>
+<div class="shrink">
+<table>
+<thead>
+<tr>
+<th><strong>Banks</strong></th>
+<th><strong>Central Bank</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clear audit trail of <em>who did what</em></td>
+<td>Transparent insight into all critical processing flows</td>
+</tr>
+<tr>
+<td>Detailed forensics and incident analysis</td>
+<td>Ability to reconstruct reports retrospectively (replay)</td>
+</tr>
+<tr>
+<td>Versioned rules and processes for each change</td>
+<td>Compliance oversight across all participating institutions</td>
+</tr>
+</tbody>
+</table>
+</div>
+            </section>
+        
+            <section >
+                <h3>Key Use Cases</h3>
+<p><lord-icon
+ src="https://cdn.lordicon.com/mrikdaqa.json"
+ trigger="loop"
+ colors="primary:#0ab39c,secondary:#343541"
+ style="width:150px;height:150px"> </lord-icon> <lord-icon
+ src="https://cdn.lordicon.com/pjkwunvs.json"
+ trigger="loop"
+ colors="primary:#0ab39c,secondary:#343541"
+ style="width:150px;height:150px"> </lord-icon> <lord-icon
+ src="https://cdn.lordicon.com/ggijgnjp.json"
+ trigger="loop"
+ colors="primary:#0ab39c,secondary:#343541"
+ style="width:150px;height:150px"> </lord-icon></p>
+<div style="font-size: 33%">
+<table>
+<thead>
+<tr>
+<th><strong>Use Case</strong></th>
+<th><strong>What Banks Gain</strong></th>
+<th><strong>What the Central Bank Gains</strong></th>
+<th><strong>Unique Advantage</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Data import &amp; preparation</strong></td>
+<td>Less manual ETL work</td>
+<td>Standardized input</td>
+<td>Ingest + automatic SQL generation</td>
+</tr>
+<tr>
+<td><strong>2. Source integration</strong></td>
+<td>Single point for DB/API/files</td>
+<td>Consistent formats from all banks</td>
+<td>Broadest connector ecosystem</td>
+</tr>
+<tr>
+<td><strong>3. Data standardization</strong></td>
+<td>Clear, unified structures</td>
+<td>True comparability across institutions</td>
+<td>Internal business model</td>
+</tr>
+<tr>
+<td><strong>4. Analytics &amp; visualization</strong></td>
+<td>Local dashboards</td>
+<td>Faster controls</td>
+<td>SQL + visualizations in one place</td>
+</tr>
+<tr>
+<td><strong>5. Backup &amp; restore</strong></td>
+<td>Operational stability</td>
+<td>Forensic reconstruction</td>
+<td>Unified backup/restore engine</td>
+</tr>
+<tr>
+<td><strong>6. Automated SQL execution</strong></td>
+<td>Fewer manual operations</td>
+<td>Full transparency</td>
+<td>Centralized job control</td>
+</tr>
+<tr>
+<td><strong>7. Cross-DB schema transfer</strong></td>
+<td>Lower migration risks</td>
+<td>Validation of large transformations</td>
+<td>Algorithmic dependency detection</td>
+</tr>
+<tr>
+<td><strong>8. Dependency management</strong></td>
+<td>Optimal execution order</td>
+<td>More predictable deadlines</td>
+<td>Parallelism scheduler</td>
+</tr>
+<tr>
+<td><strong>9. Data Quality</strong></td>
+<td>Fewer errors</td>
+<td>Standardized controls</td>
+<td>DQ built directly into pipelines</td>
+</tr>
+<tr>
+<td><strong>10. Scheduler</strong></td>
+<td>Predictable execution</td>
+<td>Better coordination</td>
+<td>Central orchestrator</td>
+</tr>
+<tr>
+<td><strong>11. Python Sandbox</strong></td>
+<td>Analytics + ML</td>
+<td>Validation of statistical models</td>
+<td>SQL + Python together</td>
+</tr>
+<tr>
+<td><strong>12. Fast file analysis</strong></td>
+<td>Instant preview</td>
+<td>Faster intake &amp; checks</td>
+<td>Every file → queryable table</td>
+</tr>
+<tr>
+<td><strong>13. API integrations</strong></td>
+<td>External data exchange</td>
+<td>Consolidated access</td>
+<td>Zero additional coding</td>
+</tr>
+<tr>
+<td><strong>14. Knowledge Base</strong></td>
+<td>Faster onboarding</td>
+<td>Clear documentation</td>
+<td>First platform with integrated knowledge</td>
+</tr>
+</tbody>
+</table>
+</div>
+            </section>
+        
+            <section >
+                <h3>Complete Shared Flow</h3>
+<p><lord-icon
+ src="https://cdn.lordicon.com/zwgkioyr.json"
+ trigger="loop"
+ colors="primary:#0ab39c,secondary:#343541"
+ style="width:150px;height:150px"> </lord-icon> <lord-icon
+ src="https://cdn.lordicon.com/dlchtpur.json"
+ trigger="loop"
+ colors="primary:#0ab39c,secondary:#343541"
+ style="width:150px;height:150px"> </lord-icon> <lord-icon
+ src="https://cdn.lordicon.com/msgytrdr.json"
+ trigger="loop"
+ colors="primary:#0ab39c,secondary:#343541"
+ style="width:150px;height:150px"> </lord-icon></p>
+<div style="font-size: 33%">
+<table>
+<thead>
+<tr>
+<th><strong>Step</strong></th>
+<th><strong>Banks</strong></th>
+<th><strong>Central Bank</strong></th>
+<th><strong>Shared Value</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Data acquisition and loading</strong></td>
+<td>Data from core systems, databases, and files</td>
+<td>Receiving unified, pre-prepared datasets</td>
+<td>Controlled and consistent input across the ecosystem</td>
+</tr>
+<tr>
+<td><strong>2. Model mapping</strong></td>
+<td>Converting local formats into a shared model</td>
+<td>One technical model for all participants</td>
+<td>Easier consolidation and comparability</td>
+</tr>
+<tr>
+<td><strong>3. Validation &amp; Data Quality</strong></td>
+<td>Local DQ rules and technical checks</td>
+<td>Central DQ rules and oversight</td>
+<td>Stable data quality across the entire flow</td>
+</tr>
+<tr>
+<td><strong>4. Process automation</strong></td>
+<td>Jobs executed without manual work</td>
+<td>Predictable timelines and coordinated schedules</td>
+<td>Reduced operational risk</td>
+</tr>
+<tr>
+<td><strong>5. Visualization &amp; reporting</strong></td>
+<td>Dashboards and quick insights</td>
+<td>Harmonized view for all participants</td>
+<td>Transparency and clearer information</td>
+</tr>
+<tr>
+<td><strong>6. Audit &amp; forensics</strong></td>
+<td>Local logs and history</td>
+<td>Centralized view of all processes</td>
+<td>Easier incident identification and reconstruction</td>
+</tr>
+<tr>
+<td><strong>7. Sandbox testing</strong></td>
+<td>Testing new rules and processes</td>
+<td>Validating banks before production rollout</td>
+<td>Safe implementation of changes</td>
+</tr>
+</tbody>
+</table>
+</div>
+            </section>
+        
+            <section >
+                <h3>Technical Architecture</h3>
+<p><lord-icon
+ src="https://cdn.lordicon.com/kjjbpuhp.json"
+ trigger="loop"
+ colors="primary:#0ab39c,secondary:#343541"
+ style="width:150px;height:150px"> </lord-icon> <lord-icon
+ src="https://cdn.lordicon.com/jectmwqf.json"
+ trigger="loop"
+ colors="primary:#0ab39c,secondary:#343541"
+ style="width:150px;height:150px"> </lord-icon> <lord-icon
+ src="https://cdn.lordicon.com/ecngpoqo.json"
+ trigger="loop"
+ colors="primary:#0ab39c,secondary:#343541"
+ style="width:150px;height:150px"> </lord-icon></p>
+<div style="font-size: 60%">
+<table>
+<thead>
+<tr>
+<th><strong>Banks</strong></th>
+<th><strong>Central Bank</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Isolated instances</td>
+<td>Aggregation (central) layer</td>
+</tr>
+<tr>
+<td>Ability to maintain bank-specific models</td>
+<td>Standardized reference model</td>
+</tr>
+<tr>
+<td>High integration flexibility</td>
+<td>Transparent validation and supervisory insight</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong> <span class="advanexus">advanexus</span> is fully <strong>multi-tenant</strong> — operating independently per bank while also supporting a unified central node.</p>
+</div>
+            </section>
+        
+            <section >
+                <h3>What makes advanexus unique</h3>
+<p><lord-icon
+    src="https://cdn.lordicon.com/euaablbm.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/oswwkrzw.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/urswgamh.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/yvjimpju.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon>
+<lord-icon
+    src="https://cdn.lordicon.com/sjoccsdj.json"
+    trigger="loop"
+    colors="primary:#0ab39c,secondary:#343541"
+    style="width:150px;height:150px">
+</lord-icon></p>
+<div class="shrink">
+<ol>
+<li><strong>On-premises / cloud / hybrid deployment</strong> – operates within existing infrastructure or in the cloud.</li>
+<li><strong>No changes to existing systems</strong> – works as a technical layer above core platforms.</li>
+<li><strong>End-to-end workflow in a single platform</strong> – from data acquisition and standardization to quality checks and audit.</li>
+<li><strong>Modular architecture</strong> – institutions use only the components they need.</li>
+<li><strong>Designed for the entire banking ecosystem</strong> – one unified process with different oversight views (banks / central bank).</li>
+<li><strong>Enables a unified technical standard</strong> across the banking ecosystem.</li>
+<li><strong>AI-ready</strong> – AI assists the workflow but does not govern critical processes.</li>
+</ol>
+</div>
+            </section>
+        
+            <section >
+                <p><a href="https://www.advanexus.com" :target="_blank"><img src="advanexus/advanexus-vc.png" alt="Logo" style="" width="45%"></a></p>
+<p><a href="https://www.advanexus.com" :target="_blank"><img src="advanexus/advanexus.png" alt="Logo" style="" width="20%"></a>
+<a href="https://www.milovantomasevic.com" :target="_blank"><img src="advanexus/sign-mt.png" alt="Logo" style="" width="30%"></a></p>
+
+            </section>
+        
+
+    </section>
+    
+
+
+    </div>
+
+
+  </div>
+
+  	
+	<script src="libs/reveal.js/4.1.3/reveal.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/zoom/zoom.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/notes/notes.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/search/search.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/markdown/markdown.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/highlight/highlight.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/menu/menu.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/math/math.js"></script>
+
+	<script src="libs/reveal.js/4.1.3/plugin/fullscreen/plugin.js"></script>
+  
+  	<script src="libs/reveal.js/4.1.3/plugin/animate/plugin.js"></script>
+  	<script src="libs/reveal.js/4.1.3/plugin/animate/svg.min.js"></script>
+  
+  	<script src="libs/reveal.js/4.1.3/plugin/anything/plugin.js"></script>
+	  <script src="libs/reveal.js/4.1.3/plugin/anything/Chart.min.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/anything/d3/d3.v3.min.js"></script>				
+	<script src="libs/reveal.js/4.1.3/plugin/anything/d3.patch.js"></script>			
+	<script src="libs/reveal.js/4.1.3/plugin/anything/d3/queue.v1.min.js"></script>		
+	<script src="libs/reveal.js/4.1.3/plugin/anything/d3/topojson.v1.min.js"></script>		
+	<script src="libs/reveal.js/4.1.3/plugin/anything/function-plot.js"></script>
+
+ <!--	<script src="libs/reveal.js/4.1.3/plugin/audio-slideshow/plugin.js"></script>  -->
+<!--	<script src="libs/reveal.js/4.1.3/plugin/audio-slideshow/recorder.js"></script>-->
+<!--	<script src="libs/reveal.js/4.1.3/plugin/audio-slideshow/RecordRTC.js"></script>-->
+
+<script src="libs/reveal.js/4.1.3/plugin/chalkboard/plugin.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/customcontrols/plugin.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/embed-tweet/plugin.js"></script>
+
+	<script src="libs/reveal.js/4.1.3/plugin/chart/chart.min.js"></script>
+	<script src="libs/reveal.js/4.1.3/plugin/chart/plugin.js"></script>
+
+  <script>
+
+		const printPlugins = [
+			RevealNotes, 
+			RevealHighlight,
+			RevealMath,
+			RevealAnimate,
+			RevealChalkboard, 
+			RevealEmbedTweet,
+			RevealChart,
+		];
+
+		const plugins =  [...printPlugins,
+		RevealZoom, 
+		RevealSearch, 
+				RevealMarkdown, 
+				RevealMenu, 
+				RevealFullscreen,
+				RevealAnything,
+				//RevealAudioSlideshow,
+				//RevealAudioRecorder,
+				RevealCustomControls, 
+				// poll
+				// question
+				// seminar
+				 ]
+
+
+		// Also available as an ES module, see:
+		// https://revealjs.com/initialization/
+		Reveal.initialize({
+			controls: true,
+			controlsTutorial: true,
+			controlsLayout: 'bottom-right',
+			controlsBackArrows: 'faded',
+			progress: true,
+			slideNumber: true,
+			//#showSlideNumber "all" "print" "speaker"
+			hash: true,//#  hash: false,
+			//# respondToHashChanges: true,
+			//# history: false,
+			keyboard: true,
+			//#keyboardCondition: null,
+			overview: true,
+			center: true,
+			touch: true,
+			loop: false,
+			rtl: false,
+			//#navigationMode: 'default', linear grid
+			shuffle: false,
+			fragments: true,
+			fragmentInURL: false,
+			embedded: false,
+			help: true,
+			//#pause: true
+			showNotes: false,
+			autoPlayMedia: false, // TODO fix this to a nullable value
+			//#preloadIframes: null. true false
+			//#autoAnimate: true
+			//#autoAnimateMatcher: null,
+			//#autoAnimateEasing: 'ease',
+			//autoAnimateDuration: 1.0,
+			//#autoAnimateUnmatched: true
+			//#autoAnimateStyles: []
+			autoSlide: 0, // TODO fix this to a falseable value
+			autoSlideStoppable: true,
+			autoSlideMethod: '0',
+			defaultTiming: 120,
+			mouseWheel: false,
+			//#previewLinks: false
+			//#postMessage: true,  // TODO : this can cause issues with the vscode api ???
+			//#postMessageEvents: false,
+			//#focusBodyOnPageVisibilityChange: true,
+			transition: 'slide',
+			transitionSpeed: 'default',
+			backgroundTransition: 'convex',
+			//#pdfMaxPagesPerSlide: Number.POSITIVE_INFINITY,
+			//#pdfSeparateFragments: true,
+			//#pdfPageHeightOffset: -1,
+			viewDistance: 3,
+			//#mobileViewDistance: 2,
+			display: 'block',
+			//#hideInactiveCursor: true,
+			//#hideCursorTime: 5000
+
+			// Parallax Background
+			parallaxBackgroundImage: '',
+			parallaxBackgroundSize: '',
+			parallaxBackgroundHorizontal: 0,
+			parallaxBackgroundVertical: 0,
+			
+			//Presentation Size
+			width: 960,
+			height: 700,
+			margin: 0.04,
+			minScale: 0.2,
+			maxScale: 2,
+			disableLayout: false,
+
+			audio: {
+				prefix: 'audio/', 	// audio files are stored in the "audio" folder
+				suffix: '.ogg',		// audio files have the ".ogg" ending
+				textToSpeechURL: null,  // the URL to the text to speech converter
+				defaultNotes: false, 	// use slide notes as default for the text to speech converter
+				defaultText: false, 	// use slide text as default for the text to speech converter
+				advance: 0, 		// advance to next slide after given time in milliseconds after audio has played, use negative value to not advance
+				autoplay: false,	// automatically start slideshow
+				defaultDuration: 5,	// default duration in seconds if no audio is available
+				defaultAudios: true,	// try to play audios with names such as audio/1.2.ogg
+				playerOpacity: 0.05,	// opacity value of audio player if unfocused
+				playerStyle: 'position: fixed; bottom: 4px; left: 25%; width: 50%; height:75px; z-index: 33;', // style used for container of audio controls
+				startAtFragment: false, // when moving to a slide, start at the current fragment or at the start of the slide
+			},
+			
+			chalkboard: { // font-awesome.min.css must be available
+					//src: "chalkboard/chalkboard.json",
+					storage: "chalkboard-demo",
+				},
+			
+			customcontrols: {
+					controls: [
+      						{
+						  id: 'toggle-overview',
+						  title: 'Toggle overview (O)',
+						  icon: '<i class="fa fa-th"></i>',
+						  action: 'Reveal.toggleOverview();'
+						}
+						,
+						{ icon: '<i class="fa fa-pen-square"></i>',
+						  title: 'Toggle chalkboard (B)',
+						  action: 'RevealChalkboard.toggleChalkboard();'
+						},
+						{ icon: '<i class="fa fa-pen"></i>',
+						  title: 'Toggle notes canvas (C)',
+						  action: 'RevealChalkboard.toggleNotesCanvas();'
+						}
+				]
+			},
+			chart: {
+					defaults: { 
+						color: 'lightgray', // color of labels
+						scale: { 
+							beginAtZero: true, 
+							ticks: { stepSize: 1 },
+							grid: { color: "lightgray" } , // color of grid lines
+						},
+					},
+					line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] }, 
+					bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
+					pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+					radar: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
+			},
+			math: {
+				mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+				config: 'TeX-AMS_HTML-full',
+				// pass other options into `MathJax.Hub.Config()`
+				TeX: { Macros: { RR: "{\\bf R}" } }
+				},
+				anything: [ 
+				{
+		className: "plot",
+		defaults: {width:500, height: 500, grid:true},
+		initialize: (function(container, options){ options.target = "#"+container.id; functionPlot(options) })
+	 },
+	 {
+		className: "chart",  
+		initialize: (function(container, options){ container.chart = new Chart(container.getContext("2d"), options);  })
+	 },
+	 {
+		className: "anything",
+		initialize: (function(container, options){ if (options && options.initialize) { options.initialize(container)} })
+	 },
+					],
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: (window.location.search.match(/print-pdf/gi) ? printPlugins : plugins ) 
+		});
+			
+
+
+	    // Change chalkboard theme : 
+		function changeTheme(input) {
+			var config = {};
+			config.theme = input.value;
+			Reveal.getPlugin("RevealChalkboard").configure(config);
+			input.blur();
+		}
+
+		// // Handle the message inside the webview
+        // window.addEventListener('message', event => {
+
+        //     const message = event.data; // The JSON data our extension sent
+
+        //     switch (message.command) {
+        //         case 'refactor':
+        //             Reveal.toggleHelp();
+        //     }
+        // });
+
+		if (window.location.search.match(/print-pdf-now/gi)) {
+      		setTimeout(() => {
+				window.print();
+			  }, 2500);
+			
+    }
+		
+
+	</script>
+
+</body>
+
+</html>
